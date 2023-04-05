@@ -1,0 +1,15 @@
+C:\Users\divya.shah\source\repos\HRS\HRS.Data\bin\Debug\net6.0\HRS.Data.deps.json
+C:\Users\divya.shah\source\repos\HRS\HRS.Data\bin\Debug\net6.0\HRS.Data.dll
+C:\Users\divya.shah\source\repos\HRS\HRS.Data\bin\Debug\net6.0\HRS.Data.pdb
+C:\Users\divya.shah\source\repos\HRS\HRS.Data\bin\Debug\net6.0\HRS.Busniess.dll
+C:\Users\divya.shah\source\repos\HRS\HRS.Data\bin\Debug\net6.0\HRS.Busniess.pdb
+C:\Users\divya.shah\source\repos\HRS\HRS.Data\obj\Debug\net6.0\HRS.Data.csproj.AssemblyReference.cache
+C:\Users\divya.shah\source\repos\HRS\HRS.Data\obj\Debug\net6.0\HRS.Data.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\divya.shah\source\repos\HRS\HRS.Data\obj\Debug\net6.0\HRS.Data.AssemblyInfoInputs.cache
+C:\Users\divya.shah\source\repos\HRS\HRS.Data\obj\Debug\net6.0\HRS.Data.AssemblyInfo.cs
+C:\Users\divya.shah\source\repos\HRS\HRS.Data\obj\Debug\net6.0\HRS.Data.csproj.CoreCompileInputs.cache
+C:\Users\divya.shah\source\repos\HRS\HRS.Data\obj\Debug\net6.0\HRS.Data.csproj.CopyComplete
+C:\Users\divya.shah\source\repos\HRS\HRS.Data\obj\Debug\net6.0\HRS.Data.dll
+C:\Users\divya.shah\source\repos\HRS\HRS.Data\obj\Debug\net6.0\refint\HRS.Data.dll
+C:\Users\divya.shah\source\repos\HRS\HRS.Data\obj\Debug\net6.0\HRS.Data.pdb
+C:\Users\divya.shah\source\repos\HRS\HRS.Data\obj\Debug\net6.0\ref\HRS.Data.dll

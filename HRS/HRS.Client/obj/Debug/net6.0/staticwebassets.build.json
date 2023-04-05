@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "t4Btq7Q5UjWILkP9tKLUg4lODqBszD9gpxp0yOytVdo=",
+  "Source": "HRS.Client",
+  "BasePath": "_content/HRS.Client",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
