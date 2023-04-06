@@ -1,0 +1,40 @@
+<p>employee works!</p>
+
+<div>
+    <table class="table table-hover">
+    <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Name</th>
+            <th scope="col">Address</th>
+            <th scope="col">DOB</th>
+            <th scope="col">Mobile</th>
+            <th scope="col">dep_Id</th>
+            <th scope="col">designation_Id</th>
+            <th scope="col">manager_Id</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of employee">
+            <td>{{item.id}}</td>
+            <td>{{item.name}}</td>
+            <td>{{item.address}}</td>
+            <td>{{item.dob}}</td>
+            <td>{{item.mobile}}</td>
+            <td>{{item.dep_Id}}</td>
+            <td>{{item.designation_Id}}</td>
+            <td>{{item.manager_Id}}</td>
+            <td>
+                <a [routerLink]="['/app-employee','editemp',item.id]">edit</a></td>
+            <!-- <button type="button" [routerLink]="['/editemp',item.id]">edit</button> -->
+            <!-- <button type="button"  (click)="deleteEmployee(employee)">Delete</button> -->
+            
+        </tr>
+        
+    </tbody>
+    
+    <td>
+        <button type="button" [routerLink]="['/addemp']">Add</button>
+    </td>
+</table>
+</div>

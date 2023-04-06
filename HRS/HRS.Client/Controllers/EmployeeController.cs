@@ -52,13 +52,17 @@ namespace HRS.Client.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> AddEmployee(Employee emp)
+        public ActionResult AddEmployee(Employee emp)
         {
+            if(emp == null) return BadRequest();
             try
             {
-                await _repo.AddEmployee(emp);
+                _repo.AddEmployee(emp);
+                return Ok(emp);
+                //     _repo.AddEmployee(emp);
 
-                return CreatedAtRoute("GetSpecificEmp", new { id = emp.Id }, emp);
+                //    return CreatedAtRoute("GetSpecificEmp", new { id = emp.Id }, emp);
+                //}
             }
             catch (Exception ex)
             {

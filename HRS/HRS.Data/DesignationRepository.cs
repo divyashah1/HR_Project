@@ -42,7 +42,7 @@ namespace HRS.Data
             return _dep.SaveChangesAsync();
         }
 
-        public async Task<Designation> UpdateDept(Designation des)
+        public async Task<Designation> UpdateDesignation(Designation des)
         {
             var obj = await _dep.Designation.FirstOrDefaultAsync(a => a.Id == des.Id);
             if (obj != null)
