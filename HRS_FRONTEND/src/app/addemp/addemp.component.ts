@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms'
 import { IEmployee } from '../iemployee';
 import { Router, RouterModule } from '@angular/router';
@@ -8,7 +8,7 @@ import { EmployeeService } from '../employee.service';
   templateUrl: './addemp.component.html',
   styleUrls: ['./addemp.component.css']
 })
-export class AddempComponent {
+export class AddempComponent implements OnInit {
 
   addEmpForm!:FormGroup;
   addEmployeeRequest!:IEmployee;
@@ -41,42 +41,45 @@ export class AddempComponent {
     })
   }
 
-  save(addEmpForm : IEmployee) {
-    this.ApiService.AddEmployee(addEmpForm).subscribe({
-      next:(x) => {
-        alert('emp added');
-        this.router.navigate(['/app-employee'])
-      },
-      error: (response) => {
-        console.log(response);
-      }
-    });
-  }
-
-  // AddEmployee(){
-  //   this.addEmployeeRequest={
-  //     id: 0,
-  //     name:this.addEmpForm.value.name,
-  //     address:this.addEmpForm.value.address,
-  //     dob:'2023-04-06T10:19:57.048Z',//
-  //     // dob:this.addEmpForm.value.dob,//2023-04-06T10:19:57.048Z
-  //     mobile:this.addEmpForm.value.mobile,
-  //     dep_Id:this.addEmpForm.value.dep_Id,
-  //     designation_Id:this.addEmpForm.value.designation_Id,
-  //     manager_Id:this.addEmpForm.value.manager_Id
-
-  //   };
-    
-  //   this.ApiService.AddEmployee(this.addEmployeeRequest).subscribe({
-  //     next:(res)=>{
+  // save(addEmpForm : IEmployee) {
+  //   this.ApiService.addEmployees(addEmpForm).subscribe({
+  //     next:(x) => {
   //       alert('emp added');
-  //       this.router.navigate(['/app-employee'])
-  //     //}
-  //     },error:(err)=> {
-  //       console.log(err);
+  //       this.router.navigate(['/app-employee']);
+  //     },
+  //     error: (response) => {
+  //       console.log(response);
   //     }
   //   });
   // }
+
+  AddEmployee(){
+    this.addEmployeeRequest={
+      
+      name:this.addEmpForm.value.name,
+      address:this.addEmpForm.value.address,
+      dob:'2023-04-06T10:19:57.048Z',//
+      //dob:this.addEmpForm.value.dob,//2023-04-06T10:19:57.048Zs
+      mobile:this.addEmpForm.value.mobile,
+      dep_Id:this.addEmpForm.value.dep_Id,
+      designation_Id:this.addEmpForm.value.designation_Id,
+      manager_Id:this.addEmpForm.value.manager_Id
+
+    };
+    
+    // this.ApiService.addEmployees(this.addEmployeeRequest)
+    // .subscribe({
+    //   next:(res)=>{
+    //     console.log(res)
+    //    // alert('emp added');
+    //     this.router.navigate(['/app-employee'])
+    //   //}
+    //   }
+    // });
+  this.ApiService.addEmployees(this.addEmployeeRequest).subscribe(()=>{
+
+  })
+  }
 
 
 }

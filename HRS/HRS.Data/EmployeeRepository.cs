@@ -32,7 +32,6 @@ namespace HRS.Data
         {
             var employee = new Employee()
             {
-                Id = emp.Id,
                 Name = emp.Name,
                 Address = emp.Address,
                 DOB = emp.DOB,
@@ -45,9 +44,9 @@ namespace HRS.Data
             return _emp.SaveChangesAsync();
         }
 
-        public async Task<Employee> UpdateEmployee(Employee emp)
+        public async Task UpdateEmployee(int id, Employee emp)
         {
-            var obj = await _emp.Employee.FirstOrDefaultAsync(a => a.Id == emp.Id);
+            var obj = await _emp.Employee.FindAsync(id);
             if (obj != null)
             {
                 obj.Id = emp.Id;
@@ -58,8 +57,9 @@ namespace HRS.Data
                 obj.dep_Id = emp.dep_Id;
                 obj.designation_Id = emp.designation_Id;
                 obj.Manager_Id = emp.Manager_Id;
+                await _emp.SaveChangesAsync();
             }
-            return null;
+           // return null;
         }
 
         public Employee Delete(int id)

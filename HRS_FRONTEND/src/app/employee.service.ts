@@ -19,12 +19,13 @@ export class EmployeeService {
     return this.HttpClient.get<IEmployee>(this.ApiUrl+id);
   }
 
-  AddEmployee(addEmployees :IEmployee) : Observable<IEmployee>{
+  addEmployees(addEmployees :IEmployee) : Observable<IEmployee>{
+    
     return this.HttpClient.post<IEmployee>(this.ApiUrl,addEmployees);
  
   }
-  UpdateEmployee(id: Number,update :IEmployee) :  Observable<IEmployee>{
-    return this.HttpClient.put<IEmployee>(this.ApiUrl+id,update);
+  updateEmployee(update :IEmployee) :  Observable<IEmployee>{
+    return this.HttpClient.put<IEmployee>(this.ApiUrl,update);
  
   }
 

@@ -12,7 +12,8 @@ namespace HRS.Busniess.Abstraction
         Task<IEnumerable<Employee>> GetAll();
         Task<Employee> GetSpecificEmp(int id);
         Task AddEmployee(Employee emp);
-        Task<Employee> UpdateEmployee(Employee emp);
+      //  Task<Employee> UpdateEmployee(Employee emp);
+        Task UpdateEmployee(int id,Employee emp);
         Employee Delete(int id);
     }
 }

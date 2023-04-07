@@ -10,3 +10,15 @@ C:\Users\divya.shah\source\repos\HRS\HRS.Busniess\obj\Debug\net6.0\HRS.Busniess.
 C:\Users\divya.shah\source\repos\HRS\HRS.Busniess\obj\Debug\net6.0\refint\HRS.Busniess.dll
 C:\Users\divya.shah\source\repos\HRS\HRS.Busniess\obj\Debug\net6.0\HRS.Busniess.pdb
 C:\Users\divya.shah\source\repos\HRS\HRS.Busniess\obj\Debug\net6.0\ref\HRS.Busniess.dll
+D:\HRS_GITHUB\HR_Project\HRS\HRS.Busniess\bin\Debug\net6.0\HRS.Busniess.deps.json
+D:\HRS_GITHUB\HR_Project\HRS\HRS.Busniess\bin\Debug\net6.0\HRS.Busniess.dll
+D:\HRS_GITHUB\HR_Project\HRS\HRS.Busniess\bin\Debug\net6.0\HRS.Busniess.pdb
+D:\HRS_GITHUB\HR_Project\HRS\HRS.Busniess\obj\Debug\net6.0\HRS.Busniess.csproj.AssemblyReference.cache
+D:\HRS_GITHUB\HR_Project\HRS\HRS.Busniess\obj\Debug\net6.0\HRS.Busniess.GeneratedMSBuildEditorConfig.editorconfig
+D:\HRS_GITHUB\HR_Project\HRS\HRS.Busniess\obj\Debug\net6.0\HRS.Busniess.AssemblyInfoInputs.cache
+D:\HRS_GITHUB\HR_Project\HRS\HRS.Busniess\obj\Debug\net6.0\HRS.Busniess.AssemblyInfo.cs
+D:\HRS_GITHUB\HR_Project\HRS\HRS.Busniess\obj\Debug\net6.0\HRS.Busniess.csproj.CoreCompileInputs.cache
+D:\HRS_GITHUB\HR_Project\HRS\HRS.Busniess\obj\Debug\net6.0\HRS.Busniess.dll
+D:\HRS_GITHUB\HR_Project\HRS\HRS.Busniess\obj\Debug\net6.0\refint\HRS.Busniess.dll
+D:\HRS_GITHUB\HR_Project\HRS\HRS.Busniess\obj\Debug\net6.0\HRS.Busniess.pdb
+D:\HRS_GITHUB\HR_Project\HRS\HRS.Busniess\obj\Debug\net6.0\ref\HRS.Busniess.dll

@@ -1,10 +1,22 @@
 export interface IEmployee { 
-    id: Number;
+    
     name : string;
     address : string;
-    dob : Date;
-    mobile : Number;
-    dep_Id : Number;
-    designation_Id : Number;
-    manager_Id : Number;
+    dob : string;
+    mobile : number;
+    dep_Id : number;
+    designation_Id : number;
+    manager_Id : number;
+
+    //id: number;
+    // name : string;
+    // address : string;
+    // dob : Date;
+    // mobile : number;
+    // dep_Id : string;
+    // designation_Id : string;
+    // manager_Id : string;
+
+
+
 }

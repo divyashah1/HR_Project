@@ -11,9 +11,9 @@ import { EmployeeService } from '../employee.service';
   styleUrls: ['./editemp.component.css']
 })
 export class EditempComponent {
+  editEmpForm!: FormGroup;
 
-  edit!: FormGroup;
-  //emp!: IEmployee;
+  emp!: IEmployee;
   // emp: IEmployee = {
   //   id: ,
   //   name: '',
@@ -23,21 +23,23 @@ export class EditempComponent {
   //   dep_Id : 0,
   //   designation_Id : 0,
   //   manager_Id : 0,
-    
+
   // };
 
-  emp: any;
-  
+  id: any;
+
 
   constructor(private route: ActivatedRoute,
-      private router: Router,
-      private  ApiService: EmployeeService,
-      private formBuilder: FormBuilder
-    ) { }
+    private router: Router,
+    private ApiService: EmployeeService,
+    private formBuilder: FormBuilder
+  ) { }
 
   ngOnInit(): void {
-    this.edit = this.formBuilder.group({
-      id:['', [Validators.required]],
+    // this.id = Number(this.route.snapshot.paramMap.get('id'));
+
+    this.editEmpForm = this.formBuilder.group({
+      id: ['response.id'],
       name: ['', [Validators.required]],
       address: ['', [Validators.required]],
       dob: ['', [Validators.required]],
@@ -47,20 +49,51 @@ export class EditempComponent {
       manager_Id: ['', [Validators.required]]
     })
 
-  //   const id = Number(this.route.snapshot.paramMap.get('id'));
-  //   if(id!=null){
-  //     this.ApiService.GetSpecificEmp(id)
-  //       .subscribe({
-  //         next: (x) => {
-  //           this.emp = x;
-  //         }
-  //       });
-  //   }
-  // }
+    const id = Number(this.route.snapshot.paramMap.get('id'));
+    this.ApiService.GetSpecificEmp(id).subscribe(res => {
+      this.emp = res;
+    })
+    // if (id != null) {
+    //   this.ApiService.GetSpecificEmp(id)
+    //     .subscribe({
+    //       next: (x) => {
+    //         this.emp = x;
+    //         this.editEmpForm = this.formBuilder.group({
+    //           //id: [this.emp.id, [Validators.required]],
+    //           name: [this.emp.name, [Validators.required]],
+    //           address: [this.emp.address, [Validators.required]],
+    //           dob: [this.emp.dob,  [Validators.required]],
+    //           mobile: [this.emp.mobile, [Validators.required]],
+    //           dep_Id: [this.emp.dep_Id,  [Validators.required]],
+    //           designation_Id: [this.emp.designation_Id, [Validators.required]],
+    //           manager_Id: [this.emp.manager_Id, [Validators.required]]
+    //         });
+    //       },
+    //       error:(res)=>{
+    //         console.log(res);
+    //       }
+    //     });
+    // }
+  }
 
-  // updateEmployee() {
-  //   this.ApiService.UpdateEmployee( this.emp).subscribe((x)=> {
-  //     this.router.navigate(['employee']);
+  // UpdateEmployee(updateEmployee: IEmployee) {
+  //   this.ApiService.updateEmployee(updateEmployee).subscribe((x) => {
+  //     this.router.navigate(['app-employee']);
   //   })
+  // }
+  UpdateEmployee() {
+    var req: IEmployee = {
+      name: this.emp.name,
+      address: this.emp.address,
+      dob: this.emp.dob,
+      mobile: this.emp.mobile,
+      dep_Id: this.emp.dep_Id,
+      designation_Id: this.emp.designation_Id,
+      manager_Id: this.emp.manager_Id
+    };
+    let id = this.emp.
+    this.ApiService.updateEmployee(updateEmployee).subscribe((x) => {
+      this.router.navigate(['app-employee']);
+    })
   }
 }

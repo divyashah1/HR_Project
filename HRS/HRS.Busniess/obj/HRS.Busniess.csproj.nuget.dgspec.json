@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\divya.shah\\source\\repos\\HRS\\HRS.Busniess\\HRS.Busniess.csproj": {}
+    "D:\\HRS_GITHUB\\HR_Project\\HRS\\HRS.Busniess\\HRS.Busniess.csproj": {}
   },
   "projects": {
-    "C:\\Users\\divya.shah\\source\\repos\\HRS\\HRS.Busniess\\HRS.Busniess.csproj": {
+    "D:\\HRS_GITHUB\\HR_Project\\HRS\\HRS.Busniess\\HRS.Busniess.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\divya.shah\\source\\repos\\HRS\\HRS.Busniess\\HRS.Busniess.csproj",
+        "projectUniqueName": "D:\\HRS_GITHUB\\HR_Project\\HRS\\HRS.Busniess\\HRS.Busniess.csproj",
         "projectName": "HRS.Busniess",
-        "projectPath": "C:\\Users\\divya.shah\\source\\repos\\HRS\\HRS.Busniess\\HRS.Busniess.csproj",
-        "packagesPath": "C:\\Users\\divya.shah\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\divya.shah\\source\\repos\\HRS\\HRS.Busniess\\obj\\",
+        "projectPath": "D:\\HRS_GITHUB\\HR_Project\\HRS\\HRS.Busniess\\HRS.Busniess.csproj",
+        "packagesPath": "C:\\Users\\Divya\\.nuget\\packages\\",
+        "outputPath": "D:\\HRS_GITHUB\\HR_Project\\HRS\\HRS.Busniess\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\divya.shah\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Divya\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],

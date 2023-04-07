@@ -72,7 +72,7 @@ namespace HRS.Client.Controllers
 
 
         [HttpPut]
-        public async Task<IActionResult> UpdateEmployee(Employee emp)
+        public async Task<IActionResult> UpdateEmployee(int id,Employee emp)
         {
             try
             {
@@ -82,8 +82,9 @@ namespace HRS.Client.Controllers
                 {
                     return NotFound();
                 }
+                if(id!=emp.Id) return BadRequest();
 
-                await _repo.UpdateEmployee(emp);
+                await _repo.UpdateEmployee(id,emp);
                 return NoContent();
 
             }

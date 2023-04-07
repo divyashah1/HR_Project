@@ -10,7 +10,8 @@ const routes: Routes = [
   { path: 'app-employee/:id', component: EmployeeComponent },
   
   { path: 'addemp', component: AddempComponent },
-  { path: 'app-employee/editemp/:id', component: EditempComponent }
+  // { path: 'app-employee/editemp/:id', component: EditempComponent }
+  { path: 'editemp', component: EditempComponent }
 
 ];
 
