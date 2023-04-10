@@ -1,5 +1,5 @@
 export interface IDesignation {
-    id : number;
+   // id : number;
     emp_Designation : string;
 }
 

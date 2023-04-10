@@ -1,1 +1,22 @@
-<p>department works!</p>
+<div>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+
+                <th scope="col">dept_Name</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of department">
+
+                <td>{{item.dept_Name}}</td>
+
+
+            </tr>
+
+        </tbody>
+
+      
+    </table>
+</div>

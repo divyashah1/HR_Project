@@ -33,7 +33,7 @@ export class AddempComponent implements OnInit {
     this.addEmpForm = this.formBuilder.group({
       name: ['', [Validators.required]],
       address: ['', [Validators.required]],
-      dob: ['', [Validators.required]],
+   //   dob: ['', [Validators.required]],
       mobile: ['', [Validators.required]],
       dep_Id: ['', [Validators.required]],
       designation_Id: ['', [Validators.required]],
@@ -58,7 +58,7 @@ export class AddempComponent implements OnInit {
       
       name:this.addEmpForm.value.name,
       address:this.addEmpForm.value.address,
-      dob:'2023-04-06T10:19:57.048Z',//
+      //dob:'2023-04-06T10:19:57.048Z',//
       //dob:this.addEmpForm.value.dob,//2023-04-06T10:19:57.048Zs
       mobile:this.addEmpForm.value.mobile,
       dep_Id:this.addEmpForm.value.dep_Id,

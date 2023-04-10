@@ -1,1 +1,32 @@
-<p>designation works!</p>
+
+
+<div>
+    <table class="table table-hover">
+        <thead>
+            <tr>
+
+                <th scope="col">Employee_Designation</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of designation">
+
+                <td>{{item.emp_Designation}}</td>
+
+                <!-- <td class="tbl_alg_cent">
+                    <a data-bs-toggle="modal" data-bs-target="#staticBackdropEdit"
+                        [routerLink]="['/editemp',item.id]">Edit</a>
+                    &nbsp;|&nbsp;
+                    <a data-bs-toggle="modal" data-bs-target="#staticBackdropEdit" (click)="delete(item.id)">Delete</a>
+                </td> -->
+
+            </tr>
+
+        </tbody>
+
+        <td>
+            <!-- <button type="button" [routerLink]="['/addemp']">Add</button> -->
+        </td>
+    </table>
+</div>
