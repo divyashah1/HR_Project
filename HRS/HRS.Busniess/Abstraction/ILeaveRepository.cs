@@ -11,7 +11,7 @@ namespace HRS.Busniess.Abstraction
     {
        // Task<IEnumerable<Leave>> GetAll();
        // Task<Leave> GetSpecificLeave();
-       // Task AddLeave(Leave leave);
+       //Task AddLeave(Leave leave);
        // Task<Leave> UpdateLeave(Leave leave);
 
        // Leave Delete(int id);

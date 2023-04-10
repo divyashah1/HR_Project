@@ -34,7 +34,7 @@ namespace HRS.Data
             {
                 Name = emp.Name,
                 Address = emp.Address,
-                DOB = emp.DOB,
+              //  DOB = emp.DOB,
                 Mobile = emp.Mobile,
                 dep_Id = emp.dep_Id,
                 designation_Id = emp.designation_Id,    
@@ -52,7 +52,7 @@ namespace HRS.Data
                 obj.Id = emp.Id;
                 obj.Name = emp.Name;
                 obj.Address = emp.Address;
-                obj.DOB = emp.DOB;
+              //  obj.DOB = emp.DOB;
                 obj.Mobile = emp.Mobile;
                 obj.dep_Id = emp.dep_Id;
                 obj.designation_Id = emp.designation_Id;

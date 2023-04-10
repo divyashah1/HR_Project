@@ -9,7 +9,7 @@ namespace HRS.Busniess.Entities
     public class Leave
     {
         public int Id { get; set; }
-        public int Leave_Type { get; set; }
+        public string Leave_Type { get; set; }
         public int emp_ID { get; set; }
         public DateTime Leave_From { get; set; }
 

@@ -12,7 +12,7 @@ namespace HRS.Busniess.Entities
         public string? Name { get; set; }
         public string? Address { get; set; }
 
-        public DateTime DOB { get; set; }
+     //   public DateTime DOB { get; set; }
 
         public int Mobile { get; set; }
 

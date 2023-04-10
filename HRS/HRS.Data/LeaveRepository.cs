@@ -11,13 +11,13 @@ namespace HRS.Data
 {
     public class LeaveRepository  : ILeaveRepository
     {
-        //private readonly DataDbContext _emp;
-        //public LeaveRepository(DataDbContext emp)
-        //{
-        //    _emp = emp;
-        //}
+        private readonly DataDbContext _emp;
+        public LeaveRepository(DataDbContext emp)
+        {
+            _emp = emp;
+        }
 
-       
+
 
         //public Leave Delete(int id)
 
