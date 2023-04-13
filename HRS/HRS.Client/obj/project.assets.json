@@ -3764,11 +3764,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\HRS_GITHUB\\HR_Project\\HRS\\HRS.Client\\HRS.Client.csproj",
+      "projectUniqueName": "D:\\New_HR\\HR_Project\\HRS\\HRS.Client\\HRS.Client.csproj",
       "projectName": "HRS.Client",
-      "projectPath": "D:\\HRS_GITHUB\\HR_Project\\HRS\\HRS.Client\\HRS.Client.csproj",
+      "projectPath": "D:\\New_HR\\HR_Project\\HRS\\HRS.Client\\HRS.Client.csproj",
       "packagesPath": "C:\\Users\\Divya\\.nuget\\packages\\",
-      "outputPath": "D:\\HRS_GITHUB\\HR_Project\\HRS\\HRS.Client\\obj\\",
+      "outputPath": "D:\\New_HR\\HR_Project\\HRS\\HRS.Client\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -3790,8 +3790,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "D:\\HRS_GITHUB\\HR_Project\\HRS\\HRS.Data\\HRS.Data.csproj": {
-              "projectPath": "D:\\HRS_GITHUB\\HR_Project\\HRS\\HRS.Data\\HRS.Data.csproj"
+            "D:\\New_HR\\HR_Project\\HRS\\HRS.Data\\HRS.Data.csproj": {
+              "projectPath": "D:\\New_HR\\HR_Project\\HRS\\HRS.Data\\HRS.Data.csproj"
             }
           }
         }

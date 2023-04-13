@@ -15,6 +15,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AddempComponent } from './addemp/addemp.component';
 import { EditempComponent } from './editemp/editemp.component';
+import { AddleaveComponent } from './leave/addleave/addleave.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,7 +27,8 @@ import { EditempComponent } from './editemp/editemp.component';
     AttendenceComponent,
     RejectComponent,
     AddempComponent,
-    EditempComponent
+    EditempComponent,
+    AddleaveComponent
   ],
   imports: [
     BrowserModule,

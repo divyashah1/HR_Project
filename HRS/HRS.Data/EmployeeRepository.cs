@@ -34,7 +34,11 @@ namespace HRS.Data
             {
                 Name = emp.Name,
                 Address = emp.Address,
+<<<<<<< HEAD
+             
+=======
               //  DOB = emp.DOB,
+>>>>>>> 4d8d1fe745f8e840b932893ea13f41b4a0f616d2
                 Mobile = emp.Mobile,
                 dep_Id = emp.dep_Id,
                 designation_Id = emp.designation_Id,    
@@ -52,14 +56,18 @@ namespace HRS.Data
                 obj.Id = emp.Id;
                 obj.Name = emp.Name;
                 obj.Address = emp.Address;
+<<<<<<< HEAD
+            
+=======
               //  obj.DOB = emp.DOB;
+>>>>>>> 4d8d1fe745f8e840b932893ea13f41b4a0f616d2
                 obj.Mobile = emp.Mobile;
                 obj.dep_Id = emp.dep_Id;
                 obj.designation_Id = emp.designation_Id;
                 obj.Manager_Id = emp.Manager_Id;
                 await _emp.SaveChangesAsync();
             }
-           // return null;
+       
         }
 
         public Employee Delete(int id)

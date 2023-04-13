@@ -1,1 +1,49 @@
-<p>salary works!</p>
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Employee_ID</th>
+            <th>Employee_Salary</th>
+
+        </tr>
+    </thead>
+
+    <tr *ngFor="let item of salary">
+      <td>{{item.id}}</td>
+        <td>{{item.emp_ID}}</td>
+        <td>{{item.salary}}</td>
+        <td class="tbl_alg_cent"> <button type="button" (click)="edit(item)">Edit </button>
+            &nbsp;|&nbsp;
+            <button type="button"  (click)="delete(item.id)">Delete </button>
+        </td>
+    </tr>
+
+</table>
+<button class="btn btn-success" (click)="addForm()">Add Salary </button>
+
+
+<div class="mt-4">
+    <form *ngIf="salaryForm">
+        <h1>Add New Salary</h1>
+        <p>Employee_ID: <input type="text" name="emp_ID" [(ngModel)]="new.emp_ID"></p>
+        <p>Employee_Salary <input type="text" name="salary" [(ngModel)]="new.salary"></p>
+
+        <p>
+            <button type="button" (click)="save(new)">Submit</button>
+        </p>
+    </form>
+</div>
+
+
+<div>
+    <form *ngIf="editForm">
+        <h1>Edit Salary</h1>
+        <p>Employee_ID: <input type="text" name="emp_ID" [(ngModel)]="edited.emp_ID"></p>
+        <p>Employee_Salary <input type="text" name="salary" [(ngModel)]="edited.salary"></p>
+
+        <p>
+            <button type="button" class="btn btn-primary mr-2" (click)="update()">Edit</button>
+        </p>
+    </form>
+</div>
+

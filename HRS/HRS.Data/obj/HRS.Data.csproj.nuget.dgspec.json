@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\HRS_GITHUB\\HR_Project\\HRS\\HRS.Data\\HRS.Data.csproj": {}
+    "D:\\New_HR\\HR_Project\\HRS\\HRS.Data\\HRS.Data.csproj": {}
   },
   "projects": {
-    "D:\\HRS_GITHUB\\HR_Project\\HRS\\HRS.Busniess\\HRS.Busniess.csproj": {
+    "D:\\New_HR\\HR_Project\\HRS\\HRS.Busniess\\HRS.Busniess.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\HRS_GITHUB\\HR_Project\\HRS\\HRS.Busniess\\HRS.Busniess.csproj",
+        "projectUniqueName": "D:\\New_HR\\HR_Project\\HRS\\HRS.Busniess\\HRS.Busniess.csproj",
         "projectName": "HRS.Busniess",
-        "projectPath": "D:\\HRS_GITHUB\\HR_Project\\HRS\\HRS.Busniess\\HRS.Busniess.csproj",
+        "projectPath": "D:\\New_HR\\HR_Project\\HRS\\HRS.Busniess\\HRS.Busniess.csproj",
         "packagesPath": "C:\\Users\\Divya\\.nuget\\packages\\",
-        "outputPath": "D:\\HRS_GITHUB\\HR_Project\\HRS\\HRS.Busniess\\obj\\",
+        "outputPath": "D:\\New_HR\\HR_Project\\HRS\\HRS.Busniess\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -64,14 +64,14 @@
         }
       }
     },
-    "D:\\HRS_GITHUB\\HR_Project\\HRS\\HRS.Data\\HRS.Data.csproj": {
+    "D:\\New_HR\\HR_Project\\HRS\\HRS.Data\\HRS.Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\HRS_GITHUB\\HR_Project\\HRS\\HRS.Data\\HRS.Data.csproj",
+        "projectUniqueName": "D:\\New_HR\\HR_Project\\HRS\\HRS.Data\\HRS.Data.csproj",
         "projectName": "HRS.Data",
-        "projectPath": "D:\\HRS_GITHUB\\HR_Project\\HRS\\HRS.Data\\HRS.Data.csproj",
+        "projectPath": "D:\\New_HR\\HR_Project\\HRS\\HRS.Data\\HRS.Data.csproj",
         "packagesPath": "C:\\Users\\Divya\\.nuget\\packages\\",
-        "outputPath": "D:\\HRS_GITHUB\\HR_Project\\HRS\\HRS.Data\\obj\\",
+        "outputPath": "D:\\New_HR\\HR_Project\\HRS\\HRS.Data\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -93,8 +93,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "D:\\HRS_GITHUB\\HR_Project\\HRS\\HRS.Busniess\\HRS.Busniess.csproj": {
-                "projectPath": "D:\\HRS_GITHUB\\HR_Project\\HRS\\HRS.Busniess\\HRS.Busniess.csproj"
+              "D:\\New_HR\\HR_Project\\HRS\\HRS.Busniess\\HRS.Busniess.csproj": {
+                "projectPath": "D:\\New_HR\\HR_Project\\HRS\\HRS.Busniess\\HRS.Busniess.csproj"
               }
             }
           }
