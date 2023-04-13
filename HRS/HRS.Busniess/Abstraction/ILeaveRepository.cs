@@ -9,11 +9,11 @@ namespace HRS.Busniess.Abstraction
 {
     public interface ILeaveRepository
     {
-       // Task<IEnumerable<Leave>> GetAll();
-       // Task<Leave> GetSpecificLeave();
-       // Task AddLeave(Leave leave);
+        Task<IEnumerable<Leave>> GetAll();
+        //Task<IEnumerable<Employee>>GetEmpBYLeaveID(int id);
+        Task AddLeave(Leave leave);
        // Task<Leave> UpdateLeave(Leave leave);
 
-       // Leave Delete(int id);
+        //Leave Delete(int id);
     }
 }

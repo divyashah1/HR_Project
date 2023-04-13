@@ -14,23 +14,23 @@ namespace HRS.Client.Controllers
             _repo = Repo;
         }
 
-        //[HttpGet]
-        //public async Task<IActionResult> GetAll()
-        //{
-        //    try
-        //    {
-        //        var emp = await _repo.GetAll();
-        //        if (emp == null)
-        //        {
-        //            return NotFound();
-        //        }
-        //        return Ok(emp);
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        return StatusCode(500, ex.Message);
-        //    }
-        //}
+        [HttpGet]
+        public async Task<IActionResult> GetAll()
+        {
+            try
+            {
+                var emp = await _repo.GetAll();
+                if (emp == null)
+                {
+                    return NotFound();
+                }
+                return Ok(emp);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, ex.Message);
+            }
+        }
 
 
         [HttpGet("{id}", Name = "GetSpecificAtt")]
@@ -51,7 +51,7 @@ namespace HRS.Client.Controllers
             }
         }
 
-        [HttpPost]
+        [HttpPost("[action]")]
         public async Task<IActionResult> AddAttendance(Attendance attendance)
         {
             try
@@ -65,20 +65,24 @@ namespace HRS.Client.Controllers
                 return StatusCode(500, ex.Message);
             }
         }
+     
 
-
-        [HttpPut]
-        public async Task<IActionResult> UpdateAttendance(Attendance attendance)
+        [HttpPut("{id}")]
+        public async Task<IActionResult> UpdateAttendance(int id, Attendance attendance)
         {
             try
             {
-
-                if (attendance == null)
+                if (id != attendance.ID)
                 {
                     return NotFound();
                 }
 
-                await _repo.UpdateAttendance(attendance);
+                if (attendance == null)
+                {
+                    return BadRequest();
+                }
+
+                await _repo.UpdateAttendance(id,attendance);
                 return NoContent();
 
             }
@@ -87,7 +91,7 @@ namespace HRS.Client.Controllers
                 return StatusCode(500, ex.Message);
             }
         }
-
+    
 
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)

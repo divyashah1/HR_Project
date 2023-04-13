@@ -1,1 +1,36 @@
-<p>leave works!</p>
+<table class="table table-hover">
+    <thead>
+        <tr>
+
+            <!-- <th>leave_ID</th> -->
+            <th>leave_Type</th>
+            <th>Employee_ID</th>
+            <th>leave_From</th>
+            <th>leave_To</th>
+            <th>isActive</th>
+            <th>approval_Id</th>
+
+        </tr>
+    </thead>
+
+    <tr *ngFor="let item of leave">
+        <!-- <td>{{item.id}}</td> -->
+       
+        <td>{{item.leave_Type}}</td>
+        <td>{{item.emp_ID}}</td>
+        <td>{{item.leave_From}}</td>
+        <td>{{item.leave_To}}</td>
+        <td>{{item.isActive}}</td>
+
+        <td>{{item.approval_Id}}</td>
+        <!-- <td class="tbl_alg_cent"> <a href="http://" data-bs-toggle="modal" data-bs-target="#staticBackdropEdit"
+                (click)="editDocById(item.id)">Edit</a>&nbsp;|&nbsp;<a href="http://" data-bs-toggle="modal"
+                data-bs-target="#staticBackdropDelete" (click)="getDocById(item.id)">Delete</a>
+        </td> -->
+    </tr>
+
+</table>
+<td>
+    <button type="button" [routerLink]="['/addleave']">Add</button>
+</td>
+

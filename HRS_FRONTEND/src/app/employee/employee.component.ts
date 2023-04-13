@@ -8,17 +8,13 @@ import { EmployeeService } from '../employee.service';
 })
 export class EmployeeComponent implements OnInit {
 
-  //employee: any;
-
-  employee: IEmployee[] = [];
-  //employeeName: string = "";
-
+  employee;
+  id: any;
 
   constructor(private ApiService: EmployeeService) { }
 
-
   ngOnInit(): void {
-    
+
     this.ApiService.getall().subscribe({
       next: (x) => {
         this.employee = x;
@@ -28,10 +24,21 @@ export class EmployeeComponent implements OnInit {
         console.log(response);
       }
     });
-    //   data => {
-    //     this.employee = data;
-    //   }
-    // );
 
   }
+
+  delete(id:string) {
+    this.employee = this.employee.filter(emp=>emp.id != id);
+   // console.log(item);
+    
+  }
 }
+
+
+
+//  deleteEmployee() {
+  //   this.ApiService.deleteEmployee(this.id)
+  //     .subscribe((x) => {
+  //       this.router.navigate(['app-employees']);
+  //     });
+  // }

@@ -15,8 +15,8 @@ export class EmployeeService {
     return this.HttpClient.get<IEmployee[]>(this.ApiUrl);
   }
 
-  GetSpecificEmp(id: Number) : Observable<IEmployee>{
-    return this.HttpClient.get<IEmployee>(this.ApiUrl+id);
+  GetSpecificEmp(id: string) : Observable<IEmployee>{
+    return this.HttpClient.get<IEmployee>(this.ApiUrl+"/"+id);
   }
 
   addEmployees(addEmployees :IEmployee) : Observable<IEmployee>{
@@ -24,10 +24,18 @@ export class EmployeeService {
     return this.HttpClient.post<IEmployee>(this.ApiUrl,addEmployees);
  
   }
-  updateEmployee(update :IEmployee) :  Observable<IEmployee>{
-    return this.HttpClient.put<IEmployee>(this.ApiUrl,update);
+  // updateEmployee(update :IEmployee) :  Observable<IEmployee>{
+  //   return this.HttpClient.put<IEmployee>(this.ApiUrl+"/",update);
+ 
+  // }
+
+  updateEmployee(id:any,update :IEmployee) :  Observable<IEmployee>{
+   // console.log(id,update)
+    return this.HttpClient.put<IEmployee>(this.ApiUrl+"/"+id,update);
  
   }
 
- // Delete
+  deleteEmployee(id: string): Observable<IEmployee> {
+    return this.HttpClient.delete<IEmployee>(this.ApiUrl + '/api/employees/' + id);
+  }
 }

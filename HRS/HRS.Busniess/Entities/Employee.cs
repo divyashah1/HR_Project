@@ -11,9 +11,6 @@ namespace HRS.Busniess.Entities
         public int Id { get; set; }
         public string? Name { get; set; }
         public string? Address { get; set; }
-
-        public DateTime DOB { get; set; }
-
         public int Mobile { get; set; }
 
         public int dep_Id { get; set; }

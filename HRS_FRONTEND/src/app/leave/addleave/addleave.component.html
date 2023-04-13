@@ -1,0 +1,294 @@
+
+<div class="d-flex justify-content-md-center align-items-center vh-100">
+    <form [formGroup]="addEmpForm" (ngSubmit)="Addleave()" class="emp">
+    
+            <div class="form-group">
+
+                <label for="leave_Type" class="form-label">leave_Type</label>
+                <input type="text" class="form-control" id="leave_Type" name="leave_Type"
+                 formControlName="leave_Type" [ngClass]="{'is-invalid': (addEmpForm.get('leave_Type')?.touched 
+                 || addEmpForm.get('leave_Type')?.dirty) && 
+                    !addEmpForm.get('leave_Type')?.valid}">
+                <span class="invalid-feedback">
+                    <span *ngIf="addEmpForm.get('leave_Type')?.errors?.['required']">leave_Type can't be blank.</span>
+                </span>
+            </div>
+
+            <div class="mb-3">
+                <label for="emp_ID" class="form-label">emp_ID</label>
+                
+                <input type="emp_ID" class="form-control" id="emp_ID" name="emp_ID" formControlName="emp_ID"
+                    [ngClass]="{'is-invalid': (addEmpForm.get('emp_ID')?.touched || 
+                    addEmpForm.get('emp_ID')?.dirty) && !addEmpForm.get('emp_ID')?.valid}">
+                <span class="invalid-feedback">
+                    <span *ngIf="addEmpForm.get('emp_ID')?.errors?.['required']">emp_ID can't be blank.</span>
+                </span>
+            </div>
+     
+            <div class="mb-3">
+                <label for="leave_From" class="form-label">leave_From</label>
+                <input type="date" class="form-control" id="leave_From" name="leave_From" formControlName="leave_From"
+                    [ngClass]="{'is-invalid': (addEmpForm.get('leave_From')?.touched || addEmpForm.get('leave_From')?.dirty) && !addEmpForm.get('leave_From')?.valid}">
+                <span class="invalid-feedback">
+                    <span *ngIf="addEmpForm.get('leave_From')?.errors?.['required']">leave_From can't be blank.</span>
+                </span>
+            </div>
+            <div class="mb-3">
+                <label for="leave_To" class="form-label">leave_To</label>
+                <input type="date" class="form-control" id="leave_To" name="leave_To" formControlName="leave_To"
+                    [ngClass]="{'is-invalid': (addEmpForm.get('leave_To')?.touched || addEmpForm.get('leave_To')?.dirty) && !addEmpForm.get('leave_To')?.valid}">
+                <span class="invalid-feedback">
+                    <span *ngIf="addEmpForm.get('leave_To')?.errors?.['required']">leave_To can't be blank.</span>
+                </span>
+            </div>
+            <!-- <div class="mb-3">
+                <label for="isActive" class="form-label">isActive</label>
+                <input type="isActive" class="form-control" id="isActive" name="isActive"
+                    formControlName="isActive"
+                    [ngClass]="{'is-invalid': (addEmpForm.get('isActive')?.touched || addEmpForm.get('isActive')?.dirty) && !addEmpForm.get('isActive')?.valid}">
+                <span class="invalid-feedback">
+                    <span *ngIf="addEmpForm.get('isActive')?.errors?.['required']">isActive can't be
+                        blank.</span>
+                </span>
+            </div> -->
+
+            <div class="mb-3">
+                <label for="approval_Id" class="form-label">approval_Id</label>
+                <input type="approval_Id" class="form-control" id="approval_Id" name="approval_Id"
+                    formControlName="approval_Id"
+                    [ngClass]="{'is-invalid': (addEmpForm.get('approval_Id')?.touched || addEmpForm.get('approval_Id')?.dirty) && !addEmpForm.get('approval_Id')?.valid}">
+                <span class="invalid-feedback">
+                    <span *ngIf="addEmpForm.get('approval_Id')?.errors?.['required']">approval_Id can't be
+                        blank.</span>
+                </span>
+            </div>
+
+            <button type="submit" [disabled]="!addEmpForm.valid" type="submit" class="btn btn-primary">Submit</button>
+        </form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <form novalidate autocomplete="off" #form="ngForm" (submit)="onSubmit(form)">
+    <input type="hidden" [value]="ApiService.formDataEmployee" />Name
+    <h1>Employee Form</h1>
+    <table>
+        <tr>
+            <td>
+                <label>leave_Type</label>
+            </td>
+            <td>
+                <input placeholder="leave_Type" name="leave_Type" #leave_Type="ngModel"
+                    [(ngModel)]="ApiService.formDataEmployee.leave_Type" required
+                    [class.invalid]="leave_Type.invalid &#038;&#038; leave_Type.touched">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label>emp_ID</label>
+            </td>
+            <td>
+                <input placeholder="emp_ID" name="emp_ID" #emp_ID="ngModel"
+                    [(ngModel)]="ApiService.formDataEmployee.emp_ID" required
+                    [class.invalid]="emp_ID.invalid &#038;&#038; emp_ID.touched">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label>leave_From</label>
+            </td>
+            <td>
+                <input placeholder="leave_From" name="leave_From" #leave_From="ngModel" [(ngModel)]="ApiService.formDataEmployee.leave_From"
+                    required maxlength="30" minlength="12" [class.invalid]="leave_From.invalid &#038;&#038; leave_From.touched">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label>leave_To</label>
+            </td>
+            <td>
+                <input type="date" placeholder="leave_To" name="leave_To" #leave_To="ngModel"
+                    [(ngModel)]="ApiService.formDataEmployee.leave_To" required
+                    [class.invalid]="leave_To.invalid &#038;&#038; leave_To.touched">
+            </td>
+        </tr> -->
+        <!-- <tr>
+            <td>
+                <label>isActive</label>
+            </td>
+            <td>
+                <input ngModel disabled placeholder="isActive" type="isActive" name="isActive" #isActive="ngModel"
+                    [(ngModel)]="ApiService.formDataEmployee.isActive" required
+                    [class.invalid]="isActive.invalid &#038;&#038; isActive.touched">
+            </td>
+        </tr> -->
+<!--        
+        <tr>
+            <td>
+                <label>IsActive</label>
+            </td>
+            <td>
+                <select class="form-control select_style1" [(ngModel)]='ApiService.formDataEmployee.isActive'
+                    name="isActive">
+                    <option value="true">True</option>
+                    <option value="false">False</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label>approval_Id</label>
+            </td>
+            <td>
+                <input type="number" placeholder="approval_Id" name="approval_Id" #approval_Id="ngModel"
+                    [(ngModel)]="ApiService.formDataEmployee.approval_Id"
+                    [class.invalid]="approval_Id.invalid &#038;&#038; approval_Id.touched">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button class="btn btn-info btn-lg btn-block" type="submit" [disabled]="form.invalid">SUBMIT</button>
+            </td>
+        </tr>
+    </table>
+</form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ -->
+
+
+
+
+
+
+
+<!-- <div class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-body">
+        <form [formGroup]="addForm" (ngSubmit)="onSubmit()">
+            <div class="form-group row d-flex justify-content-center align-items-center">
+
+                <div class="col-sm-5">
+                    <label for="leave_Type" class="form-label">leave_Type</label>
+                    <input type="text" class="form-control" id="leave_Type" 
+                        formControlleave_Type="leave_Type">
+                    <span class="invalid-feedback">
+                        <span *ngIf="addForm.get('leave_Type')?.errors?.['required']">leave_Type can't be blank.</span>
+                    </span>
+                </div>
+            </div>
+
+            <div class="form-group row d-flex justify-content-center align-items-center">
+                <label for="emp_ID" class="col-form-label col-sm-2 text-right">emp Id:</label>
+                <div class="col-sm-5">
+                    <input type="text" formControlleave_Type="emp_ID" class="form-control" />
+                    <!-- <div *ngIf="addForm.emp_ID.invalid && (addForm.emp_ID.dirty || addForm.emp_ID.touched)"
+                class="alert-danger">
+                <span>Last leave_Type is required!</span> 
+                </div>
+            </div>
+
+            <div class="form-group row d-flex justify-content-center align-items-center">
+                <label for="leave_From" class="col-form-label col-sm-2 text-right">leave_From:</label>
+                <div class="col-sm-5">
+                    <input type="text" formControlleave_Type="leave_From" class="form-control" />
+                     <div *ngIf="addForm.leave_From.invalid && (addForm.leave_From.dirty || addForm.leave_From.touched)"
+            class="alert-danger">
+            <span *ngIf="addForm.leave_From.errors.required">leave_From is required!</span>
+            <span *ngIf="addForm.leave_From.errors.leave_From">leave_From must be a valid emp_ID!</span>
+        </div> 
+                </div>
+            </div>
+            <div class="form-group row d-flex justify-content-center align-items-center">
+                <label for="leave_To" class="col-form-label col-sm-2 text-right">leave_To</label>
+                <div class="col-sm-5">
+                    <input type="text" formControlleave_Type="leave_To" class="form-control" />
+                    <!-- <div *ngIf="addForm.leave_To.invalid && (addForm.leave_To.dirty || addForm.leave_To.touched)"
+            class="alert-danger">
+            <span>leave_From number is required!</span>
+        </div> 
+                </div>
+            </div>
+            <div class="form-group row d-flex justify-content-center align-items-center">
+                <label for="isActive" class="col-form-label col-sm-2 text-right">isActive</label>
+                <div class="col-sm-5">
+                    <input type="text" formControlleave_Type="isActive" class="form-control" />
+                    <div *ngIf="addForm.isActive.invalid && (addForm.isActive.dirty || addForm.isActive.touched)"
+            class="alert-danger">
+            <span>leave_From number is required!</span>
+        </div> -->
+                <!-- </div>
+            </div>
+            <div class="form-group row d-flex justify-content-center align-items-center">
+                <label for="approval_Id" class="col-form-label col-sm-2 text-right">approval_Id</label>
+                <div class="col-sm-5">
+                    <input type="text" formControlleave_Type="approval_Id" class="form-control" />
+         <div *ngIf="addForm.approval_Id.invalid && (addForm.approval_Id.dirty || addForm.approval_Id.touched)" 
+            class="alert-danger">
+            <span>leave_From number is required!</span>
+        </div>
+                </div>
+            </div> 
+    <div class="modal-footer">
+        <button [disabled]="isLoading" class="btn btn-primary mr-2" (click)="modal.close('Cancel')">Cancel</button>
+        <button class="btn btn-primary mr-2">Add</button>
+    </div>-->
+
+<!-- </div> -->

@@ -9,10 +9,10 @@ namespace HRS.Busniess.Abstraction
 {
     public interface IAttendanceRepository
     {
-        //Task<IEnumerable<Attendance>> GetAll();
+        Task<IEnumerable<Attendance>> GetAll();
         Task<Attendance> GetSpecificAttendance(int id);
         Task AddAttendance(Attendance attendance);
-        Task<Attendance> UpdateAttendance(Attendance attendance);
+        Task UpdateAttendance(int id,Attendance attendance);
 
         Attendance Delete(int id);
     }

@@ -13,10 +13,10 @@ namespace HRS.Data
         }
 
 
-        //public Task<IEnumerable<Attendance>> GetAll()
-        //{
-        //    throw new NotImplementedException();
-        //}
+        public async Task<IEnumerable<Attendance>> GetAll()
+        {
+            return await _emp.Attendance.ToListAsync();
+        }
 
         public async Task<Attendance> GetSpecificAttendance(int id)
         {
@@ -36,37 +36,27 @@ namespace HRS.Data
             _emp.AddAsync(employee);
             return _emp.SaveChangesAsync();
         }
-
-        public async Task<Attendance> UpdateAttendance(Attendance attendance)
-
+     
+        
+        public async Task UpdateAttendance(int id, Attendance attendance)
         {
-
-            var obj = await _emp.Attendance.FirstOrDefaultAsync(a => a.ID == attendance.ID);
-            if (obj != null)
-            {
-                obj.ID = attendance.ID;
-                obj.emp_ID = attendance.emp_ID;
-                obj.sign_In = attendance.sign_In;
-                obj.sign_Out = attendance.sign_Out;
-            }
-            return null;
-
-
+            _emp.Entry(attendance).State = EntityState.Modified;
+            await _emp.SaveChangesAsync();
+         
         }
+    
 
         public Attendance Delete(int id)
-
         {
+            //var obj = _emp.Salary.Find(id);
+            //_emp.Salary.Remove(obj);
+            //_emp.SaveChanges();
+            //return obj;
 
-            var obj = _emp.Attendance.Where(a => a.ID == id).FirstOrDefault();
-            if (obj == null)
-            {
-
-                _emp.Attendance.Remove(obj);
-                _emp.SaveChangesAsync();
-
-            }
-            return null;
+            var obj = _emp.Attendance.Find(id);
+             _emp.Attendance.Remove(obj);
+             _emp.SaveChangesAsync();
+            return obj;
 
         }
 

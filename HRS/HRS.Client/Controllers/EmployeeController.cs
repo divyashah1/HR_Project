@@ -1,4 +1,5 @@
-﻿using HRS.Busniess.Abstraction;
+﻿using Azure.Core;
+using HRS.Busniess.Abstraction;
 using HRS.Busniess.Entities;
 using Microsoft.AspNetCore.Mvc;
 
@@ -54,20 +55,24 @@ namespace HRS.Client.Controllers
         [HttpPost]
         public ActionResult AddEmployee(Employee emp)
         {
-            if(emp == null) return BadRequest();
+            if (emp == null) return BadRequest();
             try
             {
                 _repo.AddEmployee(emp);
                 return Ok(emp);
-                //     _repo.AddEmployee(emp);
+                //     _repo.addemployee(emp);
 
-                //    return CreatedAtRoute("GetSpecificEmp", new { id = emp.Id }, emp);
+                //    return createdatroute("getspecificemp", new { id = emp.id }, emp);
                 //}
             }
             catch (Exception ex)
             {
                 return StatusCode(500, ex.Message);
             }
+
+            //var result = _repo.AddEmployee(emp);
+            //if (result == null) return BadRequest();
+            //return Ok(result);
         }
 
 
