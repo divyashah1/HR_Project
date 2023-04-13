@@ -2,18 +2,34 @@
     <thead>
         <tr>
             <th>ID</th>
+            <th>emp_ID</th>
             <th>signIN</th>
             <th>signOut</th>
 
         </tr>
     </thead>
-
+   
     <tr *ngFor="let item of attendance">
         <td>{{item.id}}</td>
+        <td>{{item.emp_ID}}</td>
         <td>{{item.sign_In }}</td>
         <td>{{item.sign_Out}}</td>
-      
+
     </tr>
 
 </table>
+<button class="btn btn-success" (click)="addForm()">Add Attendance </button>
 
+
+<div class="mt-4">
+    <form *ngIf="attendanceForm">
+        <h1>Add Attendance</h1>
+        <p>Employee_ID: <input type="text" name="emp_ID" [(ngModel)]="new.emp_ID"></p>
+        <p>sign_In <input type="datetime-local" name="sign_In" [(ngModel)]="new.sign_In"></p>
+        <p>sign_Out <input type="datetime-local" name="sign_Out" [(ngModel)]="new.sign_Out"></p>
+
+        <p>
+            <button type="button" (click)="save(new)">Submit</button>
+        </p>
+    </form>
+</div>

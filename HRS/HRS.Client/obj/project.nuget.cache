@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "FNGq1herOe1dAZpHTa3GssQxm7v7riU5Kgo64SHjneaRZz75/sBuD6xfrCfvOcoGt3FstOOyUiiKcBAIZqsFSw==",
+  "dgSpecHash": "SS15DhdscfzO1Rm1qoHfyYwRVg5I0CiBPqL/qQWwM/r1Z35UzZnilOkCGfmcqc8z0NvUR3FQmOobcuiu8bsUhA==",
   "success": true,
-  "projectFilePath": "D:\\HRS_GITHUB\\HR_Project\\HRS\\HRS.Client\\HRS.Client.csproj",
+  "projectFilePath": "D:\\New_HR\\HR_Project\\HRS\\HRS.Client\\HRS.Client.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Divya\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\Divya\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",

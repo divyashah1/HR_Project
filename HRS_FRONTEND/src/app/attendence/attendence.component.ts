@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { AttendanceService } from '../attendance.service';
+import { IAttendence } from '../iattendence';
 
 @Component({
   selector: 'app-attendence',
@@ -9,22 +10,14 @@ import { AttendanceService } from '../attendance.service';
 })
 export class AttendenceComponent {
   attendance;
+  attendanceForm: boolean;
+  new: any = {};
+
+
   constructor(private ApiService: AttendanceService, private router: Router) { }
 
   ngOnInit(): void {
     this.read(); //for getall
-
-    // this.salary = this.
-    // this.ApiService.getall().subscribe({
-    //   next: (x) => {
-    //     this.salary = x;
-    //     console.log(x);
-    //   },
-    //   error: (response) => {
-    //     console.log(response);
-    //   }
-    // });
-
 
   }
 
@@ -35,5 +28,27 @@ export class AttendenceComponent {
         console.log(data)
       }
     );
+  }
+
+  addForm() {
+    if (this.attendance.length) {
+      this.new = {};
+    }
+    this.attendanceForm = true;
+  }
+
+  save(user: IAttendence) {
+    // this.ApiService.addAttendence(user).subscribe(()=>{
+
+    // })
+    //console.log(user)
+    this.ApiService.addAttendence(user).subscribe({
+      next: (res) => {
+        console.log(res)
+        alert('attendance added');
+
+
+      }
+    });
   }
 }

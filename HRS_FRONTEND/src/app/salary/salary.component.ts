@@ -15,24 +15,12 @@ export class SalaryComponent {
   salaryForm: boolean;
   editForm: boolean;
   edited: any = {}
-  // addForm!: FormGroup;
   new: any = {};
+
   constructor(private ApiService: SalaryService, private router: Router) { }
 
   ngOnInit(): void {
     this.read(); //for getall
-
-    // this.salary = this.
-    // this.ApiService.getall().subscribe({
-    //   next: (x) => {
-    //     this.salary = x;
-    //     console.log(x);
-    //   },
-    //   error: (response) => {
-    //     console.log(response);
-    //   }
-    // });
-
 
   }
 

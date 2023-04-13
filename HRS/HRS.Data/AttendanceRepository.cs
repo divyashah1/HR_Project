@@ -27,7 +27,6 @@ namespace HRS.Data
         {
             var employee = new Attendance()
             {
-                ID = attendance.ID,
                 emp_ID = attendance.emp_ID,
                 sign_In = attendance.sign_In,
                 sign_Out = attendance.sign_Out,

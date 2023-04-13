@@ -16,18 +16,10 @@ export class AttendanceService {
     return this.HttpClient.get<IAttendence[]>(this.ApiUrl);
   }
 
-  // addSalary(salary: ISalary): Observable<ISalary> {
+  addAttendence(attendance: IAttendence): Observable<IAttendence> {
 
-  //   return this.HttpClient.post<ISalary>(this.ApiUrl, salary);
+    return this.HttpClient.post<IAttendence>(this.ApiUrl+"/AddAttendance", attendance);
 
-  // }
+  }
 
-  // update(update: ISalary): Observable<ISalary> {
-  //   return this.HttpClient.put<ISalary>(this.ApiUrl + "/", update);
-
-  // }
-
-  // deleteSalary(id: number){
-  //   return this.HttpClient.delete(this.ApiUrl + '/Salary/' + id);
-  // }
 }

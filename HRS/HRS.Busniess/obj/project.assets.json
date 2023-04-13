@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\HRS_GITHUB\\HR_Project\\HRS\\HRS.Busniess\\HRS.Busniess.csproj",
+      "projectUniqueName": "D:\\New_HR\\HR_Project\\HRS\\HRS.Busniess\\HRS.Busniess.csproj",
       "projectName": "HRS.Busniess",
-      "projectPath": "D:\\HRS_GITHUB\\HR_Project\\HRS\\HRS.Busniess\\HRS.Busniess.csproj",
+      "projectPath": "D:\\New_HR\\HR_Project\\HRS\\HRS.Busniess\\HRS.Busniess.csproj",
       "packagesPath": "C:\\Users\\Divya\\.nuget\\packages\\",
-      "outputPath": "D:\\HRS_GITHUB\\HR_Project\\HRS\\HRS.Busniess\\obj\\",
+      "outputPath": "D:\\New_HR\\HR_Project\\HRS\\HRS.Busniess\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
