@@ -16,6 +16,7 @@ namespace HRS.Data
         {
             _emp = emp;
         }
+<<<<<<< HEAD
 
 
         public async Task<IEnumerable<Leave>> GetAll()
@@ -42,6 +43,10 @@ namespace HRS.Data
         //                      DepartmentId = e.DepartmentId
         //                  }).ToListAsync();
         //}
+=======
+
+
+>>>>>>> 4d8d1fe745f8e840b932893ea13f41b4a0f616d2
 
         //public Leave Delete(int id)
 
