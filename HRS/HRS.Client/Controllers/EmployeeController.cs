@@ -53,26 +53,20 @@ namespace HRS.Client.Controllers
         }
 
         [HttpPost]
-        public ActionResult AddEmployee(Employee emp)
+        public async Task<IActionResult> AddEmployee(Employee emp)
         {
-            if (emp == null) return BadRequest();
+         
             try
             {
-                _repo.AddEmployee(emp);
-                return Ok(emp);
-                //     _repo.addemployee(emp);
-
-                //    return createdatroute("getspecificemp", new { id = emp.id }, emp);
-                //}
+                await _repo.AddEmployee(emp);
+                return CreatedAtRoute("GetSpecificEmp", new { id = emp.Id }, emp);
+                
             }
             catch (Exception ex)
             {
                 return StatusCode(500, ex.Message);
             }
 
-            //var result = _repo.AddEmployee(emp);
-            //if (result == null) return BadRequest();
-            //return Ok(result);
         }
 
 
@@ -81,14 +75,15 @@ namespace HRS.Client.Controllers
         {
             try
             {
-
-
-                if (emp == null)
+                if (id != emp.Id)
                 {
                     return NotFound();
                 }
-                if(id!=emp.Id) return BadRequest();
 
+                if (emp == null)
+                {
+                    return BadRequest();
+                }
                 await _repo.UpdateEmployee(id,emp);
                 return NoContent();
 

@@ -34,11 +34,7 @@ namespace HRS.Data
             {
                 Name = emp.Name,
                 Address = emp.Address,
-<<<<<<< HEAD
-             
-=======
-              //  DOB = emp.DOB,
->>>>>>> 4d8d1fe745f8e840b932893ea13f41b4a0f616d2
+
                 Mobile = emp.Mobile,
                 dep_Id = emp.dep_Id,
                 designation_Id = emp.designation_Id,    
@@ -50,24 +46,23 @@ namespace HRS.Data
 
         public async Task UpdateEmployee(int id, Employee emp)
         {
-            var obj = await _emp.Employee.FindAsync(id);
-            if (obj != null)
-            {
-                obj.Id = emp.Id;
-                obj.Name = emp.Name;
-                obj.Address = emp.Address;
-<<<<<<< HEAD
-            
-=======
-              //  obj.DOB = emp.DOB;
->>>>>>> 4d8d1fe745f8e840b932893ea13f41b4a0f616d2
-                obj.Mobile = emp.Mobile;
-                obj.dep_Id = emp.dep_Id;
-                obj.designation_Id = emp.designation_Id;
-                obj.Manager_Id = emp.Manager_Id;
-                await _emp.SaveChangesAsync();
-            }
-       
+
+            _emp.Entry(emp).State = EntityState.Modified;
+            await _emp.SaveChangesAsync();
+
+            //var obj = await _emp.Employee.FindAsync(id);
+            //if (obj != null)
+            //{
+            //    obj.Id = emp.Id;
+            //    obj.Name = emp.Name;
+            //    obj.Address = emp.Address;
+            //    obj.Mobile = emp.Mobile;
+            //    obj.dep_Id = emp.dep_Id;
+            //    obj.designation_Id = emp.designation_Id;
+            //    obj.Manager_Id = emp.Manager_Id;
+            //    await _emp.SaveChangesAsync();
+            //}
+
         }
 
         public Employee Delete(int id)

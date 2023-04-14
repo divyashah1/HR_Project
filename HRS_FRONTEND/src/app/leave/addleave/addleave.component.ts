@@ -51,8 +51,10 @@ export class AddleaveComponent {
     //     //}
     //   }
     // });
-    this.ApiService.add(this.addEmployeeRequest).subscribe(()=>{
-     //alert(1)
+    this.ApiService.add(this.addEmployeeRequest).subscribe((a)=>{
+     alert(1)
+     this.router.navigate(['/app-leave'])
+     console.log(a)
     })
 
   }

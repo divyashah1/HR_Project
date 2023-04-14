@@ -15,6 +15,10 @@ export class EmployeeService {
     return this.HttpClient.get<IEmployee[]>(this.ApiUrl);
   }
 
+  // GetSpecificEmp(id: any) : Observable<IEmployee>{
+  //   return this.HttpClient.get<IEmployee>(this.ApiUrl+"/"+id);
+  // }
+
   GetSpecificEmp(id: string) : Observable<IEmployee>{
     return this.HttpClient.get<IEmployee>(this.ApiUrl+"/"+id);
   }
