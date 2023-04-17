@@ -39,7 +39,7 @@ export class EmployeeService {
  
   }
 
-  deleteEmployee(id: string): Observable<IEmployee> {
-    return this.HttpClient.delete<IEmployee>(this.ApiUrl + '/api/employees/' + id);
+  deleteEmployee(id: string): Observable<any> {
+    return this.HttpClient.delete<any>(this.ApiUrl + '/api/employees/' + id);
   }
 }

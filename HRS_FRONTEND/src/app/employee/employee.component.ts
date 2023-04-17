@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { IEmployee } from '../iemployee';
 import { EmployeeService } from '../employee.service';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-employee',
   templateUrl: './employee.component.html',
@@ -11,7 +12,7 @@ export class EmployeeComponent implements OnInit {
   employee;
   id: any;
 
-  constructor(private ApiService: EmployeeService) { }
+  constructor(private ApiService: EmployeeService , private router: Router) { }
 
   ngOnInit(): void {
 
@@ -27,18 +28,18 @@ export class EmployeeComponent implements OnInit {
 
   }
 
-  delete(id:string) {
-    this.employee = this.employee.filter(emp=>emp.id != id);
-   // console.log(item);
+  delete(id) {
+    alert("are you sure , you want to delete?");
+    // {
+    //   this.ApiService.deleteEmployee(id).subscribe(x => {
+    //     this.employee = x.data
+    //     this.router.navigate(['app-employee']);
+    //   })
+    // }
+   this.employee = this.employee.filter(emp=>emp.id != id);
+   console.log(this.employee);
     
   }
 }
 
 
-
-//  deleteEmployee() {
-  //   this.ApiService.deleteEmployee(this.id)
-  //     .subscribe((x) => {
-  //       this.router.navigate(['app-employees']);
-  //     });
-  // }

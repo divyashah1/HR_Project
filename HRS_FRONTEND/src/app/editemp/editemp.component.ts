@@ -26,9 +26,6 @@ export class EditempComponent {
 
   };
 
-  //id: any;
-
-
   constructor(private route: ActivatedRoute,
     private router: Router,
     private ApiService: EmployeeService,
