@@ -22,7 +22,7 @@ namespace HRS.Client.Controllers
                 var emp = await _repo.GetAll();
                 if (emp == null)
                 {
-                    return NotFound();
+                    return NotFound("Attendance Details Not Found / There is no Details");
                 }
                 return Ok(emp);
             }
@@ -41,7 +41,7 @@ namespace HRS.Client.Controllers
                 var dep = await _repo.GetSpecificAttendance(id);
                 if (dep == null)
                 {
-                    return NotFound();
+                    return NotFound("Attendance Detail Not Found / Please Enter valid Attendance Id");
                 }
                 return Ok(dep);
             }
@@ -74,12 +74,12 @@ namespace HRS.Client.Controllers
             {
                 if (id != attendance.ID)
                 {
-                    return NotFound();
+                    return BadRequest("Please enter valid Id ");
                 }
 
                 if (attendance == null)
                 {
-                    return BadRequest();
+                    return NotFound("Attendance Detail Not Found / Please Enter valid Attendance Id");
                 }
 
                 await _repo.UpdateAttendance(id,attendance);
@@ -102,7 +102,7 @@ namespace HRS.Client.Controllers
                 var result = _repo.Delete(id);
                 if (result == null)
                 {
-                    return BadRequest();
+                    return NotFound("Attendance Detail Not Found / Please Enter valid Attendance Id");
                 }
                 return NoContent();
 

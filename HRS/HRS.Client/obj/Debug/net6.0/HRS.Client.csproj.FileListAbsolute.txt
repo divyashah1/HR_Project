@@ -271,3 +271,5 @@ D:\New_HR\HR_Project\HRS\HRS.Client\obj\Debug\net6.0\refint\HRS.Client.dll
 D:\New_HR\HR_Project\HRS\HRS.Client\obj\Debug\net6.0\HRS.Client.pdb
 D:\New_HR\HR_Project\HRS\HRS.Client\obj\Debug\net6.0\HRS.Client.genruntimeconfig.cache
 D:\New_HR\HR_Project\HRS\HRS.Client\obj\Debug\net6.0\ref\HRS.Client.dll
+D:\New_HR\HR_Project\HRS\HRS.Client\bin\Debug\net6.0\HRS.Common.dll
+D:\New_HR\HR_Project\HRS\HRS.Client\bin\Debug\net6.0\HRS.Common.pdb

@@ -25,7 +25,7 @@ namespace HRS.Client.Controllers
                 var emp = await _repo.GetAll();
                 if (emp == null)
                 {
-                    return NotFound();
+                    return NotFound("Salary Detail Not Found / There is no entry");
                 }
                 return Ok(emp);
             }
@@ -64,9 +64,9 @@ namespace HRS.Client.Controllers
 
                 if (emp == null)
                 {
-                    return NotFound();
+                    return NotFound("salary Detail Not Found / Please Enter valid salary Id");
                 }
-                if (id != emp.Id) return BadRequest();
+                if (id != emp.Id) return BadRequest("Please enter valid Id ");
 
                 await _repo.UpdateSalary(id, emp);
                 return NoContent();
@@ -90,7 +90,7 @@ namespace HRS.Client.Controllers
                 var result = _repo.Delete(id);
                 if (result == null)
                 {
-                    return BadRequest();
+                    return NotFound("Salary Detail Not Found / Please Enter valid salary Id");
                 }
                 return NoContent();
 

@@ -52,7 +52,7 @@ export class EditempComponent {
     
      this.id = String(this.route.snapshot.paramMap.get('id'));     // getting id from url
     this.ApiService.GetSpecificEmp(this.id).subscribe(res => {
-      this.addEmployeeRequest = res;
+      this.addEmployeeRequest = res.data;
     })
  
   }
@@ -74,8 +74,8 @@ export class EditempComponent {
     // this.ApiService.updateEmployee(this.id,req).subscribe((x) => {
     //   this.router.navigate(['app-employee']);
     // })
-    this.ApiService.updateEmployee(this.id,req);
-    this.router.navigate(['app-employee']);
+   this.ApiService.updateEmployee(this.id,req);
+   this.router.navigate(['app-employee']);
   }
 
 }

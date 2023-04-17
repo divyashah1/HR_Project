@@ -11,16 +11,16 @@ export class EmployeeService {
 
   constructor(private HttpClient:HttpClient) { }
 
-  getall(): Observable<IEmployee[]> {
-    return this.HttpClient.get<IEmployee[]>(this.ApiUrl);
+  getall(): Observable<any> {
+    return this.HttpClient.get<any>(this.ApiUrl);
   }
 
   // GetSpecificEmp(id: any) : Observable<IEmployee>{
   //   return this.HttpClient.get<IEmployee>(this.ApiUrl+"/"+id);
   // }
 
-  GetSpecificEmp(id: string) : Observable<IEmployee>{
-    return this.HttpClient.get<IEmployee>(this.ApiUrl+"/"+id);
+  GetSpecificEmp(id: string) : Observable<any>{
+    return this.HttpClient.get<any>(this.ApiUrl+"/"+id);
   }
 
   addEmployees(addEmployees :IEmployee) : Observable<IEmployee>{

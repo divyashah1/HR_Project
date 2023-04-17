@@ -17,7 +17,7 @@ export class EmployeeComponent implements OnInit {
 
     this.ApiService.getall().subscribe({
       next: (x) => {
-        this.employee = x;
+        this.employee = x.data;
         console.log(x);
       },
       error: (response) => {

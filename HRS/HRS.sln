@@ -3,11 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33516.290
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HRS.Client", "HRS.Client\HRS.Client.csproj", "{FC2F35DC-4B03-4003-A210-17CAF0B435C6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HRS.Client", "HRS.Client\HRS.Client.csproj", "{FC2F35DC-4B03-4003-A210-17CAF0B435C6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HRS.Busniess", "HRS.Busniess\HRS.Busniess.csproj", "{0F0062C6-8E2A-483A-A871-456FA9FDB46B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HRS.Busniess", "HRS.Busniess\HRS.Busniess.csproj", "{0F0062C6-8E2A-483A-A871-456FA9FDB46B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HRS.Data", "HRS.Data\HRS.Data.csproj", "{4BBB212A-E1C1-41A5-A2B3-EC8992D13F4E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HRS.Data", "HRS.Data\HRS.Data.csproj", "{4BBB212A-E1C1-41A5-A2B3-EC8992D13F4E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HRS.Common", "HRS.Common\HRS.Common.csproj", "{9C368CC2-92B2-43CB-BEB2-F272815B945D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{4BBB212A-E1C1-41A5-A2B3-EC8992D13F4E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4BBB212A-E1C1-41A5-A2B3-EC8992D13F4E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4BBB212A-E1C1-41A5-A2B3-EC8992D13F4E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9C368CC2-92B2-43CB-BEB2-F272815B945D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9C368CC2-92B2-43CB-BEB2-F272815B945D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9C368CC2-92B2-43CB-BEB2-F272815B945D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9C368CC2-92B2-43CB-BEB2-F272815B945D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

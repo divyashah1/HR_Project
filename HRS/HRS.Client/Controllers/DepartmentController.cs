@@ -22,7 +22,7 @@ namespace HRS.Client.Controllers
                 var dep = await _repo.GetAll();
                 if (dep == null)
                 {
-                    return NotFound();
+                    return NotFound("Department Detail Not Found / there is no entry");
                 }
                 return Ok(dep);
             }
@@ -40,7 +40,7 @@ namespace HRS.Client.Controllers
                 var dep = await _repo.GetSpecificDept(id);
                 if (dep == null)
                 {
-                    return NotFound();
+                    return NotFound("Department Detail Not Found / Please Enter valid Attendance Id");
                 }
                 return Ok(dep);
             }
@@ -72,10 +72,9 @@ namespace HRS.Client.Controllers
             try
             {
 
-
                 if (dept == null)
                 {
-                    return NotFound();
+                    return NotFound("Department Detail Not Found / Please Enter valid Attendance Id");
                 }
 
                 await _repo.UpdateDept(dept);
@@ -97,7 +96,7 @@ namespace HRS.Client.Controllers
                 var result = _repo.Delete(id);
                 if (result == null)
                 {
-                    return BadRequest();
+                    return NotFound("Department Detail Not Found / Please Enter valid Attendance Id");
                 }
                 return NoContent();
 

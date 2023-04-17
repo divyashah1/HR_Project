@@ -23,7 +23,7 @@ namespace HRS.Client.Controllers
                 var emp = await _repo.GetAll();
                 if (emp == null)
                 {
-                    return NotFound();
+                    return NotFound("Leave Detail Not Found /There is no details");
                 }
                 return Ok(emp);
             }
@@ -58,7 +58,7 @@ namespace HRS.Client.Controllers
         //        var result = _repo.Delete(id);
         //        if (result == null)
         //        {
-        //            return BadRequest();
+        //            return NotFound("leave Detail Not Found / Please Enter valid Attendance Id");
         //        }
         //        return NoContent();
 
