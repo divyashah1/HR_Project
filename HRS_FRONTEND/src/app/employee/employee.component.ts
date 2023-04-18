@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { IEmployee } from '../iemployee';
 import { EmployeeService } from '../employee.service';
 import { Router } from '@angular/router';
+import { PagingConfig } from '../paging-config';
 @Component({
   selector: 'app-employee',
   templateUrl: './employee.component.html',
@@ -12,8 +13,16 @@ export class EmployeeComponent implements OnInit {
   employee;
   id: any;
   col: IEmployee[] = [];
+  currentPage:number  = 1;
+  itemsPerPage: number = 7;
+  totalItems: number = 0;
+
   column: any[] = ['Name of Employee','City' , 'Mobile', 'Dep_Id',
   'Designation_Id' ,'Manager_Id ']
+
+  pagingConfig: PagingConfig = {} as PagingConfig;
+
+
   constructor(private ApiService: EmployeeService, private router: Router) { }
 
   ngOnInit(): void {
@@ -21,6 +30,8 @@ export class EmployeeComponent implements OnInit {
     this.ApiService.getall().subscribe({
       next: (x) => {
         this.employee = x.data;
+        this.pagingConfig.totalItems = x.length;
+        //this.total = x.total;
         console.log(x);
       },
       error: (response) => {
@@ -28,6 +39,11 @@ export class EmployeeComponent implements OnInit {
       }
     });
 
+    this.pagingConfig = {
+      itemsPerPage: this.itemsPerPage,
+      currentPage: this.currentPage,
+      totalItems: this.totalItems
+    }
   }
 
   delete(id) {
@@ -42,15 +58,16 @@ export class EmployeeComponent implements OnInit {
     console.log(this.employee);
 
   }
-
-  t: any = [];
-  value: any = [];
-
-  // getdata() {
-  //   this.col.forEach((element : any) => {
-  //     console.log(element)
-  //   });
-  // }
+  onTableDataChange(event:any){
+    this.pagingConfig.currentPage  = event;
+    this.ApiService.getall();
+  }
+  onTableSizeChange(event:any): void {
+    this.pagingConfig.itemsPerPage = event.target.value;
+    this.pagingConfig.currentPage = 1;
+    this.ApiService.getall();
+  }
+  
 }
 
 

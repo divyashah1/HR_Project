@@ -16,6 +16,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AddempComponent } from './addemp/addemp.component';
 import { EditempComponent } from './editemp/editemp.component';
 import { AddleaveComponent } from './leave/addleave/addleave.component';
+import { NgxPaginationModule } from 'ngx-pagination';
+import { PaginationComponent } from './pagination/pagination.component';
 
 
 @NgModule({
@@ -30,14 +32,17 @@ import { AddleaveComponent } from './leave/addleave/addleave.component';
     RejectComponent,
     AddempComponent,
     EditempComponent,
-    AddleaveComponent
+    AddleaveComponent,
+    PaginationComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    
+   NgxPaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent]

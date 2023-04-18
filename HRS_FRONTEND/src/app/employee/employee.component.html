@@ -1,22 +1,18 @@
+<div class="col-auto">
+    <select name="noOfRows" (change)="onTableSizeChange($event)" class="form-select form-select-sm">
+        <option *ngFor="let col of column" [ngValue]="col">
+            {{ col }}
+        </option>
+    </select>
+</div>
 <div>
     <table class="table table-hover">
         <thead>
-           
-            <!-- <ng-template pTemplate="header">
-                <tr>
-                  <th *ngFor="let col of column" >{{ col }}
-                  </th>
-                </tr>
-              </ng-template> -->
 
-              <tr>
-                <th *ngFor="let col of column" >{{ col }}
-                </th>
-              </tr>
-           
         </thead>
         <tbody>
-            <tr *ngFor="let item of employee ">
+            <tr *ngFor="let item of employee | paginate : pagingConfig; let i = index">
+
                 <td>{{item.name}}</td>
                 <td>{{item.address}}</td>
 
@@ -41,3 +37,7 @@
     </table>
 </div>
 
+<div class="d-flex justify-content-center">
+    <pagination-controls previousLabel="Prev" nextLabel="Next" (pageChange)="onTableDataChange($event)">
+    </pagination-controls>
+</div>
