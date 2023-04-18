@@ -1,4 +1,5 @@
 ﻿using HRS.Busniess.Entities;
+using HRS.Busniess.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,11 +10,11 @@ namespace HRS.Busniess.Abstraction
 {
     public interface IDepartmentRepository
     {
-        Task<IEnumerable<Department>> GetAll();
-        Task<Department> GetSpecificDept(int id);
-        Task AddDepartment(Department dept);
-        Task<Department> UpdateDept(Department dept);
+        Task<List<DepartmentViewModel>> GetAll();
+        Task<DepartmentViewModel> GetSpecificDept(int id);
+        Task AddDepartment(DepartmentViewModel dept);
+        Task UpdateDept(int id,DepartmentViewModel dept);
 
-        Department Delete(int id);
+        DepartmentViewModel Delete(int id);
     }
 }

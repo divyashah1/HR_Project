@@ -1,10 +1,14 @@
 ﻿using Azure.Core;
 using HRS.Busniess.Abstraction;
 using HRS.Busniess.Entities;
+using HRS.Busniess.ViewModel;
 using HRS.Common;
+using HRS.Data;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 using System.Diagnostics.Eventing.Reader;
 using System.Security.AccessControl;
+using System.Threading.Tasks;
 
 namespace HRS.Client.Controllers
 {
@@ -14,43 +18,48 @@ namespace HRS.Client.Controllers
     public class EmployeeController : Controller
     {
         private readonly IEmployeeRepository _repo;
-        public EmployeeController(IEmployeeRepository empRepo)
+        private readonly DataDbContext dataDbContext;
+        public EmployeeController(IEmployeeRepository empRepo, DataDbContext dataDbContext)
         {
             _repo = empRepo;
+            this.dataDbContext = dataDbContext;
+
         }
 
+        
 
         [HttpGet]
-        public async Task<ActionResult<CommonData<List<Employee>>>> GetAll()
+        public async Task<ActionResult<CommonData<List<EmployeeViewModel>>>> GetAll()
         {
-            var emp = await _repo.GetAll();
-            if (emp != null)
+            var employeeViewModel= await _repo.GetAll();
+            if (employeeViewModel != null)
             {
-                return Ok(new CommonData<IEnumerable<Employee>>
+                return Ok(new CommonData<IEnumerable<EmployeeViewModel>>
                 {
                     Status = true,
                     Message = "Get Data Successfully",
-                    Data = emp
-
+                    Data = employeeViewModel
                 });
             }
             else
                 return NotFound("Employee Not Found / there is no Details");
 
-
-
         }
 
+
+
+
+
         [HttpGet("{id}", Name = "GetSpecificEmp")]
-        public async Task<ActionResult<CommonData<Employee>>> GetSpecificEmp(int id)
+        public async Task<ActionResult<CommonData<EmployeeViewModel>>> GetSpecificEmp(int id)
         {
             try
             {
                 var emp = await _repo.GetSpecificEmp(id);
-               
-                if(emp != null) 
+
+                if (emp != null)
                 {
-                    return Ok(new CommonData<Employee>
+                    return Ok(new CommonData<EmployeeViewModel>
                     {
                         Status = true,
                         Message = "Get Data Specific Employee Id",
@@ -68,14 +77,31 @@ namespace HRS.Client.Controllers
             }
         }
 
+    
+
         [HttpPost]
-        public async Task<IActionResult> AddEmployee(Employee emp)
+        public async Task<ActionResult<CommonData<EmployeeViewModel>>> AddEmployee(EmployeeViewModel emp)
         {
 
             try
             {
-                await _repo.AddEmployee(emp);
-                return CreatedAtRoute("GetSpecificEmp", new { id = emp.Id }, emp);
+
+               bool data=this.dataDbContext.Employee.Where(x=>x.Name == emp.Name).Any();
+               if(data)
+                {
+                    return BadRequest("The employee name is already taken, Add new Employee name");
+                }
+                else
+                {
+                    await _repo.AddEmployee(emp);
+                    return Ok(new CommonData<EmployeeViewModel>
+                    {
+                        Status = true,
+                        Message = "New Employee information saved successfully.",
+                        Data = emp
+                    });
+
+                }
 
             }
             catch (Exception ex)
@@ -87,19 +113,16 @@ namespace HRS.Client.Controllers
 
 
         [HttpPut]
-        public async Task<ActionResult<CommonData<Employee>>> UpdateEmployee(int id, Employee emp)
+        public async Task<ActionResult<CommonData<int>>> UpdateEmployee(int id, EmployeeViewModel emp)
         {
             try
             {
-                await _repo.UpdateEmployee(id, emp);
-
+             
                 if (id != emp.Id)
                 {
                     return BadRequest("Please enter valid Id ");
                 }
-
-               
-              
+                await _repo.UpdateEmployee(id, emp);
 
                 return Ok(new CommonData<IEnumerable<int>>
                 {
@@ -117,8 +140,11 @@ namespace HRS.Client.Controllers
 
         }
 
+       
+
+
         [HttpDelete("{id}")]
-        public async Task<ActionResult<CommonData<Employee>>> Delete(int id)
+        public async Task<ActionResult<CommonData<EmployeeViewModel>>> Delete(int id)
         {
             try
             {

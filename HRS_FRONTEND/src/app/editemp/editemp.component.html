@@ -1,4 +1,4 @@
-<h1 class="mb-3">Edit Employee</h1>
+<!-- <h1 class="mb-3">Edit Employee</h1>
 <div class="row">
     <div class="col-6">
         <form #form="ngForm" [formGroup]="addEmpForm" (ngSubmit)="UpdateEmployee()">
@@ -64,160 +64,66 @@
             </div>
             <input type="submit" value="Update" class="btn btn-primary" [disabled]="!addEmpForm.valid">
 
-
-
-            <!-- old -->
-            <!-- <input type="button" value="Delete" class="btn btn-danger" (click)="deleteEmployee()"> -->
-
-            <!-- <button (click)="deleteEmployee()" class="btn btn-danger">Delete</button> -->
-
-            <!--  -->
-            <!-- <div class="container my-5">
-    <h1 class="mb-3">Edit Employee</h1>
-    <div class="row">
-        <div class="col-6">
-            <form #form="ngForm" [formGroup]="editEmpForm" (ngSubmit)="UpdateEmployee(editEmpForm.value)"> -->
-            <!-- <div class="mb-3">
-                    <label for="id" class="form-label">Id</label>
-                    <input type="text" class="form-control" id="id" readonly
-                    name="id" [(ngModel)]="employeeDetails.id" formControlName="Id" >
-                </div> -->
-            <!-- <div class="mb-3">
-                    <label for="name" class="form-label">Name</label>
-                    <input type="text" class="form-control" id="name" 
-                    name="name" 
-                    formControlName="name" 
-                    [ngClass]="{'is-invalid': (editEmpForm.get('name')?.touched || editEmpForm.get('name')?.dirty) && !editEmpForm.get('name')?.valid}">
-                    <span class="invalid-feedback">
-                        <span *ngIf="editEmpForm.get('name')?.errors?.['required']">Name can't be blank.</span>
-                    </span>
-                </div>
-                <div class="mb-3">
-                    <label for="address" class="form-label">Address</label>
-                    <input type="text" class="form-control" id="address" name="address" formControlName="address"
-                        [ngClass]="{'is-invalid': (editEmpForm.get('address')?.touched || editEmpForm.get('address')?.dirty) && !editEmpForm.get('address')?.valid}">
-                    <span class="invalid-feedback">
-                        <span *ngIf="editEmpForm.get('address')?.errors?.['required']">address can't be blank.</span>
-                    </span>
-                </div>
-                <div class="mb-3">
-                    <label for="dob" class="form-label">dob</label>
-                    <input type="date" class="form-control" id="dob" name="dob" formControlName="dob"
-                        [ngClass]="{'is-invalid': (editEmpForm.get('dob')?.touched || editEmpForm.get('dob')?.dirty) && !editEmpForm.get('dob')?.valid}">
-                    <span class="invalid-feedback">
-                        <span *ngIf="editEmpForm.get('dob')?.errors?.['required']">dob can't be blank.</span>
-                    </span>
-                </div>
-                <div class="mb-3">
-                    <label for="mobile" class="form-label">mobile</label>
-                    <input type="number" class="form-control" id="mobile" name="mobile" formControlName="mobile"
-                        [ngClass]="{'is-invalid': (editEmpForm.get('mobile')?.touched || editEmpForm.get('mobile')?.dirty) && !editEmpForm.get('mobile')?.valid}">
-                    <span class="invalid-feedback">
-                        <span *ngIf="editEmpForm.get('mobile')?.errors?.['required']">mobile can't be blank.</span>
-                    </span>
-                </div>
-                <div class="mb-3">
-                    <label for="dep_Id" class="form-label">dep_Id</label>
-                    <input type="text" class="form-control" id="dep_Id" name="dep_Id" formControlName="dep_Id"
-                        [ngClass]="{'is-invalid': (editEmpForm.get('dep_Id')?.touched || editEmpForm.get('dep_Id')?.dirty) && !editEmpForm.get('dep_Id')?.valid}">
-                    <span class="invalid-feedback">
-                        <span *ngIf="editEmpForm.get('dep_Id')?.errors?.['required']">dep_Id can't be blank.</span>
-                    </span>
-                </div>
-                <div class="mb-3">
-                    <label for="designation_Id" class="form-label">designation_Id</label>
-                    <input type="designation_Id" class="form-control" id="designation_Id" name="designation_Id"
-                        formControlName="designation_Id"
-                        [ngClass]="{'is-invalid': (editEmpForm.get('designation_Id')?.touched || editEmpForm.get('designation_Id')?.dirty) && !editEmpForm.get('designation_Id')?.valid}">
-                    <span class="invalid-feedback">
-                        <span *ngIf="editEmpForm.get('designation_Id')?.errors?.['required']">designation_Id can't be
-                            blank.</span>
-                    </span>
-                </div>
-    
-                <div class="mb-3">
-                    <label for="manager_Id" class="form-label">manager_Id</label>
-                    <input type="manager_Id" class="form-control" id="manager_Id" name="manager_Id"
-                        formControlName="manager_Id"
-                        [ngClass]="{'is-invalid': (editEmpForm.get('manager_Id')?.touched || editEmpForm.get('manager_Id')?.dirty) && !editEmpForm.get('manager_Id')?.valid}">
-                    <span class="invalid-feedback">
-                        <span *ngIf="editEmpForm.get('manager_Id')?.errors?.['required']">manager_Id can't be
-                            blank.</span>
-                    </span>
-                </div>
-                <input type="submit" value="Update" class="btn btn-primary" [disabled]="!editEmpForm.valid">
-                &nbsp;&nbsp;&nbsp;&nbsp;
-               <input type="button" value="Delete" class="btn btn-danger" 
-                (click)="deleteEmployee(employeeDetails.id)"> -->
-            <!-- </form>
-        </div>
-    </div>
-
-</div> -->
-
-            <!-- <h1 class="mb-3">Edit Employee</h1>
-<div class="row">
-    <div class="col-6">
-        <form [formGroup]="addEmpForm" (ngSubmit)="UpdateEmployee()">
-
-            <div class="form-group">
-                <label for="name" class="form-label">Name</label>
-                <input type="text" class="form-control" id="name" name="name" [(ngModel)]="addEmployeeRequest.name"
-                    formControlName="name" [ngClass]="{'is-invalid': (addEmpForm.get('name')?.touched || addEmpForm.get('name')?.dirty) && 
-                            !addEmpForm.get('name')?.valid}">
-                <span class="invalid-feedback">
-                    <span *ngIf="addEmpForm.get('name')?.errors?.['required']">Name can't be blank.</span>
-                </span>
-
-            </div>
-            <div class="form-group">
-                <label for="address" class="form-label">Address</label>
-                <input type="address" class="form-control" id="address" name="address"
-                    [(ngModel)]="addEmployeeRequest.address" formControlName="address"
-                    [ngClass]="{'is-invalid': (addEmpForm.get('address')?.touched || addEmpForm.get('address')?.dirty) && !addEmpForm.get('address')?.valid}">
-                <span class="invalid-feedback">
-                    <span *ngIf="addEmpForm.get('address')?.errors?.['required']">address can't be blank.</span>
-                </span>
-            </div>
-
-            <div class="form-group">
-                <label for="mobile" class="form-label">mobile</label>
-                <input type="number" class="form-control" id="mobile" name="mobile"
-                    [(ngModel)]="addEmployeeRequest.mobile" formControlName="mobile"
-                    [ngClass]="{'is-invalid': (addEmpForm.get('mobile')?.touched || addEmpForm.get('mobile')?.dirty) && !addEmpForm.get('mobile')?.valid}">
-                <span class="invalid-feedback">
-                    <span *ngIf="addEmpForm.get('mobile')?.errors?.['required']">mobile can't be blank.</span>
-                </span>
-            </div>
-            <div class="form-group">
-                <label for="dep_Id" class="form-label">dep_Id</label>
-                <input type="text" class="form-control" id="dep_Id" name="dep_Id"
-                    [(ngModel)]="addEmployeeRequest.dep_Id" formControlName="dep_Id"
-                    [ngClass]="{'is-invalid': (addEmpForm.get('dep_Id')?.touched || addEmpForm.get('dep_Id')?.dirty) && !addEmpForm.get('dep_Id')?.valid}">
-                <span class="invalid-feedback">
-                    <span *ngIf="addEmpForm.get('dep_Id')?.errors?.['required']">dep_Id can't be blank.</span>
-                </span>
-            </div>
-            <div class="form-group">
-                <label for="designation_Id" class="form-label">designation_Id</label>
-                <input type="designation_Id" class="form-control" id="designation_Id" name="designation_Id"
-                    [(ngModel)]="addEmployeeRequest.designation_Id" formControlName="designation_Id"
-                    [ngClass]="{'is-invalid': (addEmpForm.get('designation_Id')?.touched || addEmpForm.get('designation_Id')?.dirty) && !addEmpForm.get('designation_Id')?.valid}">
-                <span class="invalid-feedback">
-                    <span *ngIf="addEmpForm.get('designation_Id')?.errors?.['required']">designation_Id can't be
-                        blank.</span>
-                </span>
-            </div>
-
-            <div class="form-group">
-                <label for="manager_Id" class="form-label">manager_Id</label>
-                <input type="manager_Id" class="form-control" id="manager_Id" name="manager_Id"
-                    [(ngModel)]="addEmployeeRequest.manager_Id" formControlName="manager_Id"
-                    [ngClass]="{'is-invalid': (addEmpForm.get('manager_Id')?.touched || addEmpForm.get('manager_Id')?.dirty) && !addEmpForm.get('manager_Id')?.valid}">
-                <span class="invalid-feedback">
-                    <span *ngIf="addEmpForm.get('manager_Id')?.errors?.['required']">manager_Id can't be
-                        blank.</span>
-                </span>
-            </div>
-            <button [disabled]="!addEmpForm.valid" type="submit" class="btn btn-primary">Submit</button>
-       -->
+ -->
+            <div class="d-flex justify-content-md-center align-items-center vh-100">
+                <form [formGroup]="addEmpForm" (ngSubmit)="UpdateEmployee()" class="emp">
+            
+                    <div class="form-group">
+            
+                        <label for="name" class="form-label">Name</label>
+                        <input type="text" class="form-control" id="name" name="name" formControlName="name" [ngClass]="{'is-invalid': (addEmpForm.get('name')?.touched || addEmpForm.get('name')?.dirty) && 
+                                !addEmpForm.get('name')?.valid}">
+                        <span class="invalid-feedback">
+                            <span *ngIf="addEmpForm.get('name')?.errors?.['required']">Name can't be blank.</span>
+                        </span>
+                    </div>
+            
+                    <div class="mb-3">
+                        <label for="address" class="form-label">Address</label>
+            
+                        <input type="address" class="form-control" id="address" name="address" formControlName="address"
+                            [ngClass]="{'is-invalid': (addEmpForm.get('address')?.touched || addEmpForm.get('address')?.dirty) && !addEmpForm.get('address')?.valid}">
+                        <span class="invalid-feedback">
+                            <span *ngIf="addEmpForm.get('address')?.errors?.['required']">address can't be blank.</span>
+                        </span>
+                    </div>
+            
+                    <div class="mb-3">
+                        <label for="mobile" class="form-label">mobile</label>
+                        <input type="number" class="form-control" id="mobile" name="mobile" formControlName="mobile"
+                            [ngClass]="{'is-invalid': (addEmpForm.get('mobile')?.touched || addEmpForm.get('mobile')?.dirty) && !addEmpForm.get('mobile')?.valid}">
+                        <span class="invalid-feedback">
+                            <span *ngIf="addEmpForm.get('mobile')?.errors?.['required']">mobile can't be blank.</span>
+                        </span>
+                    </div>
+                    <div class="mb-3">
+                        <label for="dep_Id" class="form-label">dep_Id</label>
+                        <input type="text" class="form-control" id="dep_Id" name="dep_Id" formControlName="dep_Id"
+                            [ngClass]="{'is-invalid': (addEmpForm.get('dep_Id')?.touched || addEmpForm.get('dep_Id')?.dirty) && !addEmpForm.get('dep_Id')?.valid}">
+                        <span class="invalid-feedback">
+                            <span *ngIf="addEmpForm.get('dep_Id')?.errors?.['required']">dep_Id can't be blank.</span>
+                        </span>
+                    </div>
+                    <div class="mb-3">
+                        <label for="designation_Id" class="form-label">designation_Id</label>
+                        <input type="designation_Id" class="form-control" id="designation_Id" name="designation_Id"
+                            formControlName="designation_Id"
+                            [ngClass]="{'is-invalid': (addEmpForm.get('designation_Id')?.touched || addEmpForm.get('designation_Id')?.dirty) && !addEmpForm.get('designation_Id')?.valid}">
+                        <span class="invalid-feedback">
+                            <span *ngIf="addEmpForm.get('designation_Id')?.errors?.['required']">designation_Id can't be
+                                blank.</span>
+                        </span>
+                    </div>
+            
+                    <div class="mb-3">
+                        <label for="manager_Id" class="form-label">manager_Id</label>
+                        <input type="manager_Id" class="form-control" id="manager_Id" name="manager_Id" formControlName="manager_Id"
+                            [ngClass]="{'is-invalid': (addEmpForm.get('manager_Id')?.touched || addEmpForm.get('manager_Id')?.dirty) && !addEmpForm.get('manager_Id')?.valid}">
+                        <span class="invalid-feedback">
+                            <span *ngIf="addEmpForm.get('manager_Id')?.errors?.['required']">manager_Id can't be
+                                blank.</span>
+                        </span>
+                    </div>
+            
+                    <button type="submit" [disabled]="!addEmpForm.valid" type="submit" class="btn btn-primary">Submit</button>
+                </form>

@@ -1,4 +1,5 @@
 ﻿using HRS.Busniess.Entities;
+using HRS.Busniess.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,9 +11,9 @@ namespace HRS.Busniess.Abstraction
     public interface ILeaveRepository
     {
 
-        Task<IEnumerable<Leave>> GetAll();
-        //Task<IEnumerable<Employee>>GetEmpBYLeaveID(int id);
-        Task AddLeave(Leave leave);
+        Task<List<LeaveViewModel>> GetAll();
+     
+        Task AddLeave(LeaveViewModel leave);
 
      
        // Task<Leave> GetSpecificLeave();

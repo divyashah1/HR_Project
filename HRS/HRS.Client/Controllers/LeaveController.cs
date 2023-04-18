@@ -1,5 +1,6 @@
 ﻿using HRS.Busniess.Abstraction;
 using HRS.Busniess.Entities;
+using HRS.Busniess.ViewModel;
 using Microsoft.AspNetCore.Mvc;
 
 namespace HRS.Client.Controllers
@@ -16,7 +17,7 @@ namespace HRS.Client.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetAll()
+        public async Task<ActionResult<List<LeaveViewModel>>> GetAll()
         {
             try
             {
@@ -34,7 +35,7 @@ namespace HRS.Client.Controllers
         }
 
         [HttpPost]
-        public ActionResult AddLeave(Leave leave)
+        public ActionResult AddLeave(LeaveViewModel leave)
         {
             if (leave == null) return BadRequest();
             try

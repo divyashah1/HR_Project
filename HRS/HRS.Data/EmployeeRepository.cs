@@ -1,5 +1,6 @@
 ﻿using HRS.Busniess.Abstraction;
 using HRS.Busniess.Entities;
+using HRS.Busniess.ViewModel;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -18,17 +19,45 @@ namespace HRS.Data
         }
 
 
-        public async Task<IEnumerable<Employee>> GetAll()
+        public async Task<List<EmployeeViewModel>> GetAll()
         {
-            return await _emp.Employee.ToListAsync();
+          
+           return await (from e in _emp.Employee
+                         select new EmployeeViewModel 
+                         {
+                             Id = e.Id,
+                            Name = e.Name,
+                            Address = e.Address,
+
+                            Mobile = e.Mobile,
+                            dep_Id = e.dep_Id,
+                            designation_Id = e.designation_Id,
+                            Manager_Id = e.Manager_Id
+
+                          }).ToListAsync();
         }
 
-        public async Task<Employee> GetSpecificEmp(int id)
+        public async Task<EmployeeViewModel> GetSpecificEmp(int id)
         {
-            return await _emp.Employee.FindAsync(id);
+         
+            var result = await(from e in _emp.Employee
+                               where e.Id == id
+                          select new EmployeeViewModel
+                          {
+                              Id = e.Id,
+                              Name = e.Name,
+                              Address = e.Address,
+
+                              Mobile = e.Mobile,
+                              dep_Id = e.dep_Id,
+                              designation_Id = e.designation_Id,
+                              Manager_Id = e.Manager_Id
+
+                          }).FirstOrDefaultAsync();
+            return result;
         }
 
-        public Task AddEmployee(Employee emp)
+        public Task AddEmployee(EmployeeViewModel emp)
         {
             var employee = new Employee()
             {
@@ -44,28 +73,29 @@ namespace HRS.Data
             return _emp.SaveChangesAsync();
         }
 
-        public async Task UpdateEmployee(int id, Employee emp)
+        public async Task UpdateEmployee(int id, EmployeeViewModel emp)
         {
 
-            _emp.Entry(emp).State = EntityState.Modified;
-            await _emp.SaveChangesAsync();
+            //_emp.Entry(emp).State = EntityState.Modified;
+            //await _emp.SaveChangesAsync();
 
-            //var obj = await _emp.Employee.FindAsync(id);
-            //if (obj != null)
-            //{
-            //    obj.Id = emp.Id;
-            //    obj.Name = emp.Name;
-            //    obj.Address = emp.Address;
-            //    obj.Mobile = emp.Mobile;
-            //    obj.dep_Id = emp.dep_Id;
-            //    obj.designation_Id = emp.designation_Id;
-            //    obj.Manager_Id = emp.Manager_Id;
-            //    await _emp.SaveChangesAsync();
-            //}
+            var obj = await _emp.Employee.FindAsync(id);
+            if (obj != null)
+            {
+                obj.Id = emp.Id;
+                obj.Name = emp.Name;
+                obj.Address = emp.Address;
+                obj.Mobile = emp.Mobile;
+                obj.dep_Id = emp.dep_Id;
+                obj.designation_Id = emp.designation_Id;
+                obj.Manager_Id = emp.Manager_Id;
+                _emp.Employee.Update(obj);
+                await _emp.SaveChangesAsync();
+            };
 
         }
 
-        public Employee Delete(int id)
+        public EmployeeViewModel Delete(int id)
 
         {
 
@@ -78,6 +108,8 @@ namespace HRS.Data
             }
             return null;
         }
+
+        
     }
 }
 

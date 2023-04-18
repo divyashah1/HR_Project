@@ -1,22 +1,25 @@
-
 <div>
     <table class="table table-hover">
         <thead>
-            <tr>
-                <th scope="col">Name</th>
-                <th scope="col">Address</th>
-                
-                <th scope="col">Mobile</th>
-                <th scope="col">dep_Id</th>
-                <th scope="col">designation_Id</th>
-                <th scope="col">manager_Id</th>
-            </tr>
+           
+            <!-- <ng-template pTemplate="header">
+                <tr>
+                  <th *ngFor="let col of column" >{{ col }}
+                  </th>
+                </tr>
+              </ng-template> -->
+
+              <tr>
+                <th *ngFor="let col of column" >{{ col }}
+                </th>
+              </tr>
+           
         </thead>
         <tbody>
             <tr *ngFor="let item of employee ">
                 <td>{{item.name}}</td>
                 <td>{{item.address}}</td>
-             
+
                 <td>{{item.mobile}}</td>
                 <td>{{item.dep_Id}}</td>
                 <td>{{item.designation_Id}}</td>
@@ -27,16 +30,6 @@
                     &nbsp;|&nbsp;
                     <a data-bs-toggle="modal" data-bs-target="#staticBackdropEdit" (click)="delete(item.id)">Delete</a>
                 </td>
-                <!-- <td class="tbl_alg_cent"> <a data-bs-toggle="modal" data-bs-target="#staticBackdropEdit"
-                    [routerLink]="['/app-employee','editemp']">Edit</a>&nbsp;|&nbsp;<a href="http://"
-                    data-bs-toggle="modal" data-bs-target="#staticBackdropDelete"
-                    (click)="getDocById(item.id)">Delete</a>
-            </td> -->
-                <!-- <td>
-                    <a [routerLink]="['/app-employee','editemp']">edit</a>
-                </td> -->
-                <!-- <button type="button" [routerLink]="['/editemp',item.id]">edit</button> -->
-                <!-- <button type="button"  (click)="deleteEmployee(employee)">Delete</button> -->
 
             </tr>
 
@@ -47,3 +40,4 @@
         </td>
     </table>
 </div>
+

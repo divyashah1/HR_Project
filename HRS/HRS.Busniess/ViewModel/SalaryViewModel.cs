@@ -4,11 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HRS.Busniess.Entities
+namespace HRS.Busniess.ViewModel
 {
-    public class Designation
+    public class SalaryViewModel
     {
         public int Id { get; set; }
-        public string Designation_Name { get; set; }
+        public int emp_ID { get; set; }
+        public int salary { get; set; }
     }
 }

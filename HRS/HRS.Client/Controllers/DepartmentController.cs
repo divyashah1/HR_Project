@@ -1,5 +1,6 @@
 ﻿using HRS.Busniess.Abstraction;
 using HRS.Busniess.Entities;
+using HRS.Busniess.ViewModel;
 using Microsoft.AspNetCore.Mvc;
 
 namespace HRS.Client.Controllers
@@ -15,7 +16,7 @@ namespace HRS.Client.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetAll()
+        public async Task<ActionResult<DepartmentViewModel>> GetAll()
         {
             try
             {
@@ -33,14 +34,14 @@ namespace HRS.Client.Controllers
         }
 
         [HttpGet("{id}", Name = "GetSpecificDept")]
-        public async Task<IActionResult> GetSpecificDept(int id)
+        public async Task<ActionResult<DepartmentViewModel>> GetSpecificDept(int id)
         {
             try
             {
                 var dep = await _repo.GetSpecificDept(id);
                 if (dep == null)
                 {
-                    return NotFound("Department Detail Not Found / Please Enter valid Attendance Id");
+                    return NotFound("Department Detail Not Found / Please Enter valid Department Id");
                 }
                 return Ok(dep);
             }
@@ -51,13 +52,14 @@ namespace HRS.Client.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> AddDepartment(Department dept)
+        public async Task<ActionResult<DepartmentViewModel>> AddDepartment(DepartmentViewModel dept)
         {
             try
             {
                 await _repo.AddDepartment(dept);
+                return Ok();
 
-                return CreatedAtRoute("GetSpecificDept", new { id = dept.Id }, dept);
+              //  return CreatedAtRoute("GetSpecificDept", new { id = dept.Id }, dept);
             }
             catch (Exception ex)
             {
@@ -67,17 +69,17 @@ namespace HRS.Client.Controllers
 
 
         [HttpPut]
-        public async Task<IActionResult> UpdateDept(Department dept)
+        public async Task<ActionResult> UpdateDept(int id,DepartmentViewModel dept)
         {
             try
             {
 
                 if (dept == null)
                 {
-                    return NotFound("Department Detail Not Found / Please Enter valid Attendance Id");
+                    return NotFound("Department Detail Not Found / Please Enter valid Department Id");
                 }
 
-                await _repo.UpdateDept(dept);
+                await _repo.UpdateDept(id,dept);
                 return NoContent();
 
             }
@@ -94,10 +96,7 @@ namespace HRS.Client.Controllers
             {
 
                 var result = _repo.Delete(id);
-                if (result == null)
-                {
-                    return NotFound("Department Detail Not Found / Please Enter valid Attendance Id");
-                }
+                
                 return NoContent();
 
             }

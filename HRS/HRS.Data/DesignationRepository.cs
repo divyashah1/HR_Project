@@ -35,7 +35,7 @@ namespace HRS.Data
             var dep = new Designation()
             {
                 Id = des.Id,
-                emp_Designation = des.emp_Designation,
+                Designation_Name = des.Designation_Name,
 
             };
             _dep.AddAsync(dep);
@@ -48,7 +48,7 @@ namespace HRS.Data
             if (obj != null)
             {
                 obj.Id = des.Id;
-                obj.emp_Designation = des.emp_Designation;
+                obj.Designation_Name = des.Designation_Name;
 
             }
             return null;
