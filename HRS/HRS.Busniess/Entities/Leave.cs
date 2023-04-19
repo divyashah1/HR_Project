@@ -10,7 +10,7 @@ namespace HRS.Busniess.Entities
     public class Leave
     {
         public int Id { get; set; }
-        public string Leave_Type { get; set; }
+        public string? Leave_Type { get; set; }
         public int emp_ID { get; set; }
 
         [DataType(DataType.Date)]
@@ -21,7 +21,9 @@ namespace HRS.Busniess.Entities
         public DateTime Leave_To { get; set; }
         public bool isActive { get; set; }  
 
-        public int approval_Id { get; set; }    
-    
+        public int approval_Id { get; set; }
+        public int Manager_Id { get; set; }
+
+
     }
 }

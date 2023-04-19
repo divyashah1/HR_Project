@@ -24,6 +24,6 @@ namespace HRS.Data
 
         public DbSet<Approval_Reject_Leave> Approval_Reject_Leave { get; set; }
 
-
+        public DbSet<Manager> Manager { get; set; }
     }
 }
