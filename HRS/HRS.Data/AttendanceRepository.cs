@@ -30,7 +30,8 @@ namespace HRS.Data
                 emp_ID = attendance.emp_ID,
                 sign_In = attendance.sign_In,
                 sign_Out = attendance.sign_Out,
-
+                Date_In = attendance.Date_In,
+                Date_Out = attendance.Date_Out
             };
             _emp.AddAsync(employee);
             return _emp.SaveChangesAsync();

@@ -4,6 +4,7 @@ using HRS.Busniess.ViewModel;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -32,10 +33,14 @@ namespace HRS.Data
                               Leave_From = leave.Leave_From,
                               Leave_To = leave.Leave_To,
                               isActive = leave.isActive,
-                              approval_Id = leave.approval_Id
+                              isAccepted = leave.isAccepted,
+                              Applied_Date = leave.Applied_Date,
+                              manager_Id = leave.manager_Id
                           }).ToListAsync();
         }
-
+       
+        [DataType(DataType.Date)]
+        public DateTime Applied_Date { get; set; }
         public Task AddLeave(LeaveViewModel leave)
         {
             var employee = new Leave()
@@ -46,11 +51,15 @@ namespace HRS.Data
                 Leave_From = leave.Leave_From,
                 Leave_To = leave.Leave_To,
                 isActive = leave.isActive,
-                approval_Id = leave.approval_Id
+                isAccepted = leave.isAccepted,
+                Applied_Date = leave.Applied_Date,
+                manager_Id = leave.manager_Id
             };
             _emp.AddAsync(employee);
             return _emp.SaveChangesAsync();
         }
+
+       
         //public async Task<IEnumerable<Leave>> GetEmpBYLeaveID(int id)
         //{
         //    return await (from e in _emp.Leave

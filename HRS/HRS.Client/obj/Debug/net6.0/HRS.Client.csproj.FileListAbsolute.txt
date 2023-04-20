@@ -273,3 +273,11 @@ D:\New_HR\HR_Project\HRS\HRS.Client\obj\Debug\net6.0\HRS.Client.genruntimeconfig
 D:\New_HR\HR_Project\HRS\HRS.Client\obj\Debug\net6.0\ref\HRS.Client.dll
 D:\New_HR\HR_Project\HRS\HRS.Client\bin\Debug\net6.0\HRS.Common.dll
 D:\New_HR\HR_Project\HRS\HRS.Client\bin\Debug\net6.0\HRS.Common.pdb
+D:\New_HR\HR_Project\HRS\HRS.Client\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+D:\New_HR\HR_Project\HRS\HRS.Client\bin\Debug\net6.0\Microsoft.AspNetCore.JsonPatch.dll
+D:\New_HR\HR_Project\HRS\HRS.Client\bin\Debug\net6.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+D:\New_HR\HR_Project\HRS\HRS.Client\bin\Debug\net6.0\Newtonsoft.Json.dll
+D:\New_HR\HR_Project\HRS\HRS.Client\bin\Debug\net6.0\Newtonsoft.Json.Bson.dll
+D:\New_HR\HR_Project\HRS\HRS.Client\bin\Debug\net6.0\Pipelines.Sockets.Unofficial.dll
+D:\New_HR\HR_Project\HRS\HRS.Client\bin\Debug\net6.0\StackExchange.Redis.dll
+D:\New_HR\HR_Project\HRS\HRS.Client\bin\Debug\net6.0\Swashbuckle.AspNetCore.Newtonsoft.dll

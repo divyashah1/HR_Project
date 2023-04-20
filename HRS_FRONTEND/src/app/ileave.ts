@@ -6,4 +6,5 @@ export interface ILeave {
     leave_To : Date;  
     // isActive : boolean;  
       approval_Id: number;  
+      manager_Id: number;
 }

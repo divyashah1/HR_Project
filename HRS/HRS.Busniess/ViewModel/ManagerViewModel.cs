@@ -9,11 +9,10 @@ namespace HRS.Busniess.ViewModel
 {
     public class ManagerViewModel
     {
-        public int Id { get; set; }
-        public string? Name { get; set; }
-
-
-        public int dep_Id { get; set; }
+        [Key]
+        public int Manager_Id { get; set; }
+        public int Emp_Id { get; set; }
+        public int deptId { get; set; }
 
         [DataType(DataType.Date)]
         public DateTime EffectiveFromDate { get; set; }

@@ -9,9 +9,9 @@ namespace HRS.Busniess.Abstraction
 {
     public interface IManagerRepository
     {
-        Task<List<EmployeeViewModel>> GetAll();
+        Task<List<ManagerViewModel>> GetAll();
 
-        Task<EmployeeViewModel> GetSpecificEmp(int id);
-        Task AddEmployee(EmployeeViewModel emp);
+        Task<ManagerViewModel> GetSpecificManager(int id);
+        Task AddManager(ManagerViewModel emp);
     }
 }

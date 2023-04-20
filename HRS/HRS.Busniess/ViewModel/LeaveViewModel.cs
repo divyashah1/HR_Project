@@ -20,7 +20,11 @@ namespace HRS.Busniess.ViewModel
         [DataType(DataType.Date)]
         public DateTime Leave_To { get; set; }
         public bool isActive { get; set; }
+        public bool isAccepted { get; set; }
+        
+        public int manager_Id { get; set; }
 
-        public int approval_Id { get; set; }
+        [DataType(DataType.Date)]
+        public DateTime Applied_Date { get; set; }
     }
 }

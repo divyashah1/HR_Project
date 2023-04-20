@@ -9,16 +9,16 @@ namespace HRS.Busniess.Entities
 {
     public class Manager
     {
-        public int Id { get; set; }
-        public string? Name { get; set; }
+        [Key]
+        public int Manager_Id { get; set; }
+
+        public int Emp_Id { get; set; }
+        public int deptId { get; set; }
+
         
-
-        public int dep_Id { get; set; }
-
-        [DataType(DataType.Date)]
         public DateTime EffectiveFromDate { get; set; }
 
-        [DataType(DataType.Date)]
+      
         public DateTime EffectiveToDate { get; set; }
 
     }

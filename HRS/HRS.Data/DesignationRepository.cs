@@ -36,7 +36,7 @@ namespace HRS.Data
             {
                 Id = des.Id,
                 Designation_Name = des.Designation_Name,
-
+                Parent_DesignationId = des.Parent_DesignationId
             };
             _dep.AddAsync(dep);
             return _dep.SaveChangesAsync();
@@ -49,7 +49,7 @@ namespace HRS.Data
             {
                 obj.Id = des.Id;
                 obj.Designation_Name = des.Designation_Name;
-
+                obj.Parent_DesignationId = des.Parent_DesignationId;
             }
             return null;
         }

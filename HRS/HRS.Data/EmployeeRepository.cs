@@ -32,7 +32,10 @@ namespace HRS.Data
                             Mobile = e.Mobile,
                             dep_Id = e.dep_Id,
                             designation_Id = e.designation_Id,
-                            Manager_Id = e.Manager_Id
+                            CreatedBy = e.CreatedBy,
+                            CreatedOn = e.CreatedOn,
+                            UpdatedBy = e.UpdatedBy,
+                            UpdatedOn = e.UpdatedOn
 
                           }).ToListAsync();
         }
@@ -47,11 +50,13 @@ namespace HRS.Data
                               Id = e.Id,
                               Name = e.Name,
                               Address = e.Address,
-
                               Mobile = e.Mobile,
                               dep_Id = e.dep_Id,
                               designation_Id = e.designation_Id,
-                              Manager_Id = e.Manager_Id
+                              CreatedBy = e.CreatedBy,
+                              CreatedOn = e.CreatedOn,
+                              UpdatedBy = e.UpdatedBy,
+                              UpdatedOn = e.UpdatedOn
 
                           }).FirstOrDefaultAsync();
             return result;
@@ -63,11 +68,13 @@ namespace HRS.Data
             {
                 Name = emp.Name,
                 Address = emp.Address,
-
                 Mobile = emp.Mobile,
                 dep_Id = emp.dep_Id,
                 designation_Id = emp.designation_Id,    
-                Manager_Id = emp.Manager_Id,
+                CreatedBy = emp.CreatedBy,
+                CreatedOn = emp.CreatedOn,
+                UpdatedBy = emp.UpdatedBy,
+                UpdatedOn = emp.UpdatedOn
             };
             _emp.AddAsync(employee);
             return _emp.SaveChangesAsync();
@@ -88,7 +95,10 @@ namespace HRS.Data
                 obj.Mobile = emp.Mobile;
                 obj.dep_Id = emp.dep_Id;
                 obj.designation_Id = emp.designation_Id;
-                obj.Manager_Id = emp.Manager_Id;
+                obj.CreatedBy = emp.CreatedBy;
+                obj.CreatedOn = emp.CreatedOn;
+                obj.UpdatedBy = emp.UpdatedBy;
+                obj.UpdatedOn = emp.UpdatedOn;
                 _emp.Employee.Update(obj);
                 await _emp.SaveChangesAsync();
             };

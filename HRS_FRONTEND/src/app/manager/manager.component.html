@@ -1,0 +1,37 @@
+<table class="table table-hover">
+
+  <tr>
+        <th *ngFor="let col of column">{{ col }}
+        </th>
+    </tr>
+     <tbody>
+        <tr *ngFor="let item of manager">
+            <td>{{item.manager_Id}}</td>
+            <td>{{item.name}}</td>
+            <td>{{item.deptId}}</td>
+            <td>{{item.effectiveFromDate}}</td>
+            <td>{{item.effectiveToDate}}</td>
+
+        </tr>
+
+    </tbody>
+
+  
+</table>
+
+<button class="btn btn-success" (click)="addForm()">Add New Manager </button>
+
+
+<div class="mt-4">
+    <form *ngIf="managerForm">
+        <h1>Add New Manager</h1>
+        <p>Manager Name: <input type="text" name="name" [(ngModel)]="new.name"></p>
+        <p>deptId<input type="text" name="deptId" [(ngModel)]="new.deptId"></p>
+        <p>effectiveFromDate<input type="date" name="effectiveFromDate" [(ngModel)]="new.effectiveFromDate"></p>
+        <p>effectiveToDate <input type="date" name="effectiveToDate" [(ngModel)]="new.effectiveToDate"></p>
+
+        <p>
+            <button type="button" (click)="save(new)">Submit</button>
+        </p>
+    </form>
+</div>

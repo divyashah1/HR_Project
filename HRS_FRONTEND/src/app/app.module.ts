@@ -18,6 +18,8 @@ import { EditempComponent } from './editemp/editemp.component';
 import { AddleaveComponent } from './leave/addleave/addleave.component';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { PaginationComponent } from './pagination/pagination.component';
+import { ManagerComponent } from './manager/manager.component';
+import { LoginComponent } from './login/login.component';
 
 
 @NgModule({
@@ -33,7 +35,9 @@ import { PaginationComponent } from './pagination/pagination.component';
     AddempComponent,
     EditempComponent,
     AddleaveComponent,
-    PaginationComponent
+    PaginationComponent,
+    ManagerComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

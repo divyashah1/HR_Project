@@ -18,8 +18,16 @@ namespace HRS.Busniess.Entities
 
         public int designation_Id { get; set; }
 
-        public int Manager_Id { get; set; }
+     
 
-        
+        public int CreatedBy { get; set; }
+
+        public DateTime CreatedOn { get; set; }
+
+        public DateTime UpdatedOn { get; set; }
+
+        public int UpdatedBy { get; set; }
+
+
     }
 }

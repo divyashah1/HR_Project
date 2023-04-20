@@ -63,6 +63,17 @@
                 </span>
             </div>
 
+            
+            <div class="mb-3">
+                <label for="manager_Id" class="form-label">manager_Id</label>
+                <input type="number" class="form-control" id="manager_Id" name="manager_Id"
+                    formControlName="manager_Id"
+                    [ngClass]="{'is-invalid': (addEmpForm.get('manager_Id')?.touched || addEmpForm.get('manager_Id')?.dirty) && !addEmpForm.get('manager_Id')?.valid}">
+                <span class="invalid-feedback">
+                    <span *ngIf="addEmpForm.get('manager_Id')?.errors?.['required']">manager_Id can't be
+                        blank.</span>
+                </span>
+            </div>
             <button type="submit" [disabled]="!addEmpForm.valid" type="submit" class="btn btn-primary">Submit</button>
         </form>
 

@@ -12,13 +12,12 @@ export class EmployeeComponent implements OnInit {
 
   employee;
   id: any;
-  col: IEmployee[] = [];
+  column: any[] = [];
   currentPage:number  = 1;
   itemsPerPage: number = 7;
   totalItems: number = 0;
 
-  column: any[] = ['Name of Employee','City' , 'Mobile', 'Dep_Id',
-  'Designation_Id' ,'Manager_Id ']
+  //column: any[] = ['Name of Employee','City' , 'Mobile', 'Dep_Id', 'Designation_Id' ,'Manager_Id ']
 
   pagingConfig: PagingConfig = {} as PagingConfig;
 
@@ -30,6 +29,8 @@ export class EmployeeComponent implements OnInit {
     this.ApiService.getall().subscribe({
       next: (x) => {
         this.employee = x.data;
+        this.column = Object.keys(x.data[0]);
+       
         this.pagingConfig.totalItems = x.length;
         //this.total = x.total;
         console.log(x);

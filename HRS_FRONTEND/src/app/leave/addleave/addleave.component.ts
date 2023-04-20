@@ -24,7 +24,7 @@ export class AddleaveComponent {
       emp_ID: ['', [Validators.required]],
       leave_From: ['', [Validators.required]],
       leave_To: ['', [Validators.required]],
-      // isActive: ['', [Validators.required]],
+      manager_Id: ['', [Validators.required]],
       approval_Id: ['', [Validators.required]]
 
     })
@@ -39,22 +39,15 @@ export class AddleaveComponent {
 
       leave_From: this.addEmpForm.value.leave_From,
       leave_To: this.addEmpForm.value.leave_To,
-      // isActive: this.addEmpForm.value.isActive,
+      manager_Id: this.addEmpForm.value.manager_Id,
       approval_Id: this.addEmpForm.value.approval_Id
 
     };
-    // this.ApiService.add(this.addEmployeeRequest).subscribe({
-    //   next: (res) => {
-    //     console.log(res)
-    //     // alert('emp added');
-    //     this.router.navigate(['/app-leave'])
-    //     //}
-    //   }
-    // });
+  
     this.ApiService.add(this.addEmployeeRequest).subscribe((a)=>{
-     alert(1)
+     alert("New Leave Add Succesfully")
      this.router.navigate(['/app-leave'])
-     console.log(a)
+    
     })
 
   }

@@ -9,9 +9,11 @@ import { SalaryComponent } from './salary/salary.component';
 import { LeaveComponent } from './leave/leave.component';
 import { AddleaveComponent } from './leave/addleave/addleave.component';
 import { AttendenceComponent } from './attendence/attendence.component';
+import { ManagerComponent } from './manager/manager.component';
+import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'app-employee', pathMatch: 'full' },
+  { path: '', redirectTo: 'app-login', pathMatch: 'full' },
   { path: 'app-employee', component: EmployeeComponent },
   { path: 'app-employee/:id', component: EmployeeComponent },
   
@@ -23,7 +25,9 @@ const routes: Routes = [
   { path: 'app-salary', component: SalaryComponent},
   { path: 'app-leave', component: LeaveComponent},
   { path: 'addleave', component: AddleaveComponent},
-  { path: 'app-attendance', component: AttendenceComponent}
+  { path: 'app-attendance', component: AttendenceComponent},
+  { path: 'app-manager', component: ManagerComponent},
+  {path: 'app-login',component:LoginComponent}
 
 
 ];

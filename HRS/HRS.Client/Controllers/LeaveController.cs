@@ -35,13 +35,13 @@ namespace HRS.Client.Controllers
         }
 
         [HttpPost]
-        public ActionResult AddLeave(LeaveViewModel leave)
+        public async Task<ActionResult> AddLeave(LeaveViewModel leave)
         {
-            if (leave == null) return BadRequest();
+           
             try
             {
-                _repo.AddLeave(leave);
-                return Ok(leave);
+                await _repo.AddLeave(leave);
+                return Ok();
 
             }
             catch (Exception ex)
