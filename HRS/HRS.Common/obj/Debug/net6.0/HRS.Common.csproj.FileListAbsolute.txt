@@ -1,0 +1,12 @@
+D:\New_HR\HR_Project\HRS\HRS.Common\bin\Debug\net6.0\HRS.Common.deps.json
+D:\New_HR\HR_Project\HRS\HRS.Common\bin\Debug\net6.0\HRS.Common.dll
+D:\New_HR\HR_Project\HRS\HRS.Common\bin\Debug\net6.0\HRS.Common.pdb
+D:\New_HR\HR_Project\HRS\HRS.Common\obj\Debug\net6.0\HRS.Common.csproj.AssemblyReference.cache
+D:\New_HR\HR_Project\HRS\HRS.Common\obj\Debug\net6.0\HRS.Common.GeneratedMSBuildEditorConfig.editorconfig
+D:\New_HR\HR_Project\HRS\HRS.Common\obj\Debug\net6.0\HRS.Common.AssemblyInfoInputs.cache
+D:\New_HR\HR_Project\HRS\HRS.Common\obj\Debug\net6.0\HRS.Common.AssemblyInfo.cs
+D:\New_HR\HR_Project\HRS\HRS.Common\obj\Debug\net6.0\HRS.Common.csproj.CoreCompileInputs.cache
+D:\New_HR\HR_Project\HRS\HRS.Common\obj\Debug\net6.0\HRS.Common.dll
+D:\New_HR\HR_Project\HRS\HRS.Common\obj\Debug\net6.0\refint\HRS.Common.dll
+D:\New_HR\HR_Project\HRS\HRS.Common\obj\Debug\net6.0\HRS.Common.pdb
+D:\New_HR\HR_Project\HRS\HRS.Common\obj\Debug\net6.0\ref\HRS.Common.dll

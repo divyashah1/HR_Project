@@ -11,12 +11,16 @@ export class EmployeeService {
 
   constructor(private HttpClient:HttpClient) { }
 
-  getall(): Observable<IEmployee[]> {
-    return this.HttpClient.get<IEmployee[]>(this.ApiUrl);
+  getall(): Observable<any> {
+    return this.HttpClient.get<any>(this.ApiUrl);
   }
 
-  GetSpecificEmp(id: Number) : Observable<IEmployee>{
-    return this.HttpClient.get<IEmployee>(this.ApiUrl+id);
+  // GetSpecificEmp(id: any) : Observable<IEmployee>{
+  //   return this.HttpClient.get<IEmployee>(this.ApiUrl+"/"+id);
+  // }
+
+  GetSpecificEmp(id: string) : Observable<any>{
+    return this.HttpClient.get<any>(this.ApiUrl+"/"+id);
   }
 
   addEmployees(addEmployees :IEmployee) : Observable<IEmployee>{
@@ -24,10 +28,18 @@ export class EmployeeService {
     return this.HttpClient.post<IEmployee>(this.ApiUrl,addEmployees);
  
   }
-  updateEmployee(update :IEmployee) :  Observable<IEmployee>{
-    return this.HttpClient.put<IEmployee>(this.ApiUrl,update);
+  // updateEmployee(update :IEmployee) :  Observable<IEmployee>{
+  //   return this.HttpClient.put<IEmployee>(this.ApiUrl+"/",update);
+ 
+  // }
+
+  updateEmployee(id:any,update :IEmployee) :  Observable<IEmployee>{
+   // console.log(id,update)
+    return this.HttpClient.put<IEmployee>(this.ApiUrl+"/"+id,update);
  
   }
 
- // Delete
+  deleteEmployee(id: string): Observable<any> {
+    return this.HttpClient.delete<any>(this.ApiUrl + '/api/employees/' + id);
+  }
 }

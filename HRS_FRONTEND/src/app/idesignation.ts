@@ -1,5 +1,6 @@
 export interface IDesignation {
     id : number;
-    emp_Designation : string;
+    designation_Name : string;
+    parent_DesignationId : number;
 }
 
