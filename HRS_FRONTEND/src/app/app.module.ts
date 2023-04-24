@@ -20,6 +20,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
 import { PaginationComponent } from './pagination/pagination.component';
 import { ManagerComponent } from './manager/manager.component';
 import { LoginComponent } from './login/login.component';
+import { LogoutComponent } from './logout/logout.component';
 
 
 @NgModule({
@@ -37,7 +38,8 @@ import { LoginComponent } from './login/login.component';
     AddleaveComponent,
     PaginationComponent,
     ManagerComponent,
-    LoginComponent
+    LoginComponent,
+    LogoutComponent
   ],
   imports: [
     BrowserModule,

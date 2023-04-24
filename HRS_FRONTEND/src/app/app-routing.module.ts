@@ -11,6 +11,7 @@ import { AddleaveComponent } from './leave/addleave/addleave.component';
 import { AttendenceComponent } from './attendence/attendence.component';
 import { ManagerComponent } from './manager/manager.component';
 import { LoginComponent } from './login/login.component';
+import { LogoutComponent } from './logout/logout.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'app-login', pathMatch: 'full' },
@@ -27,8 +28,8 @@ const routes: Routes = [
   { path: 'addleave', component: AddleaveComponent},
   { path: 'app-attendance', component: AttendenceComponent},
   { path: 'app-manager', component: ManagerComponent},
-  {path: 'app-login',component:LoginComponent}
-
+  {path: 'app-login',component:LoginComponent},
+{path:'app-logout',component:LogoutComponent}
 
 ];
 

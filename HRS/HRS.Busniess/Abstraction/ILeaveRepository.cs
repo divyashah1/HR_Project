@@ -15,7 +15,7 @@ namespace HRS.Busniess.Abstraction
      
         Task AddLeave(LeaveViewModel leave);
 
-     
+      
       
     
        // Task<Leave> UpdateLeave(Leave leave);

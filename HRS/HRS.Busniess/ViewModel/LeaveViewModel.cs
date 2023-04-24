@@ -9,6 +9,7 @@ namespace HRS.Busniess.ViewModel
 {
     public class LeaveViewModel
     {
+        [Key]
         public int Id { get; set; }
         public string Leave_Type { get; set; }
         public int emp_ID { get; set; }
@@ -22,7 +23,7 @@ namespace HRS.Busniess.ViewModel
         public bool isActive { get; set; }
         public bool isAccepted { get; set; }
         
-        public int manager_Id { get; set; }
+        public int Manager_Id { get; set; }
 
         [DataType(DataType.Date)]
         public DateTime Applied_Date { get; set; }

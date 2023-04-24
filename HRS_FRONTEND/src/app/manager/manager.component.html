@@ -7,16 +7,20 @@
      <tbody>
         <tr *ngFor="let item of manager">
             <td>{{item.manager_Id}}</td>
-            <td>{{item.name}}</td>
-            <td>{{item.deptId}}</td>
+            <td>{{item.emp_Id}}</td>
+            <td>{{item.manager_DeptId}}</td>
+            <td>{{item.managerEmp_Id}}</td>
             <td>{{item.effectiveFromDate}}</td>
             <td>{{item.effectiveToDate}}</td>
+           
+            
+            <!-- <td>{{item.isActive}}</td> -->
 
         </tr>
 
     </tbody>
 
-  
+
 </table>
 
 <button class="btn btn-success" (click)="addForm()">Add New Manager </button>
@@ -25,10 +29,12 @@
 <div class="mt-4">
     <form *ngIf="managerForm">
         <h1>Add New Manager</h1>
-        <p>Manager Name: <input type="text" name="name" [(ngModel)]="new.name"></p>
-        <p>deptId<input type="text" name="deptId" [(ngModel)]="new.deptId"></p>
+        <p>emp_Id <input type="text" name="name" [(ngModel)]="new.emp_Id"></p>
+        <p>manager_DeptId<input type="text" name="deptId" [(ngModel)]="new.manager_DeptId"></p>
         <p>effectiveFromDate<input type="date" name="effectiveFromDate" [(ngModel)]="new.effectiveFromDate"></p>
         <p>effectiveToDate <input type="date" name="effectiveToDate" [(ngModel)]="new.effectiveToDate"></p>
+        <p>managerEmp_Id <input type="text" name="name" [(ngModel)]="new.managerEmp_Id"></p>
+        
 
         <p>
             <button type="button" (click)="save(new)">Submit</button>

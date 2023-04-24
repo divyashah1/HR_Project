@@ -11,7 +11,7 @@ namespace HRS.Client.Controllers
     public class ManagerController : Controller
     {
         private readonly IManagerRepository _repo;
-        
+        //private readonly DataDbContext dataDbContext;
         public ManagerController(IManagerRepository empRepo)
         {
             _repo = empRepo;
@@ -66,7 +66,61 @@ namespace HRS.Client.Controllers
             }
         }
 
+        
+        [HttpGet("aproval")]
+        public async Task<IActionResult> GetAppoval()
+        {
+            try
+            {
+                return Ok(await _repo.GetAppoval());
 
+                //if (emp != null)
+                //{
+                //    return Ok(new CommonData<ManagerViewModel>
+                //    {
+                //        Status = true,
+                //        Message = "Get Data Specific Manager Id",
+                //        Data = emp
+
+                //    });
+                //}
+                //else
+                //    return NotFound("Manager Not Found /  Please Enter valid Manager Id");
+
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, ex.Message);
+            }
+        }
+
+
+        [HttpGet("{id}/Leave")]
+        public async Task<IActionResult> GetleaveByManager(int id)
+        {
+            try
+            {
+                return Ok(await _repo.GetleaveByManager(id));
+               
+                //if (emp != null)
+                //{
+                //    return Ok(new CommonData<ManagerViewModel>
+                //    {
+                //        Status = true,
+                //        Message = "Get Data Specific Manager Id",
+                //        Data = emp
+
+                //    });
+                //}
+                //else
+                //    return NotFound("Manager Not Found /  Please Enter valid Manager Id");
+
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, ex.Message);
+            }
+        }
 
         [HttpPost]
         public async Task<ActionResult<CommonData<ManagerViewModel>>> AddManager(ManagerViewModel emp)

@@ -20,5 +20,9 @@ export class ManagerService {
 
   }
 
+  getByleaveId(id: number): Observable<any>{
+    return this.HttpClient.get<any>(this.ApiUrl+"/api/Manager"+id+"/Leave");
+  }
+
  
 }

@@ -26,10 +26,11 @@ namespace HRS.Data
                           {
                              Manager_Id = e.Manager_Id,
                               Emp_Id = e.Emp_Id,
-                              deptId = e.deptId,
+                              Manager_DeptId = e.Manager_DeptId,
                               EffectiveFromDate = e.EffectiveFromDate,
-                              EffectiveToDate = e.EffectiveToDate
-
+                              EffectiveToDate = e.EffectiveToDate,
+                              ManagerEmp_Id = e.ManagerEmp_Id,
+                              isActive = e.isActive
                           }).ToListAsync();
         }
 
@@ -42,26 +43,67 @@ namespace HRS.Data
                                 {
                                     Manager_Id = e.Manager_Id,
                                     Emp_Id = e.Emp_Id,
-                                    deptId = e.deptId,
+                                    Manager_DeptId = e.Manager_DeptId,
                                     EffectiveFromDate = e.EffectiveFromDate,
-                                    EffectiveToDate = e.EffectiveToDate
-
+                                    EffectiveToDate = e.EffectiveToDate,
+                                    ManagerEmp_Id = e.ManagerEmp_Id,
+                                    isActive = e.isActive
                                 }).FirstOrDefaultAsync();
             return result;
         }
 
-        public Task AddManager(ManagerViewModel emp)
+        public async Task<IEnumerable<LeaveViewModel>> GetleaveByManager(int id)
+        {
+            return await (from e in _emp.Leave
+                                where e.Manager_Id == id
+                                select new LeaveViewModel
+                                {
+                                    Id = e.Id,
+                                    Leave_Type = e.Leave_Type,
+                                    emp_ID = e.emp_ID,
+                                    Leave_From = e.Leave_From,
+                                    Leave_To = e.Leave_To,
+                                    isActive = e.isActive,
+                                    isAccepted = e.isAccepted,
+                                    Applied_Date = e.Applied_Date,
+                                    Manager_Id = e.Manager_Id,
+
+                                }).ToListAsync();
+            
+        }
+
+        public Task AddManager(ManagerViewModel e)
         {
             var manager = new Manager()
             {
-               
-                deptId = emp.deptId,
-                EffectiveFromDate = emp.EffectiveFromDate,
-                EffectiveToDate = emp.EffectiveToDate ,
-                Emp_Id = emp.Emp_Id
+                Manager_Id = e.Manager_Id,
+                Emp_Id = e.Emp_Id,
+                Manager_DeptId = e.Manager_DeptId,
+                EffectiveFromDate = e.EffectiveFromDate,
+                EffectiveToDate = e.EffectiveToDate,
+                ManagerEmp_Id = e.ManagerEmp_Id,
+                isActive = e.isActive
             };
             _emp.AddAsync(manager);
             return _emp.SaveChangesAsync();
+        }
+
+
+        public async Task<IEnumerable<ManagerViewModel>> GetAppoval()
+        {
+            return await (from e in _emp.Manager
+                               where e.isActive == true
+                               select new ManagerViewModel
+                               {
+                                   Manager_Id = e.Manager_Id,
+                                   Emp_Id = e.Emp_Id,
+                                   Manager_DeptId = e.Manager_DeptId,
+                                   EffectiveFromDate = e.EffectiveFromDate,
+                                   EffectiveToDate = e.EffectiveToDate,
+                                   ManagerEmp_Id = e.ManagerEmp_Id,
+                                   isActive = e.isActive
+                               }).ToListAsync();
+         
         }
 
     }

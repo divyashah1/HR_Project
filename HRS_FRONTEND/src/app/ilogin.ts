@@ -1,6 +1,6 @@
 export interface Ilogin {
-    userId: number;
+    //userId: number;
     userName : string;
     password: string;
-    emp_Id: number;
+    //emp_Id: number;
 }

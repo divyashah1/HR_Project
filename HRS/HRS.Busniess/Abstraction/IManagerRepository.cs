@@ -1,4 +1,5 @@
-﻿using HRS.Busniess.ViewModel;
+﻿using HRS.Busniess.Entities;
+using HRS.Busniess.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,6 +13,9 @@ namespace HRS.Busniess.Abstraction
         Task<List<ManagerViewModel>> GetAll();
 
         Task<ManagerViewModel> GetSpecificManager(int id);
+        Task<IEnumerable<LeaveViewModel>> GetleaveByManager(int id);
         Task AddManager(ManagerViewModel emp);
+
+        Task<IEnumerable<ManagerViewModel>> GetAppoval();
     }
 }

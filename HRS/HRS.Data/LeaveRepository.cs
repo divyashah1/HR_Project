@@ -35,15 +35,15 @@ namespace HRS.Data
                               isActive = leave.isActive,
                               isAccepted = leave.isAccepted,
                               Applied_Date = leave.Applied_Date,
-                              manager_Id = leave.manager_Id
+                              Manager_Id = leave.Manager_Id
                           }).ToListAsync();
         }
        
-        [DataType(DataType.Date)]
-        public DateTime Applied_Date { get; set; }
+      
+        
         public Task AddLeave(LeaveViewModel leave)
         {
-            var employee = new Leave()
+            var data = new Leave()
             {
 
                 Leave_Type = leave.Leave_Type,
@@ -53,31 +53,13 @@ namespace HRS.Data
                 isActive = leave.isActive,
                 isAccepted = leave.isAccepted,
                 Applied_Date = leave.Applied_Date,
-                manager_Id = leave.manager_Id
+                Manager_Id = leave.Manager_Id
             };
-            _emp.AddAsync(employee);
+            _emp.AddAsync(data);
             return _emp.SaveChangesAsync();
         }
 
-       
-        //public async Task<IEnumerable<Leave>> GetEmpBYLeaveID(int id)
-        //{
-        //    return await (from e in _emp.Leave
-        //                  where e.emp_ID == id
-        //                  select new Leave
-        //                  {
-        //                      Id = e.Id,
-        //                      FirstName = e.FirstName,
-        //                      LastName = e.LastName,
-        //                      Email = e.Email,
-        //                      DateOfBirth = e.DateOfBirth,
-        //                      Age = e.Age,
-        //                      JoinedDate = e.JoinedDate,
-        //                      IsActive = e.IsActive,
-        //                      DepartmentId = e.DepartmentId
-        //                  }).ToListAsync();
-        //}
-
+    
 
         //public Leave Delete(int id)
 

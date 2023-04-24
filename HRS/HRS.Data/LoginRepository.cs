@@ -24,8 +24,8 @@ namespace HRS.Data
             return await (from e in _emp.Login
                           select new LoginViewModel
                           {
-                              User_Id = e.User_Id,
-                              Emp_ID = e.Emp_ID,
+                             // User_Id = e.User_Id,
+                              //Emp_ID = e.Emp_ID,
                               User_Name = e.User_Name,
 
                               Password = e.Password
@@ -41,8 +41,8 @@ namespace HRS.Data
                                 where e.User_Id == id
                                 select new LoginViewModel
                                 {
-                                    User_Id = e.User_Id,
-                                    Emp_ID = e.Emp_ID,
+                                  //  User_Id = e.User_Id,
+                                  //  Emp_ID = e.Emp_ID,
                                     User_Name = e.User_Name,
 
                                     Password = e.Password
@@ -55,8 +55,8 @@ namespace HRS.Data
         {
             var login = new Login()
             {
-                User_Id = e.User_Id,
-                Emp_ID = e.Emp_ID,
+             //   User_Id = e.User_Id,
+             //   Emp_ID = e.Emp_ID,
                 User_Name = e.User_Name,
 
                 Password = e.Password

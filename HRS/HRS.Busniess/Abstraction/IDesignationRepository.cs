@@ -10,7 +10,8 @@ namespace HRS.Busniess.Abstraction
     public interface IDesignationRepository
     {
         Task<IEnumerable<Designation>> GetAll();
-        //Task<Designation> GetSpecificDesignation(int id);
+        
+        Task<Designation> GetSpecificDesignation(int id);
         //Task AddDesignation(Designation des);
         //Task<Designation> UpdateDept(Designation des);
 

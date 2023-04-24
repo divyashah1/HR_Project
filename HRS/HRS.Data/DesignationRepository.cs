@@ -27,6 +27,7 @@ namespace HRS.Data
 
         public async Task<Designation> GetSpecificDesignation(int id)
         {
+            //return await (from e  in _dep.Designation where)
             return await _dep.Designation.FindAsync(id);
         }
 

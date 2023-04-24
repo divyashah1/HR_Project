@@ -97,10 +97,12 @@ export class EditempComponent {
       mobile: ['', [Validators.required]],
       dep_Id: ['', [Validators.required]],
       designation_Id: ['', [Validators.required]],
-      manager_Id: ['', [Validators.required]]
+      createdBy: ['', [Validators.required]],
+      createdon: ['', [Validators.required]],
+      updatedBy: ['', [Validators.required]],
+      updatedOn: ['', [Validators.required]]
     })
-
-    
+   
      this.id = String(this.route.snapshot.paramMap.get('id')); 
      console.log(this.id)    // getting id from url
     this.ApiService.GetSpecificEmp(this.id).subscribe(res => {
@@ -119,7 +121,10 @@ export class EditempComponent {
       mobile: this.addEmpForm.value.mobile,
       dep_Id: this.addEmpForm.value.dep_Id,
       designation_Id: this.addEmpForm.value.designation_Id,
-      manager_Id: this.addEmpForm.value.manager_Id
+      createdBy: this.addEmpForm.value.createdBy,
+      createdon: this.addEmpForm.value.createdon,
+      updatedBy:this.addEmpForm.value.updatedBy,
+      updatedOn: this.addEmpForm.value.updatedOn
 
     };
     this.ApiService.updateEmployee(this.id,this.emp).subscribe(() => {

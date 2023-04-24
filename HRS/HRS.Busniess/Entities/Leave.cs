@@ -22,9 +22,9 @@ namespace HRS.Busniess.Entities
         public bool isActive { get; set; }
         public bool isAccepted { get; set; }
        
-        public int manager_Id { get; set; }
+        public int Manager_Id { get; set; }
 
         [DataType(DataType.Date)]
-        public DateTime Applied_Date { get; set; }
+        public DateTime Applied_Date { get; set; } = DateTime.Now;
     }
 }

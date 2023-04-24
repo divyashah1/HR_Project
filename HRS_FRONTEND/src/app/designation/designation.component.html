@@ -4,16 +4,16 @@
     <table class="table table-hover">
         <thead>
             <tr>
-
-                <th scope="col">Employee_Designation</th>
-
+                <th scope="col">Id</th>
+                <th scope="col">designation_Name</th>
+                <th scope="col">Parent_DesignationId</th>
             </tr>
         </thead>
         <tbody>
             <tr *ngFor="let item of designation">
-
-                <td>{{item.emp_Designation}}</td>
-
+                <td>{{item.id}}</td>
+                <td>{{item.designation_Name}}</td>
+                <td>{{item.parent_DesignationId}}</td>
                 <!-- <td class="tbl_alg_cent">
                     <a data-bs-toggle="modal" data-bs-target="#staticBackdropEdit"
                         [routerLink]="['/editemp',item.id]">Edit</a>
