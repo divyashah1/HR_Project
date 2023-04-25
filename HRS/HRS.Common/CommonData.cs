@@ -4,7 +4,7 @@
     {
        
         public string Message { get; set; }
-        public string Error_Message { get; set; }
+      //  public string Error_Message { get; set; }
 
         public bool Status { get; set; }
 
@@ -15,9 +15,9 @@
             return new CommonData<T> { Status = true, Data = data };
         }
 
-        public static CommonData<T> Error(string message)
+        public static CommonData<T> Error(string Error_Message)
         {
-            return new CommonData<T> { Status = false, Error_Message = message };
+            return new CommonData<T> { Status = false, Message = Error_Message };
         }
     }
 }
