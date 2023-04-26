@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { AttendanceService } from '../attendance.service';
 import { IAttendence } from '../iattendence';
+import { EmployeeService } from '../employee.service';
 
 @Component({
   selector: 'app-attendence',
@@ -9,12 +10,14 @@ import { IAttendence } from '../iattendence';
   styleUrls: ['./attendence.component.css']
 })
 export class AttendenceComponent {
+  //  date_In : number = Date.now();
   attendance;
   attendanceForm: boolean;
   new: any = {};
+  employee;
 
 
-  constructor(private ApiService: AttendanceService, private router: Router) { }
+  constructor(private ApiService: AttendanceService, private router: Router, private api: EmployeeService) { }
 
   ngOnInit(): void {
     this.read(); //for getall
@@ -22,11 +25,17 @@ export class AttendenceComponent {
   }
 
   read() {
-    this.ApiService.getall().subscribe(
-      data => {
-        this.attendance = data;
-        console.log(data)
+    this.ApiService.getall().subscribe({
+      next: (x) => {
+        this.attendance = x.data;
+        console.log(x)
+
+      },
+      error: (response) => {
+        console.log(response);
       }
+    }
+
     );
   }
 
@@ -38,17 +47,13 @@ export class AttendenceComponent {
   }
 
   save(user: IAttendence) {
-    // this.ApiService.addAttendence(user).subscribe(()=>{
 
-    // })
-    //console.log(user)
     this.ApiService.addAttendence(user).subscribe({
       next: (res) => {
         console.log(res)
         alert('attendance added');
-
-
       }
     });
+    
   }
 }
