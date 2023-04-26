@@ -1,35 +1,67 @@
 <table class="table table-hover">
     <thead>
         <tr>
-            <th>ID</th>
+            <!-- <th>ID</th> -->
             <th>emp_ID</th>
             <th>signIN</th>
             <th>signOut</th>
+            <th> date_In</th>
+            <th>date_Out</th>
 
         </tr>
     </thead>
-   
+
     <tr *ngFor="let item of attendance">
-        <td>{{item.id}}</td>
+        <!-- <td>{{item.id}}</td> -->
         <td>{{item.emp_ID}}</td>
         <td>{{item.sign_In }}</td>
         <td>{{item.sign_Out}}</td>
-
+        <td>{{item.date_In}}</td>
+        <td>{{item.date_Out}}</td>
     </tr>
 
 </table>
-<button class="btn btn-success" (click)="addForm()">Add Attendance </button>
+<button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="addForm()">Add Attendance
+</button>
 
 
 <div class="mt-4">
     <form *ngIf="attendanceForm">
-        <h1>Add Attendance</h1>
+
+
+        <!-- Add Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Add Attendance</h5>
+                        <!-- <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button> -->
+                        <button type="button" class="modal_close_btn" data-bs-dismiss="modal" aria-label="Close">X</button>
+               
+                    </div>
+                    <div class="modal-body">
+                        <p>Employee_ID: <input type="text" name="emp_ID" [(ngModel)]="new.emp_ID"></p>
+                        <p>sign_In <input type="datetime-local" name="sign_In" [(ngModel)]="new.sign_In"></p>
+                        <p>sign_Out <input type="datetime-local" name="sign_Out" [(ngModel)]="new.sign_Out"></p>
+                        <p>date_In <input type="date" name="date_In" [(ngModel)]="new.date_In"></p>
+                        <p>date_out <input type="date" name="date_out" [(ngModel)]="new.date_out"></p>
+
+                    </div>
+                    <div class="modal-footer">
+                        <input type="button" data-bs-dismiss="modal" value="Cancel" class="cmn_btn">
+                        <button type="button" class="btn btn-primary" (click)="save(new)">Submit</button>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- <h1>Add Attendance</h1>
         <p>Employee_ID: <input type="text" name="emp_ID" [(ngModel)]="new.emp_ID"></p>
         <p>sign_In <input type="datetime-local" name="sign_In" [(ngModel)]="new.sign_In"></p>
         <p>sign_Out <input type="datetime-local" name="sign_Out" [(ngModel)]="new.sign_Out"></p>
+        <p>date_In <input type="date" name="date_In" [(ngModel)]="new.date_In"></p>
+        <p>date_out <input type="date" name="date_out" [(ngModel)]="new.date_out"></p> -->
 
-        <p>
-            <button type="button" (click)="save(new)">Submit</button>
-        </p>
+
     </form>
 </div>
