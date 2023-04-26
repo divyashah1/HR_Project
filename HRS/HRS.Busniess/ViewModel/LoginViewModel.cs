@@ -9,7 +9,7 @@ namespace HRS.Busniess.ViewModel
 {
     public class LoginViewModel
     {
-        [Key]
+       // [Key]
        // public int User_Id { get; set; }
        // public int Emp_ID { get; set; }
 

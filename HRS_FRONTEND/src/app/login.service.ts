@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http'
 import { BehaviorSubject, Observable } from 'rxjs';
-
+//import {cors} from '@angular/core'
 import { Ilogin } from './ilogin';
 
 
@@ -32,11 +32,8 @@ export class LoginService {
   // });
 
 
-
-
-
-  login(addleave): Observable<any> {
-   
+  login(addleave: any ): Observable<any> {
+  
     return this.HttpClient.post(this.ApiUrl, addleave);
 
   }

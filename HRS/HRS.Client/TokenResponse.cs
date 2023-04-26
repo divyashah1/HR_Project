@@ -8,9 +8,9 @@
             set;
         }
 
-        public string Message { get; set; }
-        public string Error_Message { get; set; }
+     //   public string Message { get; set; }
+     //   public string Error_Message { get; set; }
 
-        public bool Status { get; set; }
+      //  public bool Status { get; set; }
     }
 }

@@ -13,7 +13,11 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
-
+builder.Services.AddCors(c =>
+{
+    c.AddPolicy("AllowOrigin", options => options.AllowAnyOrigin().AllowAnyMethod()
+      .AllowAnyHeader());
+});
 
 
 builder.Services.AddAuthentication(opt =>
@@ -47,6 +51,8 @@ builder.Services.AddDbContext<DataDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("HRConnectionString"));
 });
 
+//var MyAllowSpecificOrigin = "_myAllowSpecificOrigin";
+
 
 builder.Services.AddScoped<IEmployeeRepository, EmployeeRepository>();
 //builder.Services.AddScoped<IApprovalRepository, ApprovalRepository>();
@@ -66,10 +72,12 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.UseCors(policy =>
-{
-    policy.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin();
-});
+//app.UseCors(policy =>
+//{
+//    //policy.WithOrigins("http://localhost:4200").AllowAnyHeader().AllowAnyMethod();
+//    policy.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin().WithOrigins();
+//});
+app.UseCors(options => options.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
 
 app.UseAuthentication();
 
@@ -78,5 +86,5 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 
 app.MapControllers();
-
+//app.UseCors(MyAllowSpecificOrigin);
 app.Run();

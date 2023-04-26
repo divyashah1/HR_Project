@@ -4,6 +4,7 @@ using HRS.Busniess.ViewModel;
 using HRS.Common;
 using HRS.Data;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
 using System.Configuration;
@@ -15,6 +16,7 @@ namespace HRS.Client.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
+    [EnableCors("AllowOrigin")]
     public class LoginController : Controller
     {
         private readonly IConfiguration configuration; 
@@ -139,8 +141,8 @@ namespace HRS.Client.Controllers
                     var tokenString = new JwtSecurityTokenHandler().WriteToken(tokeOptions);
                     return Ok(new TokenResponse 
                     {
-                        Status = true,
-                        Message = "New User information saved successfully.",
+                      //  Status = true,
+                       // Message = "New User information saved successfully.",
                         Token = tokenString
                     });
                     
