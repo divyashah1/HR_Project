@@ -22,7 +22,7 @@ namespace HRS.Client.Controllers
                 var emp = await _repo.GetAll();
                 if (emp == null)
                 {
-                    return NotFound();
+                    return NotFound("Designatioin Detail Not Found / There is no entry");
                 }
                 return Ok(emp);
             }

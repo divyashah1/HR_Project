@@ -22,8 +22,8 @@ namespace HRS.Data
 
         public DbSet<Designation> Designation { get; set; }
 
-        public DbSet<Approval_Reject_Leave> Approval_Reject_Leave { get; set; }
+        public DbSet<Login> Login { get; set; }
 
-
+        public DbSet<Manager> Manager { get; set; }
     }
 }

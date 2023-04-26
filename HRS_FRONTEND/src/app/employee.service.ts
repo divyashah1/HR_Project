@@ -11,12 +11,16 @@ export class EmployeeService {
 
   constructor(private HttpClient:HttpClient) { }
 
-  getall(): Observable<IEmployee[]> {
-    return this.HttpClient.get<IEmployee[]>(this.ApiUrl);
+  getall(): Observable<any> {
+    return this.HttpClient.get<any>(this.ApiUrl);
   }
 
-  GetSpecificEmp(id: string) : Observable<IEmployee>{
-    return this.HttpClient.get<IEmployee>(this.ApiUrl+"/"+id);
+  // GetSpecificEmp(id: any) : Observable<IEmployee>{
+  //   return this.HttpClient.get<IEmployee>(this.ApiUrl+"/"+id);
+  // }
+
+  GetSpecificEmp(id: string) : Observable<any>{
+    return this.HttpClient.get<any>(this.ApiUrl+"/"+id);
   }
 
   addEmployees(addEmployees :IEmployee) : Observable<IEmployee>{
@@ -35,7 +39,7 @@ export class EmployeeService {
  
   }
 
-  deleteEmployee(id: string): Observable<IEmployee> {
-    return this.HttpClient.delete<IEmployee>(this.ApiUrl + '/api/employees/' + id);
+  deleteEmployee(id: string): Observable<any> {
+    return this.HttpClient.delete<any>(this.ApiUrl + '/api/employees/' + id);
   }
 }

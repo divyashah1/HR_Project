@@ -1,5 +1,6 @@
 ﻿using HRS.Busniess.Abstraction;
 using HRS.Busniess.Entities;
+using HRS.Busniess.ViewModel;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -17,12 +18,20 @@ namespace HRS.Data
             _emp = emp;
         }
 
-        public async Task<IEnumerable<Salary>> GetAll()
+        public async Task<List<SalaryViewModel>> GetAll()
         {
-            return await _emp.Salary.ToListAsync();
+            return await (from e in _emp.Salary
+                          select new SalaryViewModel
+                          {
+                              Id = e.Id,
+                              emp_ID = e.emp_ID,
+                              salary = e.salary
+
+
+                          }).ToListAsync();
         }
 
-        public Task AddSalary(Salary salary)
+        public Task AddSalary(SalaryViewModel salary)
         {
             var newSalary = new Salary()
             {
@@ -37,7 +46,7 @@ namespace HRS.Data
 
        
 
-        public async Task UpdateSalary(int id, Salary salary)
+        public async Task UpdateSalary(int id, SalaryViewModel salary)
         {
             var obj = await _emp.Salary.FindAsync(id);
             if (obj != null)
@@ -52,21 +61,21 @@ namespace HRS.Data
         }
 
 
-        public Salary Delete(int id)
+        public SalaryViewModel Delete(int id)
 
         {
-            var obj = _emp.Salary.Find(id);
-          _emp.Salary.Remove(obj);
-            _emp.SaveChanges();
-            return obj;
-           //// var obj = _emp.Salary.Where(a => a.Id == id).FirstOrDefault();
-           // if (obj != null)
-           // {
-           //     _emp.Salary.Remove(obj);
-           //     _emp.SaveChangesAsync();
+            //  var obj = _emp.Salary.Find(id);
+            //_emp.Salary.Remove(obj);
+            //  _emp.SaveChanges();
+            //  return obj;
+           var obj = _emp.Salary.Where(a => a.Id == id).FirstOrDefault();
+            if (obj != null)
+            {
+                _emp.Salary.Remove(obj);
+                _emp.SaveChangesAsync();
 
-           // }
-           // return null;
+            }
+            return null;
         }
     }
 }

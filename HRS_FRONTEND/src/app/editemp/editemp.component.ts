@@ -11,23 +11,74 @@ import { parse } from 'date-fns';
   styleUrls: ['./editemp.component.css']
 })
 export class EditempComponent {
+  // addEmpForm!: FormGroup;
+  // id: any;
+  // //emp!: IEmployee;
+  // addEmployeeRequest: IEmployee = {
+  //   //id: '',
+  //   name: '',
+  //   address: '',
+  
+  //   mobile : 0,
+  //   dep_Id : 0,
+  //   designation_Id : 0,
+  //   manager_Id : 0,
+
+  // };
+
+  // constructor(private route: ActivatedRoute,
+  //   private router: Router,
+  //   private ApiService: EmployeeService,
+  //   private formBuilder: FormBuilder
+  // ) { }
+
+  // ngOnInit(): void {
+  //   // this.id = Number(this.route.snapshot.paramMap.get('id'));
+
+  //   this.addEmpForm = this.formBuilder.group({
+  //     id: ['response.id'],
+  //     name: ['', [Validators.required]],
+  //     address: ['', [Validators.required]],
+    
+  //     mobile: ['', [Validators.required]],
+  //     dep_Id: ['', [Validators.required]],
+  //     designation_Id: ['', [Validators.required]],
+  //     manager_Id: ['', [Validators.required]]
+  //   })
+
+    
+  //    this.id = String(this.route.snapshot.paramMap.get('id'));     // getting id from url
+  //   this.ApiService.GetSpecificEmp(this.id).subscribe(res => {
+  //     this.addEmployeeRequest = res.data;
+  //   })
+ 
+  // }
+
+  
+  // UpdateEmployee() {
+  //   var req: IEmployee = {
+  //   //id: this.addEmpForm.value.id,
+  //     name: this.addEmpForm.value.name,
+  //     address: this.addEmpForm.value.address,
+  
+  //     mobile: this.addEmpForm.value.mobile,
+  //     dep_Id: this.addEmpForm.value.dep_Id,
+  //     designation_Id: this.addEmpForm.value.designation_Id,
+  //     manager_Id: this.addEmpForm.value.manager_Id
+  //   };
+  //  console.log(req);
+  // // console.log(this.id);
+  //   // this.ApiService.updateEmployee(this.id,req).subscribe((x) => {
+  //   //   this.router.navigate(['app-employee']);
+  //   // })
+  //  this.ApiService.updateEmployee(this.id,req);
+  //  this.router.navigate(['app-employee']);
+  // }
+
+
   addEmpForm!: FormGroup;
   id: any;
-  //emp!: IEmployee;
-  addEmployeeRequest: IEmployee = {
-    //id: '',
-    name: '',
-    address: '',
-  
-    mobile : 0,
-    dep_Id : 0,
-    designation_Id : 0,
-    manager_Id : 0,
-
-  };
-
-  //id: any;
-
+  emp!: IEmployee;
 
   constructor(private route: ActivatedRoute,
     private router: Router,
@@ -46,36 +97,40 @@ export class EditempComponent {
       mobile: ['', [Validators.required]],
       dep_Id: ['', [Validators.required]],
       designation_Id: ['', [Validators.required]],
-      manager_Id: ['', [Validators.required]]
+      createdBy: ['', [Validators.required]],
+      createdon: ['', [Validators.required]],
+      updatedBy: ['', [Validators.required]],
+      updatedOn: ['', [Validators.required]]
     })
-
-    
-     this.id = String(this.route.snapshot.paramMap.get('id'));     // getting id from url
+   
+     this.id = String(this.route.snapshot.paramMap.get('id')); 
+     console.log(this.id)    // getting id from url
     this.ApiService.GetSpecificEmp(this.id).subscribe(res => {
-      this.addEmployeeRequest = res;
+      this.emp = res.data;
     })
  
   }
 
   
   UpdateEmployee() {
-    var req: IEmployee = {
-    //id: this.addEmpForm.value.id,
+    this.emp = {
+
       name: this.addEmpForm.value.name,
       address: this.addEmpForm.value.address,
-  
+
       mobile: this.addEmpForm.value.mobile,
       dep_Id: this.addEmpForm.value.dep_Id,
       designation_Id: this.addEmpForm.value.designation_Id,
-      manager_Id: this.addEmpForm.value.manager_Id
+      createdBy: this.addEmpForm.value.createdBy,
+      createdon: this.addEmpForm.value.createdon,
+      updatedBy:this.addEmpForm.value.updatedBy,
+      updatedOn: this.addEmpForm.value.updatedOn
+
     };
-   console.log(req);
-  // console.log(this.id);
-    // this.ApiService.updateEmployee(this.id,req).subscribe((x) => {
-    //   this.router.navigate(['app-employee']);
-    // })
-    this.ApiService.updateEmployee(this.id,req);
-    this.router.navigate(['app-employee']);
+    this.ApiService.updateEmployee(this.id,this.emp).subscribe(() => {
+      alert('emp added');
+      this.router.navigate(['/app-employee'])
+    })
   }
 
 }

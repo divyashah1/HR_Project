@@ -1,47 +1,52 @@
-
 <div class="d-flex justify-content-md-center align-items-center vh-100">
     <form [formGroup]="addEmpForm" (ngSubmit)="Addleave()" class="emp">
-    
-            <div class="form-group">
 
-                <label for="leave_Type" class="form-label">leave_Type</label>
-                <input type="text" class="form-control" id="leave_Type" name="leave_Type"
-                 formControlName="leave_Type" [ngClass]="{'is-invalid': (addEmpForm.get('leave_Type')?.touched 
+        <div class="form-group">
+
+            <label for="leave_Type" class="form-label">leave_Type</label>
+            <input type="text" class="form-control" id="leave_Type" name="leave_Type" formControlName="leave_Type"
+                [ngClass]="{'is-invalid': (addEmpForm.get('leave_Type')?.touched 
                  || addEmpForm.get('leave_Type')?.dirty) && 
                     !addEmpForm.get('leave_Type')?.valid}">
-                <span class="invalid-feedback">
-                    <span *ngIf="addEmpForm.get('leave_Type')?.errors?.['required']">leave_Type can't be blank.</span>
-                </span>
-            </div>
+            <span class="invalid-feedback">
+                <span *ngIf="addEmpForm.get('leave_Type')?.errors?.['required']">leave_Type can't be blank.</span>
+            </span>
+        </div>
 
-            <div class="mb-3">
-                <label for="emp_ID" class="form-label">emp_ID</label>
-                
-                <input type="emp_ID" class="form-control" id="emp_ID" name="emp_ID" formControlName="emp_ID"
-                    [ngClass]="{'is-invalid': (addEmpForm.get('emp_ID')?.touched || 
-                    addEmpForm.get('emp_ID')?.dirty) && !addEmpForm.get('emp_ID')?.valid}">
+        <div class="mb-3">
+            <label for="emp_ID" class="form-label">emp_ID</label>
+            <select class="form-control" aria-label="Default select example" id="exampleFormControlSelect1"
+                formControlName="emp_ID" [ngClass]="{'is-invalid': (addEmpForm.get('emp_ID')?.touched || 
+            addEmpForm.get('emp_ID')?.dirty) && !addEmpForm.get('emp_ID')?.valid}">
+
+                <option selected>select employee name</option>
+                <option *ngFor="let emp of employee">{{emp.name}}</option>
+                <!-- <input type="emp_ID" class="form-control" id="emp_ID" name="emp_ID" formControlName="emp_ID" [ngClass]="{'is-invalid': (addEmpForm.get('emp_ID')?.touched || 
+                    addEmpForm.get('emp_ID')?.dirty) && !addEmpForm.get('emp_ID')?.valid}"> -->
                 <span class="invalid-feedback">
                     <span *ngIf="addEmpForm.get('emp_ID')?.errors?.['required']">emp_ID can't be blank.</span>
                 </span>
-            </div>
-     
-            <div class="mb-3">
-                <label for="leave_From" class="form-label">leave_From</label>
-                <input type="date" class="form-control" id="leave_From" name="leave_From" formControlName="leave_From"
-                    [ngClass]="{'is-invalid': (addEmpForm.get('leave_From')?.touched || addEmpForm.get('leave_From')?.dirty) && !addEmpForm.get('leave_From')?.valid}">
-                <span class="invalid-feedback">
-                    <span *ngIf="addEmpForm.get('leave_From')?.errors?.['required']">leave_From can't be blank.</span>
-                </span>
-            </div>
-            <div class="mb-3">
-                <label for="leave_To" class="form-label">leave_To</label>
-                <input type="date" class="form-control" id="leave_To" name="leave_To" formControlName="leave_To"
-                    [ngClass]="{'is-invalid': (addEmpForm.get('leave_To')?.touched || addEmpForm.get('leave_To')?.dirty) && !addEmpForm.get('leave_To')?.valid}">
-                <span class="invalid-feedback">
-                    <span *ngIf="addEmpForm.get('leave_To')?.errors?.['required']">leave_To can't be blank.</span>
-                </span>
-            </div>
-            <!-- <div class="mb-3">
+            </select>
+        </div>
+
+
+        <div class="mb-3">
+            <label for="leave_From" class="form-label">leave_From</label>
+            <input type="date" class="form-control" id="leave_From" name="leave_From" formControlName="leave_From"
+                [ngClass]="{'is-invalid': (addEmpForm.get('leave_From')?.touched || addEmpForm.get('leave_From')?.dirty) && !addEmpForm.get('leave_From')?.valid}">
+            <span class="invalid-feedback">
+                <span *ngIf="addEmpForm.get('leave_From')?.errors?.['required']">leave_From can't be blank.</span>
+            </span>
+        </div>
+        <div class="mb-3">
+            <label for="leave_To" class="form-label">leave_To</label>
+            <input type="date" class="form-control" id="leave_To" name="leave_To" formControlName="leave_To"
+                [ngClass]="{'is-invalid': (addEmpForm.get('leave_To')?.touched || addEmpForm.get('leave_To')?.dirty) && !addEmpForm.get('leave_To')?.valid}">
+            <span class="invalid-feedback">
+                <span *ngIf="addEmpForm.get('leave_To')?.errors?.['required']">leave_To can't be blank.</span>
+            </span>
+        </div>
+        <!-- <div class="mb-3">
                 <label for="isActive" class="form-label">isActive</label>
                 <input type="isActive" class="form-control" id="isActive" name="isActive"
                     formControlName="isActive"
@@ -52,65 +57,104 @@
                 </span>
             </div> -->
 
-            <div class="mb-3">
-                <label for="approval_Id" class="form-label">approval_Id</label>
-                <input type="approval_Id" class="form-control" id="approval_Id" name="approval_Id"
-                    formControlName="approval_Id"
-                    [ngClass]="{'is-invalid': (addEmpForm.get('approval_Id')?.touched || addEmpForm.get('approval_Id')?.dirty) && !addEmpForm.get('approval_Id')?.valid}">
-                <span class="invalid-feedback">
-                    <span *ngIf="addEmpForm.get('approval_Id')?.errors?.['required']">approval_Id can't be
-                        blank.</span>
-                </span>
-            </div>
+        <div class="mb-3">
+            <label for="isAccepted" class="form-label">isAccepted</label>
 
-            <button type="submit" [disabled]="!addEmpForm.valid" type="submit" class="btn btn-primary">Submit</button>
-        </form>
+            <!-- <select class="form-control" id="exampleFormControlSelect1" formControlName="isAccepted"
+                [ngClass]="{'is-invalid': (addEmpForm.get('isAccepted')?.touched || addEmpForm.get('isAccepted')?.dirty) && !addEmpForm.get('isAccepted')?.valid}">
+                <option selected>select menu</option>
+                <option>True</option>
+                <option>False</option>
 
+            </select> -->
+            <input type="isAccepted" class="form-control" id="isAccepted" name="isAccepted"
+                    formControlName="isAccepted"
+                    [ngClass]="{'is-invalid': (addEmpForm.get('isAccepted')?.touched || addEmpForm.get('isAccepted')?.dirty) && !addEmpForm.get('isAccepted')?.valid}">
+            <span class="invalid-feedback">
+                <span *ngIf="addEmpForm.get('isAccepted')?.errors?.['required']">isAccepted can't be
+                    blank.</span>
+            </span>
+        </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        <div class="mb-3">
+            <label for="Applied_Date" class="form-label">Applied_Date</label>
+            <input type="date" class="form-control" id="Applied_Date" name="Applied_Date" formControlName="Applied_Date"
+                [ngClass]="{'is-invalid': (addEmpForm.get('Applied_Date')?.touched || addEmpForm.get('Applied_Date')?.dirty) && !addEmpForm.get('Applied_Date')?.valid}">
+            <span class="invalid-feedback">
+                <span *ngIf="addEmpForm.get('Applied_Date')?.errors?.['required']">Applied_Date can't be
+                    blank.</span>
+            </span>
+        </div>
 
 
+        <div class="mb-3">
+            <label for="Manager_Id" class="form-label">manager_Id</label>
+
+            <!-- <select class="form-control" id="exampleFormControlSelect1" formControlName="Manager_Id"
+                [ngClass]="{'is-invalid': (addEmpForm.get('Manager_Id')?.touched || addEmpForm.get('Manager_Id')?.dirty) && !addEmpForm.get('Manager_Id')?.valid}">
+
+                <option selected>select manager name</option>
+                <option *ngFor="let emp of employee">{{emp.name}}</option> -->
+            <!-- <option *ngFor="let man of manager">{{man.managerEmp_Id.name}}</option> -->
 
 
+            <input type="number" class="form-control" id="Manager_Id" name="Manager_Id" formControlName="manager_Id"
+                [ngClass]="{'is-invalid': (addEmpForm.get('manager_Id')?.touched || addEmpForm.get('manager_Id')?.dirty) && !addEmpForm.get('manager_Id')?.valid}">
+            <span class="invalid-feedback">
+                <span *ngIf="addEmpForm.get('manager_Id')?.errors?.['required']">manager_Id can't be
+                    blank.</span>
+            </span>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            <!-- </select> -->
+        </div>
+        <button type="submit" type="submit" class="btn btn-primary">Submit</button>
+    </form>
 
 
 
 
-<!-- <form novalidate autocomplete="off" #form="ngForm" (submit)="onSubmit(form)">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- <form novalidate autocomplete="off" #form="ngForm" (submit)="onSubmit(form)">
     <input type="hidden" [value]="ApiService.formDataEmployee" />Name
     <h1>Employee Form</h1>
     <table>
@@ -153,7 +197,7 @@
                     [class.invalid]="leave_To.invalid &#038;&#038; leave_To.touched">
             </td>
         </tr> -->
-        <!-- <tr>
+    <!-- <tr>
             <td>
                 <label>isActive</label>
             </td>
@@ -163,7 +207,7 @@
                     [class.invalid]="isActive.invalid &#038;&#038; isActive.touched">
             </td>
         </tr> -->
-<!--        
+    <!--        
         <tr>
             <td>
                 <label>IsActive</label>
@@ -219,7 +263,7 @@
 
 
 
-<!-- <div class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    <!-- <div class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
     aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-body">
         <form [formGroup]="addForm" (ngSubmit)="onSubmit()">
@@ -274,7 +318,7 @@
             class="alert-danger">
             <span>leave_From number is required!</span>
         </div> -->
-                <!-- </div>
+    <!-- </div>
             </div>
             <div class="form-group row d-flex justify-content-center align-items-center">
                 <label for="approval_Id" class="col-form-label col-sm-2 text-right">approval_Id</label>
@@ -291,4 +335,4 @@
         <button class="btn btn-primary mr-2">Add</button>
     </div>-->
 
-<!-- </div> -->
+    <!-- </div> -->

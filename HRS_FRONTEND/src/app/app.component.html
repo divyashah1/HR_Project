@@ -1,5 +1,4 @@
 <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
-<<<<<<< HEAD
 
   <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId"
     aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
@@ -7,6 +6,9 @@
   </button>
   <div class="collapse navbar-collapse" id="collapsibleNavId">
     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+      <li class="nav-item active">
+        <a class="nav-link" [routerLink]="['/app-employee']">Employee</a>
+      </li>
       <li class="nav-item active">
         <a class="nav-link" [routerLink]="['/app-designation']">Designation</a>
       </li>
@@ -17,35 +19,20 @@
         <a class="nav-link" [routerLink]="['/app-salary']">Salary</a>
       </li>
       <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/app-manager']"> Manager</a>
+      </li>
+      <li class="nav-item">
         <a class="nav-link" [routerLink]="['/app-leave']"> Leave</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" [routerLink]="['/app-attendance']"> Attendance</a>
       </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/app-logout']"> Logout</a>
+      </li>
     </ul>
   </div>
 </nav>
-=======
-  
-    <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
-        aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="collapsibleNavId">
-      <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-        <li class="nav-item active">
-          <a class="nav-link"[routerLink]="['/app-designation']">Designation</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" [routerLink]="['/add-department']"> Department</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" [routerLink]="['/add-leave']"> Apply for Leave</a>
-          </li>
-        </ul>
-    </div>
-  </nav>
->>>>>>> 4d8d1fe745f8e840b932893ea13f41b4a0f616d2
 
 
 
@@ -53,8 +40,4 @@
 
 
 
-<<<<<<< HEAD
 <router-outlet></router-outlet>
-=======
-<router-outlet></router-outlet> 
->>>>>>> 4d8d1fe745f8e840b932893ea13f41b4a0f616d2

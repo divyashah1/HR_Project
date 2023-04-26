@@ -27,6 +27,7 @@ namespace HRS.Data
 
         public async Task<Designation> GetSpecificDesignation(int id)
         {
+            //return await (from e  in _dep.Designation where)
             return await _dep.Designation.FindAsync(id);
         }
 
@@ -35,8 +36,8 @@ namespace HRS.Data
             var dep = new Designation()
             {
                 Id = des.Id,
-                emp_Designation = des.emp_Designation,
-
+                Designation_Name = des.Designation_Name,
+                Parent_DesignationId = des.Parent_DesignationId
             };
             _dep.AddAsync(dep);
             return _dep.SaveChangesAsync();
@@ -48,8 +49,8 @@ namespace HRS.Data
             if (obj != null)
             {
                 obj.Id = des.Id;
-                obj.emp_Designation = des.emp_Designation;
-
+                obj.Designation_Name = des.Designation_Name;
+                obj.Parent_DesignationId = des.Parent_DesignationId;
             }
             return null;
         }

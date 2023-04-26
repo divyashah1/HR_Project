@@ -1,5 +1,6 @@
 ﻿using HRS.Busniess.Abstraction;
 using HRS.Busniess.Entities;
+using HRS.Busniess.ViewModel;
 using Microsoft.AspNetCore.Mvc;
 
 namespace HRS.Client.Controllers
@@ -18,14 +19,14 @@ namespace HRS.Client.Controllers
 
 
         [HttpGet]
-        public async Task<IActionResult> GetAll()
+        public async Task<ActionResult<List<SalaryViewModel>>> GetAll()
         {
             try
             {
                 var emp = await _repo.GetAll();
                 if (emp == null)
                 {
-                    return NotFound();
+                    return NotFound("Salary Detail Not Found / There is no entry");
                 }
                 return Ok(emp);
             }
@@ -37,7 +38,7 @@ namespace HRS.Client.Controllers
 
 
         [HttpPost]
-        public async Task<IActionResult> AddSalary(Salary emp)
+        public async Task<IActionResult> AddSalary(SalaryViewModel emp)
         {
             //if (emp == null) return BadRequest();
             try
@@ -56,17 +57,14 @@ namespace HRS.Client.Controllers
 
 
         [HttpPut]
-        public async Task<IActionResult> UpdateSalary(int id, Salary emp)
+        public async Task<IActionResult> UpdateSalary(int id, SalaryViewModel emp)
         {
             try
             {
 
 
-                if (emp == null)
-                {
-                    return NotFound();
-                }
-                if (id != emp.Id) return BadRequest();
+               
+                if (id != emp.Id) return BadRequest("Please enter valid Id ");
 
                 await _repo.UpdateSalary(id, emp);
                 return NoContent();
@@ -88,10 +86,10 @@ namespace HRS.Client.Controllers
             {
 
                 var result = _repo.Delete(id);
-                if (result == null)
-                {
-                    return BadRequest();
-                }
+                //if (result == null)
+                //{
+                //    return NotFound("Salary Detail Not Found / Please Enter valid salary Id");
+                //}
                 return NoContent();
 
             }

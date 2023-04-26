@@ -24,6 +24,7 @@ export class SalaryComponent {
 
   }
 
+  
   //getall
 
   read() {

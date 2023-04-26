@@ -17,6 +17,10 @@ namespace HRS.Busniess.Entities
 
        // [DataType(DataType.Time)]
         public DateTime sign_Out { get; set; }
-       
+
+        public DateTime Date_In { get; set; }
+
+        public DateTime Date_Out { get; set; }
+
     }
 }

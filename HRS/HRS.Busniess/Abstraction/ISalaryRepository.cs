@@ -1,4 +1,5 @@
 ﻿using HRS.Busniess.Entities;
+using HRS.Busniess.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,11 +10,11 @@ namespace HRS.Busniess.Abstraction
 {
     public interface ISalaryRepository
     {
-        Task<IEnumerable<Salary>> GetAll();
-        Task AddSalary(Salary salary);
+        Task<List<SalaryViewModel>> GetAll();
+        Task AddSalary(SalaryViewModel salary);
   
-        Task UpdateSalary(int id, Salary salary);
+        Task UpdateSalary(int id, SalaryViewModel salary);
 
-        Salary Delete(int id);
+        SalaryViewModel Delete(int id);
     }
 }
