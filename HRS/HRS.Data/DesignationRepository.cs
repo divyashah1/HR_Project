@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -30,6 +31,50 @@ namespace HRS.Data
             //return await (from e  in _dep.Designation where)
             return await _dep.Designation.FindAsync(id);
         }
+
+        //public async Task<List<Designation>> GetSpecificDes_Name(int id)
+        //{
+
+            //var emp = _dep.Employee.Where(x => x.Id == id).Select(x => x.Id).First();
+            //var des = _dep.
+            //var result = await (from d in _dep.Designation
+            //                    join empgroup in 
+            //                    (
+            //                       from e  in Employee
+            //                       group e by e.designation_Id into g select g 
+            //                    )
+            //                    on designation_Id equals empgroup.key
+            //                    //where e.Id == id
+            //                    select new 
+            //                    {
+            //                        Name = empgroup.Name,
+            //                        Designation_Name = d.Designation_Name
+            //                    }).ToListAsync();
+            //return result;
+
+            //var inner = await (from em in Employee
+            //                   join des in _dep.Designation
+            //                   on em.designation_Id equals des.Id
+            //                   select new
+            //                   {
+            //                       Name = em.Name,
+            //                       Des = des.Designation_Name
+            //                   });
+            //return inner;
+
+        //    var inner = await (from des in _dep.Designation.Where(s=>s.Id==id)
+        //                       join em in _dep.Employee
+        //                       //join des in _dep.Designation
+        //                       on des.Id equals em.designation_Id
+        //                    //   on em.designation_Id equals des.Id
+        //                       select new
+        //                       {
+        //                           Des = des.Designation_Name,
+        //                           Name = em.Name,
+                                   
+        //                       }).FirstOrDefaultAsync();
+        //    return inner;
+        //}
 
         public Task AddDesignation(Designation des)
         {

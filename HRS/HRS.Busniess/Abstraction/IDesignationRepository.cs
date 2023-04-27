@@ -12,6 +12,8 @@ namespace HRS.Busniess.Abstraction
         Task<IEnumerable<Designation>> GetAll();
         
         Task<Designation> GetSpecificDesignation(int id);
+
+      //  Task<List<Designation>> GetSpecificDes_Name(int id);
         //Task AddDesignation(Designation des);
         //Task<Designation> UpdateDept(Designation des);
 
