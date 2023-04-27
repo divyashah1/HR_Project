@@ -34,7 +34,7 @@ export class LoginComponent {
   
    //   console.log('res',res)
       localStorage.setItem('token',res.token);
-      this.router.navigate(['/app-employee'])
+      this.router.navigate(['/app-view-employee'])
     })
   }
  

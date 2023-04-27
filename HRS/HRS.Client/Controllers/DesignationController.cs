@@ -1,4 +1,6 @@
 ﻿using HRS.Busniess.Abstraction;
+using HRS.Busniess.ViewModel;
+using HRS.Common;
 using Microsoft.AspNetCore.Mvc;
 
 namespace HRS.Client.Controllers
@@ -31,5 +33,27 @@ namespace HRS.Client.Controllers
                 return StatusCode(500, ex.Message);
             }
         }
+
+        [HttpGet("{id}")]
+        public async Task<ActionResult<DesignationViewModel>> GetSpecificDesignation(int id)
+        {
+            try
+            {
+                var emp = await _repo.GetSpecificDesignation(id);
+
+                if (emp != null)
+                {
+                    return Ok(emp);
+                }
+                else
+                    return NotFound("Employee Not Found /  Please Enter valid employee Id");
+
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, ex.Message);
+            }
+        }
+
     }
 }

@@ -17,8 +17,6 @@ export class EmployeeComponent implements OnInit {
   itemsPerPage: number = 7;
   totalItems: number = 0;
 
-  //column: any[] = ['Name of Employee','City' , 'Mobile', 'Dep_Id', 'Designation_Id' ,'Manager_Id ']
-
   pagingConfig: PagingConfig = {} as PagingConfig;
 
 
