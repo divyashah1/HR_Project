@@ -119,7 +119,22 @@ namespace HRS.Data
             return null;
         }
 
-        
+        //public async Task<Designation> GetSpecificDes_Name(int id)
+        //{
+           
+        //    var res = (from e1 in _emp.Employee
+        //              join e2 in _emp.Designation
+        //                  on e1.designation_Id equals e2.Id
+        //              select new
+        //              {
+        //                  Emp_Name = e1.Name,
+        //                  Designation_Name = e2.Designation_Name
+        //              }).FirstOrDefaultAsync();
+
+        //    return res;
+        //}
+
+
     }
 }
 

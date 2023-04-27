@@ -77,7 +77,31 @@ namespace HRS.Client.Controllers
             }
         }
 
-    
+
+
+        //[HttpGet("{id}/Des")]
+        //public async Task<ActionResult<CommonData<List<Designation>>>> GetSpecificDes_Name(int id)
+        //{
+        //    try
+        //    {
+              
+        //        return Ok(new CommonData<IEnumerable<Designation>>
+        //        {
+        //            Data = await _repo.GetSpecificDes_Name(id),
+        //                Status = true,
+        //                Message = "Get Data Specific Employee Id",
+                       
+
+        //        });
+               
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        return StatusCode(500, ex.Message);
+        //    }
+        //}
+
+
 
         [HttpPost]
         public async Task<ActionResult<CommonData<EmployeeViewModel>>> AddEmployee(EmployeeViewModel emp)
