@@ -15,6 +15,8 @@ export class DesignationService {
     return this.HttpClient.get<IEmployee[]>(this.ApiUrl);
   }
 
-  
+  GetSpecific(id: string) : Observable<any>{
+    return this.HttpClient.get<any>(this.ApiUrl+"/"+id);
+  }
   
 }
