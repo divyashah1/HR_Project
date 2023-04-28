@@ -1,51 +1,66 @@
 <div class="col-auto">
-    <tr>
-        <th *ngFor="let col of column">
-            &nbsp;&nbsp;{{ col }}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        </th>
-    </tr>
-
+    <!-- <tr> -->
+        <!-- <th *ngFor="let col of column"> -->
+            <!-- {{ col }}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
+        <!-- </th> -->
+    <!-- </tr> -->
     <select name="noOfRows" (change)="onTableSizeChange($event)" class="form-select form-select-sm">
         <!-- <option *ngFor="let col of column">
           <span><b>{{ col }}</b> </span> 
         </option> -->
     </select>
 </div>
-
 <div>
-    <table class="table table-hover">
-
-        <tbody>
-            <tr *ngFor="let item of employee | paginate : pagingConfig; let i = index">
-
-                <td>{{item.name}}</td>
-                <td>{{item.address}}</td>
-
-                <td>{{item.mobile}}</td>
-                <td>{{item.dep_Id}}</td>
-                <td>{{item.designation_Id}}</td>
-                <td>{{item.createdBy}}</td>
-                <td>{{item.createdon}}</td>
-                <td>{{item.updatedBy}}</td>
-                <td>{{item.updatedOn}}</td>
-                <td class="tbl_alg_cent">
-                    <a data-bs-toggle="modal" data-bs-target="#staticBackdropEdit"
-                        [routerLink]="['/editemp',item.id]">Edit</a>
-                    &nbsp;|&nbsp;
-                    <a data-bs-toggle="modal" data-bs-target="#staticBackdropEdit" (click)="delete(item.id)">Delete</a>
-                </td>
-
-            </tr>
-
-        </tbody>
-
-        <td>
-            <button type="button" [routerLink]="['/addemp']">Add</button>
-        </td>
-    </table>
-</div>
-
-<div class="d-flex justify-content-center">
-    <pagination-controls previousLabel="Prev" nextLabel="Next" (pageChange)="onTableDataChange($event)">
-    </pagination-controls>
-</div>
+    <section class="intro">
+        <div class="gradient-custom-1 h-100">
+            <div class="mask d-flex align-items-center h-100">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-12">
+                            <div class="table-responsive bg-white">
+                                <table class="table mb-0">
+                                    <!-- <table class="table table-hover"> -->
+                                        <thead>
+                                            <tr>
+                                              <th scope="col">Name</th>
+                                              <th scope="col">Address</th>
+                                              <th scope="col">Mobile</th>
+                                              <th scope="col">Department</th>
+                                              <th scope="col">Designation</th>
+                                              <th scope="col">createdBy</th>
+                                              <th scope="col">createdOn</th>
+                                              <th scope="col">UpdatedBy</th>
+                                              <th scope="col">UpdatedOn</th>
+                                            </tr>
+                                          </thead>
+                                    <tbody>
+                                        <tr *ngFor="let item of employee | paginate : pagingConfig; let i = index">
+                                            <!-- <td>{{item.id}}</td> -->
+                                            <td>{{item.name}}</td>
+                                            <td>{{item.address}}</td>
+                                            <td>{{item.mobile}}</td>
+                                            <td>{{item.dep_Id}}</td>
+                                            <td>{{item.designation_Id}}</td>
+                                            <td>{{item.createdBy}}</td>
+                                            <td>{{item.createdOn}}</td>
+                                            <td>{{item.updatedBy}}</td>
+                                            <td>{{item.updatedOn}}</td>
+                                            <td class="tbl_alg_cent">
+                                                <a data-bs-toggle="modal" data-bs-target="#staticBackdropEdit"
+                                                    [routerLink]="['/editemp',item.id]">Edit</a>
+                                                &nbsp;|&nbsp;
+                                                <a data-bs-toggle="modal" data-bs-target="#staticBackdropEdit"
+                                                    (click)="delete(item.id)">Delete</a>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                    <td>
+                                        <button type="button" [routerLink]="['/addemp']">Add</button>
+                                    </td>
+                                </table>
+                            </div>
+                            <div class="d-flex justify-content-center">
+                                <pagination-controls previousLabel="Prev" nextLabel="Next"
+                                    (pageChange)="onTableDataChange($event)">
+                                </pagination-controls>
+                            </div>

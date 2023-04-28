@@ -1,22 +1,31 @@
-<div>
-    <table class="table table-hover">
-        <thead>
-            <tr>
+<section class="intro">
+    <div class="bg-image h-100"
+        style="background-image: url('https://mdbootstrap.com/img/Photos/new-templates/tables/img4.jpg');">
+        <div class="mask d-flex align-items-center h-100" style="background-color: rgba(25, 185, 234,.25);">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table table-hover mb-0">
+                                        <thead>
+                                            <tr>
 
-                <th scope="col">dept_Name</th>
+                                                <th scope="col">Department Name</th>
 
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let item of department">
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr *ngFor="let item of department">
 
-                <td>{{item.dept_Name}}</td>
+                                                <td>{{item.dept_Name}}</td>
 
 
-            </tr>
+                                            </tr>
 
-        </tbody>
+                                        </tbody>
 
-      
-    </table>
-</div>
+
+                                    </table>
+                                </div>
