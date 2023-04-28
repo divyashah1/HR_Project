@@ -15,7 +15,7 @@ namespace HRS.Busniess.Abstraction
 
         Task<EmployeeViewModel> GetSpecificEmp(int id);
 
-      //  Task<Designation> GetSpecificDes_Name(int id);
+   //    Task GetSpecificDes_Name(int id);
 
         Task AddEmployee(EmployeeViewModel emp);
      

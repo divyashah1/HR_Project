@@ -1,43 +1,79 @@
-<table class="table table-hover">
+<section class="intro">
+    <div class="gradient-custom-1 h-100">
+        <div class="mask d-flex align-items-center h-100">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-12">
+                        <!-- <div class="table-responsive bg-white"> -->
+                            <table class="table mb-0">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Employee Id</th>
+                                        <th scope="col">manager_DeptId</th>
+                                        <th scope="col">ManagerEmp_Id</th>
+                                        <th scope="col">effectiveFromDate</th>
+                                        <th scope="col">effectiveToDate</th>
 
-  <tr>
+                                    </tr>
+                                </thead>
+                                <!-- <tr>
         <th *ngFor="let col of column">{{ col }}
-        </th>
-    </tr>
-     <tbody>
-        <tr *ngFor="let item of manager">
-            <td>{{item.manager_Id}}</td>
-            <td>{{item.emp_Id}}</td>
-            <td>{{item.manager_DeptId}}</td>
-            <td>{{item.managerEmp_Id}}</td>
-            <td>{{item.effectiveFromDate}}</td>
-            <td>{{item.effectiveToDate}}</td>
-           
-            
-            <!-- <td>{{item.isActive}}</td> -->
+        </th> -->
+                                <!-- </tr> -->
+                                <tbody>
+                                    <tr *ngFor="let item of manager">
 
-        </tr>
+                                        <td>{{item.emp_Id}}</td>
+                                        <td>{{item.manager_DeptId}}</td>
+                                        <td>{{item.managerEmp_Id}}</td>
+                                        <td>{{item.effectiveFromDate}}</td>
+                                        <td>{{item.effectiveToDate}}</td>
+                                    </tr>
 
-    </tbody>
+                                </tbody>
 
 
-</table>
+                            </table>
 
-<button class="btn btn-success" (click)="addForm()">Add New Manager </button>
+                            <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                                (click)="addForm()">Add New
+                                Manager </button>
 
 
-<div class="mt-4">
-    <form *ngIf="managerForm">
-        <h1>Add New Manager</h1>
-        <p>emp_Id <input type="text" name="name" [(ngModel)]="new.emp_Id"></p>
-        <p>manager_DeptId<input type="text" name="deptId" [(ngModel)]="new.manager_DeptId"></p>
-        <p>effectiveFromDate<input type="date" name="effectiveFromDate" [(ngModel)]="new.effectiveFromDate"></p>
-        <p>effectiveToDate <input type="date" name="effectiveToDate" [(ngModel)]="new.effectiveToDate"></p>
-        <p>managerEmp_Id <input type="text" name="name" [(ngModel)]="new.managerEmp_Id"></p>
-        
 
-        <p>
-            <button type="button" (click)="save(new)">Submit</button>
-        </p>
-    </form>
-</div>
+                            <!-- Modal Add -->
+
+                            <div class="mt-4">
+                                <form *ngIf="managerForm">
+                                    <div class="modal fade" id="exampleModal" tabindex="-1"
+                                        aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleModalLabel">Add New Manager</h5>
+                                                    <button type="button" class="modal_close_btn"
+                                                        data-bs-dismiss="modal" aria-label="Close">X</button>
+                                                </div>
+                                                <div class="modal-body">
+
+                                                    <p>emp_Id <input type="text" name="name" [(ngModel)]="new.emp_Id">
+                                                    </p>
+                                                    <p>manager_DeptId<input type="text" name="deptId"
+                                                            [(ngModel)]="new.manager_DeptId"></p>
+                                                    <p>effectiveFromDate<input type="date" name="effectiveFromDate"
+                                                            [(ngModel)]="new.effectiveFromDate"></p>
+                                                    <p>effectiveToDate <input type="date" name="effectiveToDate"
+                                                            [(ngModel)]="new.effectiveToDate">
+                                                    </p>
+                                                    <p>managerEmp_Id <input type="text" name="name"
+                                                            [(ngModel)]="new.managerEmp_Id"></p>
+
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <input type="button" data-bs-dismiss="modal" value="Cancel"
+                                                        class="cmn_btn">
+
+                                                    <button type="button" (click)="save(new)">Submit</button>
+
+                                                    <!-- </form> -->
+                                                </div>

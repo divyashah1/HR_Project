@@ -80,20 +80,20 @@ namespace HRS.Client.Controllers
 
 
         //[HttpGet("{id}/Des")]
-        //public async Task<ActionResult<CommonData<List<Designation>>>> GetSpecificDes_Name(int id)
+        //public async Task<ActionResult<CommonData<DesignationViewModel>>> GetSpecificDes_Name(int id)
         //{
         //    try
         //    {
-              
-        //        return Ok(new CommonData<IEnumerable<Designation>>
+
+        //        return Ok(new CommonData<DesignationViewModel>
         //        {
         //            Data = await _repo.GetSpecificDes_Name(id),
-        //                Status = true,
-        //                Message = "Get Data Specific Employee Id",
-                       
+        //            Status = true,
+        //            Message = "Get Data Specific Employee Id",
+
 
         //        });
-               
+
         //    }
         //    catch (Exception ex)
         //    {
