@@ -6,4 +6,5 @@ export interface IAttendence {
     sign_Out : Date;  
     date_In: Date ;
     date_out: Date;
+    name:string;
 }
