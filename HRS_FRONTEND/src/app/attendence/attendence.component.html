@@ -9,7 +9,7 @@
                                 <thead>
                                     <tr>
                                         <!-- <th>ID</th> -->
-                                        <th>emp_ID</th>
+                                        <th>Employee Name</th>
                                         <th>signIN</th>
                                         <th>signOut</th>
                                         <th> date_In</th>
@@ -20,7 +20,7 @@
 
                                 <tr *ngFor="let item of attendance">
                                     <!-- <td>{{item.id}}</td> -->
-                                    <td>{{item.emp_ID}}</td>
+                                    <td>{{item.name}}</td>
                                     <td>{{item.sign_In }}</td>
                                     <td>{{item.sign_Out}}</td>
                                     <td>{{item.date_In}}</td>
@@ -42,7 +42,7 @@
                                             <div class="modal-content">
                                                 <div class="modal-header">
                                                     <h5 class="modal-title" id="exampleModalLabel">Add Attendance</h5>
-                                                    <!-- <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button> -->
+                                                   
                                                     <button type="button" class="modal_close_btn"
                                                         data-bs-dismiss="modal" aria-label="Close">X</button>
 
@@ -70,13 +70,6 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <!-- <h1>Add Attendance</h1>
-        <p>Employee_ID: <input type="text" name="emp_ID" [(ngModel)]="new.emp_ID"></p>
-        <p>sign_In <input type="datetime-local" name="sign_In" [(ngModel)]="new.sign_In"></p>
-        <p>sign_Out <input type="datetime-local" name="sign_Out" [(ngModel)]="new.sign_Out"></p>
-        <p>date_In <input type="date" name="date_In" [(ngModel)]="new.date_In"></p>
-        <p>date_out <input type="date" name="date_out" [(ngModel)]="new.date_out"></p> -->
-
 
                                 </form>
                             </div>

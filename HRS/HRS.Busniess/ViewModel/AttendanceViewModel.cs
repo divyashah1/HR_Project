@@ -20,5 +20,7 @@ namespace HRS.Busniess.ViewModel
         public DateTime Date_In { get; set; }
 
         public DateTime Date_Out { get; set; }
+
+        public string Name { get;set; }
     }
 }
