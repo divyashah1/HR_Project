@@ -60,6 +60,19 @@ namespace HRS.Data
         }
 
     
+        //public async Task<List<ManagerViewModel>> GetManagerName(int id)
+        //{
+        //    var emp = _emp.Employee.Where(x => x.Id == id).Select(x=>x.Id).First();
+        //    var manager = this._emp.Manager.Where(x=>x.Emp_Id == emp).First();
+        //    var emp1 = _emp.Employee.Where(x=>x.Id == manager.ManagerEmp_Id).First();
+
+        //    return await this._emp.Manager.Where(x=> x.Manager_Id == manager.Manager_Id).
+        //        Select(a=> new ManagerViewModel
+        //        {
+        //            Manager_Id = a.Manager_Id,
+        //            name = emp1.Name
+        //        }).ToListAsync();   
+        //}
 
         //public Leave Delete(int id)
 
