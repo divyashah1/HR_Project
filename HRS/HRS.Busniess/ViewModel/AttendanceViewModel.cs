@@ -21,6 +21,6 @@ namespace HRS.Busniess.ViewModel
 
         public DateTime Date_Out { get; set; }
 
-        public string Name { get;set; }
+       // public string Name { get;set; }
     }
 }

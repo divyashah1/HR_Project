@@ -16,24 +16,35 @@ namespace HRS.Data
 
         public async Task<List<AttendanceViewModel>> GetAll()
         {
-          
+            return await (from ME in _emp.Attendance
+                          select new AttendanceViewModel
+                          {
+                              ID = ME.ID,
+                              emp_ID = ME.emp_ID,
+                              sign_In = ME.sign_In,
+                              sign_Out = ME.sign_Out,
+                              Date_In = ME.Date_In,
+                              Date_Out = ME.Date_Out,
 
-            var dataobject =await (from ME in _emp.Attendance
-                              join RT in _emp.Employee on ME.emp_ID equals RT.Id
-                             
+                          }).ToListAsync();
 
-                              select new AttendanceViewModel
-                              {
-                                  ID = ME.ID,
-                                  emp_ID = ME.emp_ID,
-                                  sign_In = ME.sign_In,
-                                  sign_Out = ME.sign_Out,
-                                  Date_In = ME.Date_In,
-                                  Date_Out = ME.Date_Out,
-                                  Name=RT.Name
-                              }).ToListAsync();
 
-            return dataobject;
+            //var dataobject = await (from ME in _emp.Attendance
+            //                        join RT in _emp.Employee on ME.emp_ID equals RT.Id
+
+
+            //                        select new AttendanceViewModel
+            //                        {
+            //                            ID = ME.ID,
+            //                            emp_ID = ME.emp_ID,
+            //                            sign_In = ME.sign_In,
+            //                            sign_Out = ME.sign_Out,
+            //                            Date_In = ME.Date_In,
+            //                            Date_Out = ME.Date_Out,
+            //                            Name = RT.Name
+            //                        }).ToListAsync();
+
+            //return dataobject;
         }
 
         public async Task<AttendanceViewModel> GetSpecificAttendance(int id)
@@ -54,20 +65,32 @@ namespace HRS.Data
 
         public Task AddAttendance(AttendanceViewModel attendance)
         {
-            var employee = new Attendance()
-            {
-                ID = attendance.ID,
-                emp_ID = attendance.emp_ID,
-                sign_In = attendance.sign_In,
-                sign_Out = attendance.sign_Out,
-                Date_In = attendance.Date_In,
-                Date_Out = attendance.Date_Out
-            };
-            _emp.AddAsync(employee);
+            Attendance a = new Attendance();
+            a.ID = attendance.ID;
+            //a.emp_ID = attendance.emp_ID;
+            a.emp_ID = _emp.Employee.Where(x => x.Id == attendance.emp_ID).Select(x => x.Id).First();
+            a.sign_In = attendance.sign_In;
+            a.sign_Out = attendance.sign_Out;
+            a.Date_In = attendance.Date_In;
+            a.Date_Out = attendance.Date_Out;
+            _emp.AddAsync(a);
             return _emp.SaveChangesAsync();
+
+
+            //var employee = new Attendance()
+            //{
+            //    ID = attendance.ID,
+            //    emp_ID = attendance.emp_ID,
+            //    sign_In = attendance.sign_In,
+            //    sign_Out = attendance.sign_Out,
+            //    Date_In = attendance.Date_In,
+            //    Date_Out = attendance.Date_Out
+            //};
+            //_emp.AddAsync(employee);
+            //return _emp.SaveChangesAsync();
         }
-     
-        
+
+
         public async Task UpdateAttendance(int id, AttendanceViewModel attendance)
         {
 

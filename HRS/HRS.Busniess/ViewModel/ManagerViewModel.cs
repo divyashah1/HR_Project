@@ -20,5 +20,9 @@ namespace HRS.Busniess.ViewModel
         [DataType(DataType.Date)]
         public DateTime EffectiveToDate { get; set; }
         public bool isActive { get; set; }
+
+    //    public string EmpName { get; set; } 
+
+   //     public string ManagerEmp { get; set; }
     }
 }

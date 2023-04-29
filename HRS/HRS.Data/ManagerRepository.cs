@@ -20,18 +20,37 @@ namespace HRS.Data
 
         public async Task<List<ManagerViewModel>> GetAll()
         {
-
             return await (from e in _emp.Manager
                           select new ManagerViewModel
                           {
-                             Manager_Id = e.Manager_Id,
+                              Manager_Id = e.Manager_Id,
                               Emp_Id = e.Emp_Id,
                               Manager_DeptId = e.Manager_DeptId,
                               EffectiveFromDate = e.EffectiveFromDate,
                               EffectiveToDate = e.EffectiveToDate,
                               ManagerEmp_Id = e.ManagerEmp_Id,
                               isActive = e.isActive
+
                           }).ToListAsync();
+
+            //return await (from e in _emp.Manager
+            //              join m in _emp.Employee
+            //              on e.Emp_Id equals m.Id
+            //              join j in _emp.Employee
+            //              on e.ManagerEmp_Id equals j.Id
+
+            //              select new ManagerViewModel
+            //              {
+            //                 Manager_Id = e.Manager_Id,
+            //                  Emp_Id = e.Emp_Id,
+            //                  Manager_DeptId = e.Manager_DeptId,
+            //                  EffectiveFromDate = e.EffectiveFromDate,
+            //                  EffectiveToDate = e.EffectiveToDate,
+            //                  ManagerEmp_Id = e.ManagerEmp_Id,
+            //                  isActive = e.isActive,
+            //                  EmpName = m.Name,
+            //                  ManagerEmp = j.Name
+            //              }).ToListAsync();
         }
 
         public async Task<ManagerViewModel> GetSpecificManager(int id)

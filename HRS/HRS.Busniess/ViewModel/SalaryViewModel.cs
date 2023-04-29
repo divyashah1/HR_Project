@@ -11,5 +11,7 @@ namespace HRS.Busniess.ViewModel
         public int Id { get; set; }
         public int emp_ID { get; set; }
         public int salary { get; set; }
+
+     //   public string Name { get; set; }    
     }
 }

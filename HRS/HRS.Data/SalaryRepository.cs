@@ -19,16 +19,31 @@ namespace HRS.Data
         }
 
         public async Task<List<SalaryViewModel>> GetAll()
+
+
         {
+
             return await (from e in _emp.Salary
                           select new SalaryViewModel
                           {
                               Id = e.Id,
                               emp_ID = e.emp_ID,
+
                               salary = e.salary
 
 
                           }).ToListAsync();
+            //return await (from e in _emp.Salary
+            //              join s in _emp.Employee
+            //              on e.emp_ID equals s.Id
+            //              select new SalaryViewModel
+            //              {
+            //                  Id = e.Id,
+            //                  emp_ID = e.emp_ID,
+            //                  salary = e.salary,
+            //                  Name = s.Name
+
+            //              }).ToListAsync();
         }
 
         public Task AddSalary(SalaryViewModel salary)
