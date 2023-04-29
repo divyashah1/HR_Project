@@ -5,35 +5,35 @@
                 <div class="row justify-content-center">
                     <div class="col-12">
                         <!-- <div class="table-responsive bg-white"> -->
-                            <table class="table mb-0">
-                                <thead>
-                                    <tr>
-                                        <!-- <th>ID</th> -->
-                                        <th>Employee Name</th>
-                                        <th>signIN</th>
-                                        <th>signOut</th>
-                                        <th> date_In</th>
-                                        <th>date_Out</th>
+                        <table class="table mb-0">
+                            <thead>
+                                <tr>
+                                    <th>Employee ID</th>
+                                    <!-- <th>Employee Name</th> -->
+                                    <th>signIN</th>
+                                    <th>signOut</th>
+                                    <th> date_In</th>
+                                    <th>date_Out</th>
 
-                                    </tr>
-                                </thead>
-
-                                <tr *ngFor="let item of attendance">
-                                    <!-- <td>{{item.id}}</td> -->
-                                    <td>{{item.name}}</td>
-                                    <td>{{item.sign_In }}</td>
-                                    <td>{{item.sign_Out}}</td>
-                                    <td>{{item.date_In}}</td>
-                                    <td>{{item.date_Out}}</td>
                                 </tr>
+                            </thead>
 
-                            </table>
-                            <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal"
-                                (click)="addForm()">Add Attendance
-                            </button>
+                            <tr *ngFor="let item of attendance">
+                                <td>{{item.emp_ID}}</td>
+                                <!-- <td>{{item.name}}</td> -->
+                                <td>{{item.sign_In }}</td>
+                                <td>{{item.sign_Out}}</td>
+                                <td>{{item.date_In}}</td>
+                                <td>{{item.date_Out}}</td>
+                            </tr>
+
+                        </table>
+                        <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                            (click)="addForm()">Add Attendance
+                        </button>
 
 
-                            <div class="mt-4">
+                        <div class="mt-4">
                                 <form *ngIf="attendanceForm">
                                     <!-- Add Modal -->
                                     <div class="modal fade" id="exampleModal" tabindex="-1"
@@ -70,6 +70,3 @@
                                             </div>
                                         </div>
                                     </div>
-
-                                </form>
-                            </div>

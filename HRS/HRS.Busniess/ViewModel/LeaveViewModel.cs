@@ -27,5 +27,9 @@ namespace HRS.Busniess.ViewModel
 
         [DataType(DataType.Date)]
         public DateTime Applied_Date { get; set; }
+
+      //  public string Name { get; set;}
+
+       // public string manager { get; set;}  
     }
 }

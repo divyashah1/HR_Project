@@ -20,5 +20,9 @@
 
         public string? UpdatedBy { get; set; }
 
+   //     public string dept_Name { get; set; }   
+
+   //     public string des_Name { get; set; }
+
     }
 }

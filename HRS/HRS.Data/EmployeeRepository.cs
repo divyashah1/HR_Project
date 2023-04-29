@@ -21,23 +21,47 @@ namespace HRS.Data
 
         public async Task<List<EmployeeViewModel>> GetAll()
         {
-          
-           return await (from e in _emp.Employee
-                         select new EmployeeViewModel 
-                         {
-                             Id = e.Id,
-                            Name = e.Name,
-                            Address = e.Address,
+            return await (from e in _emp.Employee
+                          select new EmployeeViewModel
+                          {
+                              Id = e.Id,
+                              Name = e.Name,
+                              Address = e.Address,
 
-                            Mobile = e.Mobile,
-                            dep_Id = e.dep_Id,
-                            designation_Id = e.designation_Id,
-                            CreatedBy = e.CreatedBy,
-                            CreatedOn = e.CreatedOn,
-                            UpdatedBy = e.UpdatedBy,
-                            UpdatedOn = e.UpdatedOn
+                              Mobile = e.Mobile,
+                              dep_Id = e.dep_Id,
+                              designation_Id = e.designation_Id,
+                              CreatedBy = e.CreatedBy,
+                              CreatedOn = e.CreatedOn,
+                              UpdatedBy = e.UpdatedBy,
+                              UpdatedOn = e.UpdatedOn
 
                           }).ToListAsync();
+
+            //return await (from e in _emp.Employee
+            //              join d in _emp.Department
+            //              on e.dep_Id equals d.Id
+
+            //              join des in _emp.Designation
+            //              on e.designation_Id equals des.Id
+            //              select new EmployeeViewModel 
+            //              {
+            //                  Id = e.Id,
+            //                 Name = e.Name,
+            //                 Address = e.Address,
+
+            //                 Mobile = e.Mobile,
+            //                 dep_Id = e.dep_Id,
+            //                 designation_Id = e.designation_Id,
+            //                 CreatedBy = e.CreatedBy,
+            //                 CreatedOn = e.CreatedOn,
+            //                 UpdatedBy = e.UpdatedBy,
+            //                 UpdatedOn = e.UpdatedOn,
+            //                  dept_Name = d.dept_Name,
+            //                  des_Name = des.Designation_Name
+
+
+            //              }).ToListAsync();
         }
 
         public async Task<EmployeeViewModel> GetSpecificEmp(int id)

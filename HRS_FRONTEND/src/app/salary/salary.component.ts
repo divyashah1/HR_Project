@@ -16,7 +16,7 @@ export class SalaryComponent {
   editForm: boolean;
   edited: any = {}
   new: any = {};
-
+employee;
   constructor(private ApiService: SalaryService, private router: Router) { }
 
   ngOnInit(): void {

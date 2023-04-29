@@ -22,9 +22,7 @@ namespace HRS.Data
 
         public async Task<List<LeaveViewModel>> GetAll()
         {
-
             return await (from leave in _emp.Leave
-
                           select new LeaveViewModel
                           {
                               Id = leave.Id,
@@ -35,8 +33,29 @@ namespace HRS.Data
                               isActive = leave.isActive,
                               isAccepted = leave.isAccepted,
                               Applied_Date = leave.Applied_Date,
-                              Manager_Id = leave.Manager_Id
+                              Manager_Id = leave.Manager_Id,
+
                           }).ToListAsync();
+
+            //return await (from leave in _emp.Leave
+            //              join e in _emp.Employee
+            //              on leave.emp_ID equals e.Id
+            //              join m in _emp.Employee
+            //              on leave.Manager_Id equals m.Id
+            //              select new LeaveViewModel
+            //              {
+            //                  Id = leave.Id,
+            //                  Leave_Type = leave.Leave_Type,
+            //                  emp_ID = leave.emp_ID,
+            //                  Leave_From = leave.Leave_From,
+            //                  Leave_To = leave.Leave_To,
+            //                  isActive = leave.isActive,
+            //                  isAccepted = leave.isAccepted,
+            //                  Applied_Date = leave.Applied_Date,
+            //                  Manager_Id = leave.Manager_Id,
+            //                  Name = e.Name,
+            //                  manager = m.Name,
+            //              }).ToListAsync();
         }
        
       
