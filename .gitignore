@@ -61,6 +61,8 @@ HRS/HRS.Busniess/bin/
 HRS/HRS.Busniess/obj/
 HRS/HRS.Client/bin/
 HRS/HRS.Client/obj/
+HRS/HRS.Data/bin/
+HRS/HRS.Data/obj/
 
 .vs/VSWorkspaceState.json
 HRS/.vs/HRS/FileContentIndex/22e41e00-5e88-4bbe-8d3f-5725266c5c62.vsidx
@@ -68,3 +70,5 @@ HRS/.vs/HRS/FileContentIndex/161e9f57-adda-4c15-92e2-18c3caf813da.vsidx
 .vs/HRMS/v17/.wsuo
 HRS/.vs/HRS/FileContentIndex/1512b171-4061-4ff6-b006-36e5b15ac6ad.vsidx
 HRS/.vs/HRS/FileContentIndex/b06cc3e1-f3b2-49b6-92fe-44f9cb2f9b4f.vsidx
+/HRS/HRS.Client/obj/Debug/net6.0/HRS.Client.csproj.AssemblyReference.cache
+/HRS/HRS.Data/obj/Debug/net6.0/HRS.Data.csproj.AssemblyReference.cache
