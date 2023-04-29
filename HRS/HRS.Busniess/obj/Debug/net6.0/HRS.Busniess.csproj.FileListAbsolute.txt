@@ -34,3 +34,15 @@ D:\New_HR\HR_Project\HRS\HRS.Busniess\obj\Debug\net6.0\HRS.Busniess.dll
 D:\New_HR\HR_Project\HRS\HRS.Busniess\obj\Debug\net6.0\refint\HRS.Busniess.dll
 D:\New_HR\HR_Project\HRS\HRS.Busniess\obj\Debug\net6.0\HRS.Busniess.pdb
 D:\New_HR\HR_Project\HRS\HRS.Busniess\obj\Debug\net6.0\ref\HRS.Busniess.dll
+D:\Projects\Official\Divya\HRMS\HRS\HRS.Busniess\bin\Debug\net6.0\HRS.Busniess.deps.json
+D:\Projects\Official\Divya\HRMS\HRS\HRS.Busniess\bin\Debug\net6.0\HRS.Busniess.dll
+D:\Projects\Official\Divya\HRMS\HRS\HRS.Busniess\bin\Debug\net6.0\HRS.Busniess.pdb
+D:\Projects\Official\Divya\HRMS\HRS\HRS.Busniess\obj\Debug\net6.0\HRS.Busniess.csproj.AssemblyReference.cache
+D:\Projects\Official\Divya\HRMS\HRS\HRS.Busniess\obj\Debug\net6.0\HRS.Busniess.GeneratedMSBuildEditorConfig.editorconfig
+D:\Projects\Official\Divya\HRMS\HRS\HRS.Busniess\obj\Debug\net6.0\HRS.Busniess.AssemblyInfoInputs.cache
+D:\Projects\Official\Divya\HRMS\HRS\HRS.Busniess\obj\Debug\net6.0\HRS.Busniess.AssemblyInfo.cs
+D:\Projects\Official\Divya\HRMS\HRS\HRS.Busniess\obj\Debug\net6.0\HRS.Busniess.csproj.CoreCompileInputs.cache
+D:\Projects\Official\Divya\HRMS\HRS\HRS.Busniess\obj\Debug\net6.0\HRS.Busniess.dll
+D:\Projects\Official\Divya\HRMS\HRS\HRS.Busniess\obj\Debug\net6.0\refint\HRS.Busniess.dll
+D:\Projects\Official\Divya\HRMS\HRS\HRS.Busniess\obj\Debug\net6.0\HRS.Busniess.pdb
+D:\Projects\Official\Divya\HRMS\HRS\HRS.Busniess\obj\Debug\net6.0\ref\HRS.Busniess.dll
