@@ -1,23 +1,70 @@
+# Prerequisites
+*.d
+
+# Object files
+*.o
+*.ko
+*.obj
+*.elf
+
+# Linker output
+*.ilk
+*.map
+*.exp
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Libraries
+*.lib
+*.a
+*.la
+*.lo
+
+# Shared objects (inc. Windows DLLs)
+*.dll
+*.so
+*.so.*
+*.dylib
+
+# Executables
+*.exe
+*.out
+*.app
+*.i*86
+*.x86_64
+*.hex
+
+# Debug files
+*.dSYM/
+*.su
+*.idb
+*.pdb
+
+# Kernel Module Compile Results
+*.mod*
+*.cmd
+.tmp_versions/
+modules.order
+Module.symvers
+Mkfile.old
+dkms.conf
+
+
 HRS/.vs/HRS/DesignTimeBuild/.dtbcache.v2
 HRS/.vs/HRS/v17/.futdcache.v2
 HRS/.vs/HRS/v17/.suo
 HRS/.vs/ProjectEvaluation/hrs.metadata.v6.1
 HRS/.vs/ProjectEvaluation/hrs.projects.v6.1
-HRS/HRS.Busniess/bin/Debug/net6.0/HRS.Busniess.dll
-HRS/HRS.Busniess/bin/Debug/net6.0/HRS.Busniess.pdb
-HRS/HRS.Busniess/obj/Debug/net6.0/HRS.Busniess.dll
-HRS/HRS.Busniess/obj/Debug/net6.0/HRS.Busniess.pdb
-HRS/HRS.Busniess/obj/Debug/net6.0/ref/HRS.Busniess.dll
-HRS/HRS.Busniess/obj/Debug/net6.0/refint/HRS.Busniess.dll
-HRS/HRS.Client/bin/Debug/net6.0/HRS.Busniess.dll
-HRS/HRS.Client/bin/Debug/net6.0/HRS.Busniess.pdb
-HRS/HRS.Client/bin/Debug/net6.0/HRS.Client.dll
-HRS/HRS.Client/bin/Debug/net6.0/HRS.Client.pdb
-HRS/HRS.Client/bin/Debug/net6.0/HRS.Data.dll
-HRS/HRS.Client/bin/Debug/net6.0/HRS.Data.pdb
-HRS/HRS.Client/obj/Debug/net6.0/HRS.Client.csproj.AssemblyReference.cache
-HRS/HRS.Client/obj/Debug/net6.0/HRS.Client.dll
-HRS/HRS.Client/obj/Debug/net6.0/HRS.Client.pdb
-HRS/HRS.Client/obj/Debug/net6.0/ref/HRS.Client.dll
-HRS/HRS.Client/obj/Debug/net6.0/refint/HRS.Client.dll
+HRS/HRS.Busniess/bin/
+HRS/HRS.Busniess/obj/
+HRS/HRS.Client/bin/
+HRS/HRS.Client/obj/
 
+.vs/VSWorkspaceState.json
+HRS/.vs/HRS/FileContentIndex/22e41e00-5e88-4bbe-8d3f-5725266c5c62.vsidx
+HRS/.vs/HRS/FileContentIndex/161e9f57-adda-4c15-92e2-18c3caf813da.vsidx
+.vs/HRMS/v17/.wsuo
+HRS/.vs/HRS/FileContentIndex/1512b171-4061-4ff6-b006-36e5b15ac6ad.vsidx
+HRS/.vs/HRS/FileContentIndex/b06cc3e1-f3b2-49b6-92fe-44f9cb2f9b4f.vsidx
